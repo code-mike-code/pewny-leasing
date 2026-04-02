@@ -1,0 +1,135 @@
+.cta-btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  min-height: 44px;
+  border: none;
+  outline: none;
+  transition: color 0.18s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.18s;
+  will-change: color, box-shadow;
+  clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  z-index: -1;
+  transition: width 0.6s cubic-bezier(0.4, 2, 0.6, 1);
+}
+
+.cta-btn:not(:hover):not(:focus-visible)::before {
+  right: 0;
+  left: auto;
+  width: 0%;
+  transition: width 0.5s cubic-bezier(0.4, 2, 0.6, 1);
+}
+
+.cta-btn:hover,
+.cta-btn:focus-visible {
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.14);
+}
+
+.cta-btn:hover::before,
+.cta-btn:focus-visible::before {
+  width: 100%;
+}
+
+/* Yellow variant */
+.cta-btn--yellow {
+  background: #FBBF24;
+  color: #111111;
+}
+
+.cta-btn--yellow::before {
+  background: #111111;
+}
+
+.cta-btn--yellow:hover,
+.cta-btn--yellow:focus-visible {
+  color: #ffffff;
+}
+
+/* Dark variant */
+.cta-btn--dark {
+  background: #111111;
+  color: #ffffff;
+}
+
+.cta-btn--dark::before {
+  background: #FBBF24;
+}
+
+.cta-btn--dark:hover,
+.cta-btn--dark:focus-visible {
+  color: #111111;
+}
+/* Grey variant */
+.cta-btn--grey {
+  background: #111111;
+  color: #ffffff;
+}
+
+.cta-btn--grey::before {
+  background: #939597;
+}
+
+.cta-btn--grey:hover,
+.cta-btn--grey:focus-visible {
+  color: #FBBF24;
+}
+
+/* Outline Yellow variant */
+.cta-btn--outline-yellow {
+  background: transparent;
+  color: #ffffff;
+  border-bottom: 2px solid #FBBF24 !important;
+}
+
+.cta-btn--outline-yellow::before {
+  background: #FBBF24;
+}
+
+.cta-btn--outline-yellow:hover,
+.cta-btn--outline-yellow:focus-visible {
+  color: #111111;
+  border-bottom-color: #111111 !important;
+}
+
+/* Sizes */
+.cta-btn--sm {
+  padding: 0.625rem 1.25rem;
+}
+
+.cta-btn--md {
+  padding: 1rem 2rem;
+}
+
+/* Forced colors mode (Windows High Contrast) — ensure focus is always visible */
+@media (forced-colors: active) {
+  .cta-btn:focus-visible {
+    outline: 2px solid ButtonText;
+    outline-offset: 2px;
+  }
+}
+
+/* Disabled */
+.cta-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.cta-btn:disabled::before {
+  display: none;
+}

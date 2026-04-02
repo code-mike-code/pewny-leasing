@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *:not(.rounded-circle) {
+    border-radius: 0 !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-dark bg-white antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+}
+
+/* ─── Reveal (scroll) keyframes ──────────────────────────────────── */
+
+@keyframes reveal-up {
+  0%   { transform: translateY(48px); opacity: 0; }
+  100% { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes reveal-left {
+  0%   { transform: translateX(-60px); opacity: 0; }
+  100% { transform: translateX(0);     opacity: 1; }
+}
+
+@keyframes reveal-right {
+  0%   { transform: translateX(60px); opacity: 0; }
+  100% { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes reveal-scale {
+  0%   { transform: scale(0.88); opacity: 0; }
+  100% { transform: scale(1);    opacity: 1; }
+}
+
+@layer utilities {
+  /* expo-out: rushes in, decelerates heavily at the very end */
+  .animate-reveal-up    { animation: reveal-up    900ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .animate-reveal-left  { animation: reveal-left  900ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .animate-reveal-right { animation: reveal-right 900ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .animate-reveal-scale { animation: reveal-scale 900ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+}
+
+/* ─── Hero keyframes ──────────────────────────────────────────────── */
+
+@keyframes char-reveal {
+  0%   { transform: translateY(130%); opacity: 0; }
+  100% { transform: translateY(0);    opacity: 1; }
+}
+
+/* ─── Carousel slide transition ──────────────────────────────────── */
+
+@keyframes carousel-enter {
+  /* scale only — opacity fade is handled by CSS transition on the wrapper */
+  from { transform: scale(1.06); }
+  to   { transform: scale(1);    }
+}
+
+@layer utilities {
+  .animate-char-reveal {
+    animation: char-reveal 900ms ease-out both;
+  }
+
+  .animate-carousel-enter {
+    animation: carousel-enter 1000ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+/* ─── WhatsApp widget ─────────────────────────────────────────────── */
+
+.rounded-circle {
+  border-radius: 9999px !important;
+}
+
+@keyframes wa-ping {
+  0%   { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@layer utilities {
+  .animate-wa-ping {
+    animation: wa-ping 2.5s ease-out infinite;
+  }
+}
+
+/* ─── Hover Wipe Animation Utility ────────────────────────────────── */
+
+.hover-wipe {
+  @apply relative overflow-hidden z-[1] transition-all duration-300;
+  @apply shape-rhombus;
+}
+
+.shape-rhombus {
+  clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+}
+
+.hover-wipe::before {
+  content: '';
+  @apply absolute left-0 top-0 w-0 h-full z-[-1] transition-[width] duration-500 ease-[cubic-bezier(0.4,2,0.6,1)];
+}
+
+.hover-wipe:not(:hover):not(:focus-visible)::before {
+  @apply right-0 left-auto w-0 transition-[width] duration-300;
+}
+
+.hover-wipe:hover::before,
+.hover-wipe:focus-visible::before {
+  @apply w-full;
+}
+
+/* Yellow Wipe (Dark Text on Hover) */
+.hover-wipe-yellow::before {
+  @apply bg-primary;
+}
+.hover-wipe-yellow:hover {
+  @apply text-dark;
+}
+
+/* Dark Wipe (White Text on Hover) */
+.hover-wipe-dark::before {
+  @apply bg-dark;
+}
+.hover-wipe-dark:hover {
+  @apply text-white;
+}
+
+/* ─── Custom Scrollbar ────────────────────────────────────────────── */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #FBBF24;
+}
+
+/* ─── Reduced motion ──────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide-up,
+  .animate-scale-in,
+  .animate-reveal-up,
+  .animate-reveal-left,
+  .animate-reveal-right,
+  .animate-reveal-scale,
+  .animate-char-reveal,
+  .animate-carousel-enter {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
