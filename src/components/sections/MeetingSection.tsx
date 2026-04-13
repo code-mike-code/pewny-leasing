@@ -1,124 +1,172 @@
-import { Video, Building2, ArrowRight } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import { ArrowRight, Loader2, AlertTriangle } from 'lucide-react'
+import { useLanguage } from '@/hooks/useLanguage'
 import { CTAButton } from '@/components/ui/CTAButton'
+import { InquiryForm, type InquiryFormHandle } from '@/components/forms/InquiryForm'
+import { isCalcSectionReady, buildCalcFinancingObject, type CalcSectionData } from '@/lib/formFlow'
+import IconOnline from '@/assets/icons/online-meet-removebg-preview.png'
+import IconPersonal from '@/assets/icons/personal-meet-removebg-preview.png'
 
-export function MeetingSection() {
+interface MeetingSectionProps {
+  calcData: CalcSectionData | null
+}
+
+export function MeetingSection({ calcData }: MeetingSectionProps) {
+  const { t } = useLanguage()
   const [activeMeeting, setActiveMeeting] = useState<'online' | 'personal'>('online')
+  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [showCalcError, setShowCalcError] = useState(false)
+  const formRef = useRef<InquiryFormHandle>(null)
+
+  function handleSubmit() {
+    if (!isCalcSectionReady(calcData)) {
+      setShowCalcError(true)
+      document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })
+      return
+    }
+    setShowCalcError(false)
+    formRef.current?.submit()
+  }
+
+  const contextData = calcData
+    ? {
+        calculatorType: calcData.activeTab === 'other' ? 'other' as const : 'vehicle' as const,
+        financingObject: buildCalcFinancingObject(calcData),
+        value: calcData.value,
+        contribution: calcData.contribution,
+        buyout: calcData.buyout,
+        period: calcData.period,
+        vehicleCondition: calcData.activeTab === 'other' ? null : calcData.activeTab,
+        wantsCashback: true,
+        meetingType: activeMeeting === 'online' ? 'online' as const : 'in_person' as const,
+      }
+    : {
+        calculatorType: 'other' as const,
+        financingObject: `Spotkanie: ${activeMeeting === 'online' ? 'Online' : 'Osobiście'}`,
+        wantsCashback: true,
+        meetingType: activeMeeting === 'online' ? 'online' as const : 'in_person' as const,
+      }
 
   return (
-    <section id="book-meeting" className="py-32 bg-white w-full">
-      <div className="max-w-screen-xl mx-auto px-4 lg:px-8">
-        
+    <section id="book-meeting" className="py-32 xl:py-48 bg-white w-full">
+      <div className="max-w-screen-xl xl:max-w-screen-2xl mx-auto px-4 lg:px-8 xl:px-12">
+
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
-          
-          {/* Lewa kolumna: Wybór spotkania */}
+
+          {/* Left: Meeting choice */}
           <div className="w-full lg:w-1/2 flex flex-col pt-4">
-            <h2 className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4 text-left">Zarezerwuj Termin</h2>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-navy leading-[1.1] tracking-tighter uppercase italic mb-6">
-              Spotkajmy się <br className="hidden md:block" />
-              <span className="text-primary italic">Przy Kawie</span>
+            <h2 className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4 text-left">{t('meeting.heading')}</h2>
+            <h3 className="text-[clamp(1.8rem,10vw,2.5rem)] md:text-[clamp(2.5rem,8vw,3.5rem)] lg:text-[clamp(2.5rem,7vw,4.5rem)] xl:text-7xl font-black text-navy leading-[1.1] tracking-tighter uppercase italic mb-6">
+              {t('meeting.title')} <br className="hidden md:block" />
+              <span className="text-primary italic">{t('meeting.titleAccent')}</span>
             </h3>
-            <p className="text-gray-500 font-medium mb-10 max-w-sm leading-relaxed text-sm md:text-base">
-              Wolisz rozmowę w cztery oczy czy szybki call? Wybierz formę, która Ci najbardziej odpowiada. Nasi eksperci czekają na Twoje pytania.
+            <p className="text-gray-500 font-medium mb-10 max-w-sm leading-relaxed text-sm md:text-base xl:text-lg">
+              {t('meeting.subtitle')}
             </p>
 
             <div className="space-y-4">
-              {/* Opcja 1: Online */}
-              <button 
+              {/* Online */}
+              <button
                 onClick={() => setActiveMeeting('online')}
                 className={`
                   w-full text-left flex items-center p-6 rounded-xl transition-all duration-300 outline-none
-                  ${activeMeeting === 'online' 
-                    ? 'bg-[#F2F5F9] border-transparent shadow-sm' 
+                  ${activeMeeting === 'online'
+                    ? 'bg-[#F2F5F9] border-transparent shadow-sm'
                     : 'bg-[#F8FAFC] border border-transparent hover:bg-[#F2F5F9]'
                   }
                 `}
               >
-                <div className="bg-white p-3 rounded-lg shadow-sm mr-6 text-primary flex items-center justify-center">
-                  <Video size={24} strokeWidth={2} />
+                <div className="p-3 mr-6 text-primary flex items-center justify-center">
+                  <img src={IconOnline} alt='online-meet' className='w-[60px] h-auto bg-transparent' />
                 </div>
                 <div>
-                  <h3 className="font-bold text-navy text-lg mb-0.5">Spotkanie Online</h3>
-                  <p className="text-gray-500 text-sm font-medium">Zoom, Teams lub Google Meet</p>
+                  <h3 className="font-bold text-navy text-lg xl:text-xl mb-0.5">{t('meeting.online.title')}</h3>
+                  <p className="text-gray-500 text-sm font-medium">{t('meeting.online.subtitle')}</p>
                 </div>
               </button>
 
-              {/* Opcja 2: Osobiste */}
-              <button 
+              {/* Personal */}
+              <button
                 onClick={() => setActiveMeeting('personal')}
                 className={`
                   w-full text-left flex items-center p-6 rounded-xl transition-all duration-300 outline-none
-                  ${activeMeeting === 'personal' 
-                    ? 'bg-[#F2F5F9] border-transparent shadow-sm' 
+                  ${activeMeeting === 'personal'
+                    ? 'bg-[#F2F5F9] border-transparent shadow-sm'
                     : 'bg-[#F8FAFC] border border-transparent hover:bg-[#F2F5F9]'
                   }
                 `}
               >
-                <div className="bg-white p-3 rounded-lg shadow-sm mr-6 text-primary flex items-center justify-center">
-                  <Building2 size={24} strokeWidth={2} />
+                <div className="p-3 mr-6 text-primary flex items-center justify-center">
+                  <img src={IconPersonal} alt='personal-meet' className='w-[60px] h-auto' />
                 </div>
                 <div>
-                  <h3 className="font-bold text-navy text-lg mb-0.5">Spotkanie Osobiste</h3>
-                  <p className="text-gray-500 text-sm font-medium">W naszym biurze lub u Ciebie</p>
+                  <h3 className="font-bold text-navy text-lg xl:text-xl mb-0.5">{t('meeting.personal.title')}</h3>
+                  <p className="text-gray-500 text-sm font-medium">{t('meeting.personal.subtitle')}</p>
                 </div>
               </button>
             </div>
           </div>
 
-          {/* Prawa kolumna: Formularz danych */}
+          {/* Right: Form */}
           <div className="w-full lg:w-1/2">
-            <div className="bg-[#F9FAFB] rounded-[2.5rem] p-10 md:p-12 shadow-sm border border-gray-100 relative overflow-hidden">
+            <div className="bg-[#F9FAFB] rounded-[2.5rem] p-10 md:p-12 xl:p-16 shadow-sm border border-gray-100 relative overflow-hidden">
               <h3 className="text-xl font-black text-navy tracking-tight mb-10 uppercase italic">
-                Podaj dane do <span className="text-primary italic">Twojej oferty</span>
+                {t('meeting.form.heading')} <span className="text-primary italic">{t('meeting.form.headingAccent')}</span>
               </h3>
 
-              <div className="space-y-8">
-                {/* Pole 1: NIP full-width */}
-                <div className="w-full group">
-                  <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 group-focus-within:text-navy transition-colors">
-                    NIP Firmy
-                  </label>
-                  <input 
-                    type="text" 
-                    placeholder="000-000-00-00" 
-                    className="w-full bg-transparent border-b border-gray-200 py-2 pt-1 pb-3 text-gray-800 font-medium placeholder:text-gray-400 focus:outline-none focus:border-navy transition-colors"
-                  />
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-8 sm:gap-6">
-                  {/* Pole 2: Email half-width */}
-                  <div className="w-full sm:w-1/2 group">
-                    <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 group-focus-within:text-navy transition-colors">
-                      Email
-                    </label>
-                    <input 
-                      type="email" 
-                      placeholder="twoj@email.pl" 
-                      className="w-full bg-transparent border-b border-gray-200 py-2 pt-1 pb-3 text-gray-800 font-medium placeholder:text-gray-400 focus:outline-none focus:border-navy transition-colors"
-                    />
-                  </div>
-
-                  {/* Pole 3: Telefon half-width */}
-                  <div className="w-full sm:w-1/2 group">
-                    <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 group-focus-within:text-navy transition-colors">
-                      Telefon
-                    </label>
-                    <input 
-                      type="tel" 
-                      placeholder="+48 000 000 000" 
-                      className="w-full bg-transparent border-b border-gray-200 py-2 pt-1 pb-3 text-gray-800 font-medium placeholder:text-gray-400 focus:outline-none focus:border-navy transition-colors"
-                    />
+              {/* Error: calc data missing */}
+              {showCalcError && (
+                <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6 animate-reveal-up">
+                  <AlertTriangle size={18} className="text-amber-500 mt-0.5 flex-shrink-0" />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-black text-amber-800 uppercase tracking-wide mb-1">
+                      {t('meeting.form.calcMissingTitle')}
+                    </p>
+                    <p className="text-xs font-medium text-amber-700 leading-snug mb-3">
+                      {t('meeting.form.calcMissingText')}
+                    </p>
+                    <button
+                      onClick={() => {
+                        setShowCalcError(false)
+                        document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })
+                      }}
+                      className="text-[10px] font-black text-amber-800 uppercase tracking-widest underline underline-offset-2 hover:text-amber-900 transition-colors"
+                    >
+                      {t('meeting.form.goToCalc')}
+                    </button>
                   </div>
                 </div>
+              )}
 
-                {/* Przycisk */}
-                <div className="pt-4">
-                  <CTAButton variant="yellow" className="w-full group">
-                    Otrzymaj ofertę w 15 minut
-                    <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
+              <InquiryForm
+                ref={formRef}
+                variant="compact"
+                hideSubmit
+                showAdvancedFields={false}
+                onStatusChange={setFormStatus}
+                onSuccess={() => setShowCalcError(false)}
+                contextData={contextData}
+              />
+
+              {formStatus !== 'success' && (
+                <div className="mt-6">
+                  <CTAButton
+                    variant="yellow"
+                    className="w-full group"
+                    disabled={formStatus === 'loading'}
+                    onClick={handleSubmit}
+                  >
+                    {formStatus === 'loading' ? (
+                      <Loader2 size={16} className="animate-spin" />
+                    ) : (
+                      <>
+                        {t('meeting.form.submitLabel').toUpperCase()}
+                        <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
+                      </>
+                    )}
                   </CTAButton>
                 </div>
-              </div>
+              )}
             </div>
           </div>
 

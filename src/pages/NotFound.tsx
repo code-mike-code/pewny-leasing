@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <>
       <Helmet>
-        <title>404 – Drago Partner</title>
+        <title>404 – Pewny Leasing</title>
       </Helmet>
 
       <Header />

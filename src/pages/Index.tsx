@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useLanguage } from '@/hooks/useLanguage'
 import { Header } from '@/components/layout/Header'
@@ -5,47 +6,50 @@ import { Footer } from '@/components/layout/Footer'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { BusinessCalculatorSection } from '@/components/sections/BusinessCalculatorSection'
 import { MeetingSection } from '@/components/sections/MeetingSection'
+import { type CalcSectionData } from '@/lib/formFlow'
 import { KnowledgeSection } from '@/components/sections/KnowledgeSection'
 import { WhyUsSection } from '@/components/sections/WhyUsSection'
 import { OfferSection } from '@/components/sections/OfferSection'
 import { BannerSection } from '@/components/sections/BannerSection'
+import { ContactSection } from '@/components/sections/ContactSection'
 import { WhatsAppWidget } from '@/components/ui/WhatsAppWidget'
 
 export default function Index() {
   const { t } = useLanguage()
+  const [calcData, setCalcData] = useState<CalcSectionData | null>(null)
 
   return (
     <>
       <Helmet>
-        <title>Drago Partner – {t('footer.tagline')}</title>
+        <title>Pewny Leasing – {t('footer.tagline')}</title>
         <meta name="description" content={t('meta.description')} />
         <meta name="keywords" content={t('meta.keywords')} />
-        <link rel="canonical" href="https://dragopartner.pl/" />
+        <link rel="canonical" href="https://pewnyleasing.pl/" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dragopartner.pl/" />
-        <meta property="og:title" content={`Drago Partner – ${t('footer.tagline')}`} />
+        <meta property="og:url" content="https://pewnyleasing.pl/" />
+        <meta property="og:title" content={`Pewny Leasing – ${t('footer.tagline')}`} />
         <meta property="og:description" content={t('meta.description')} />
-        <meta property="og:image" content="https://dragopartner.pl/og-image.jpg" />
+        <meta property="og:image" content="https://pewnyleasing.pl/og-image.jpg" />
         <meta property="og:locale" content="pl_PL" />
-        <meta property="og:site_name" content="Drago Partner" />
+        <meta property="og:site_name" content="Pewny Leasing" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`Drago Partner – ${t('footer.tagline')}`} />
+        <meta name="twitter:title" content={`Pewny Leasing – ${t('footer.tagline')}`} />
         <meta name="twitter:description" content={t('meta.description')} />
-        <meta name="twitter:image" content="https://dragopartner.pl/og-image.jpg" />
+        <meta name="twitter:image" content="https://pewnyleasing.pl/og-image.jpg" />
 
         {/* JSON-LD: LocalBusiness */}
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "name": "Drago Partner",
-          "description": "Partner flotowy Uber, Bolt i FreeNow w Warszawie. Wynajem aut, licencje taxi, szkolenia i wsparcie kierowców.",
-          "url": "https://dragopartner.pl",
+          "name": "Pewny Leasing",
+          "description": "Profesjonalne finansowanie floty i pojazdów. Leasing operacyjny, konsumencki i wsparcie w wyborze najlepszej oferty.",
+          "url": "https://pewnyleasing.pl",
           "telephone": "+48530181372",
-          "email": "biuro@dragopartner.pl",
+          "email": "kontakt@pewnyleasing.pl",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Modlińska 310/312 lok. 2",
@@ -64,10 +68,10 @@ export default function Index() {
             "opens": "10:00",
             "closes": "18:00"
           },
-          "image": "https://dragopartner.pl/og-image.jpg",
+          "image": "https://pewnyleasing.pl/og-image.jpg",
           "sameAs": [
-            "https://www.instagram.com/dragopartnertaxi",
-            "https://www.facebook.com/share/1CYoKHcnMd/"
+            "https://www.instagram.com/pewnyleasing",
+            "https://www.facebook.com/pewnyleasing"
           ]
         })}</script>
 
@@ -78,42 +82,42 @@ export default function Index() {
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Jakie dokumenty są potrzebne do rejestracji?",
+              "name": "Jakie dokumenty są potrzebne do leasingu?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Do rejestracji potrzebujesz: dowód osobisty lub paszport, prawo jazdy kategorii B (min. 3 lata), zaświadczenie o niekaralności, badania lekarskie i psychotechniczne."
+                "text": "Do leasingu firmowego potrzebujesz: NIP, REGON, dokumenty rejestrowe firmy oraz wyciąg z konta bankowego. Dla osób fizycznych wystarczy dowód osobisty i zaświadczenie o dochodach."
               }
             },
             {
               "@type": "Question",
-              "name": "Ile mogę zarobić jako kierowca?",
+              "name": "Jaka jest minimalna wpłata własna przy leasingu pojazdu?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Zarobki zależą od liczby przepracowanych godzin i wybranej platformy. Aktywni kierowcy zarabiają średnio od 5 000 do 9 000 zł miesięcznie netto."
+                "text": "Minimalna wpłata własna zaczyna się już od 0%, jednak standardowo wynosi od 10% do 20% wartości pojazdu. Wyższa wpłata obniża miesięczną ratę leasingową."
               }
             },
             {
               "@type": "Question",
-              "name": "Czy muszę mieć własny samochód?",
+              "name": "Czy mogę wziąć leasing na używany samochód?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Nie jest to wymagane. Pomagamy w znalezieniu opcji leasingu lub wynajmu pojazdu odpowiedniego do przewozów."
+                "text": "Tak. Oferujemy leasing zarówno na nowe, jak i używane pojazdy. Wiek pojazdu i jego przebieg wpływają na dostępne warunki finansowania."
               }
             },
             {
               "@type": "Question",
-              "name": "Jak długo trwa proces rejestracji?",
+              "name": "Jak długo trwa decyzja leasingowa?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Standardowy proces rejestracji trwa od 3 do 7 dni roboczych, w zależności od kompletności dokumentacji."
+                "text": "Decyzja kredytowa może być wydana nawet w ciągu 2 godzin od złożenia kompletnego wniosku online."
               }
             },
             {
               "@type": "Question",
-              "name": "Czy oferujecie wsparcie w języku ukraińskim lub angielskim?",
+              "name": "Czy Pewny Leasing obsługuje leasing konsumencki?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Tak. Nasz zespół obsługuje kierowców w języku polskim, angielskim, ukraińskim, serbskim i gruzińskim."
+                "text": "Tak. Obsługujemy zarówno leasing operacyjny dla firm, jak i leasing konsumencki dla osób fizycznych nieprowadzących działalności gospodarczej."
               }
             }
           ]
@@ -123,12 +127,13 @@ export default function Index() {
       <Header />
       <main id="main-content">
         <HeroSection />
-        <BusinessCalculatorSection />
-        <MeetingSection />
+        <BusinessCalculatorSection onConfirm={setCalcData} />
+        <MeetingSection calcData={calcData} />
         <OfferSection />
         <BannerSection />
         <KnowledgeSection />
         <WhyUsSection />
+        <ContactSection />
       </main>
       <Footer />
       <WhatsAppWidget />

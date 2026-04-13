@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async'
-import logoDark from '@/assets/logo/logo-inline-dark.webp'
+import logoDark from '@/assets/logo/logo-dark-removebg.webp'
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -14,14 +14,14 @@ export default function TermsOfService() {
   return (
     <>
       <Helmet>
-        <title>Regulamin – Drago Partner</title>
+        <title>Regulamin – Pewny Leasing</title>
         <meta name="robots" content="noindex, follow" />
       </Helmet>
 
       <div className="min-h-screen bg-white">
         <header className="border-b border-gray-100 px-4 sm:px-6 lg:px-8 py-4">
           <a href="/" className="inline-block">
-            <img src={logoDark} alt="Drago Partner" className="h-12 w-auto object-contain" />
+            <img src={logoDark} alt="Pewny Leasing" className="h-12 w-auto object-contain" />
           </a>
         </header>
 
@@ -37,7 +37,7 @@ export default function TermsOfService() {
             <Section title="§1 Postanowienia ogólne">
               <p>
                 Niniejszy Regulamin określa zasady korzystania z serwisu internetowego dostępnego pod adresem{' '}
-                <strong className="text-dark">dragopartner.pl</strong> (dalej: „Serwis"), prowadzonego przez
+                <strong className="text-dark">pewnyleasing.pl</strong> (dalej: „Serwis"), prowadzonego przez
                 GB+ Spółka z ograniczoną odpowiedzialnością z siedzibą przy ul. Książkowej 9F/405,
                 03-134 Warszawa, NIP: 5242881811 (dalej: „Operator").
               </p>
@@ -47,18 +47,18 @@ export default function TermsOfService() {
               </p>
               <p>
                 Operator zastrzega sobie prawo do zmiany Regulaminu. Aktualna wersja jest zawsze dostępna
-                pod adresem <strong className="text-dark">dragopartner.pl/terms-of-service</strong>.
+                pod adresem <strong className="text-dark">pewnyleasing.pl/terms-of-service</strong>.
               </p>
             </Section>
 
             <Section title="§2 Definicje">
               <ul className="list-disc list-inside space-y-2">
                 <li>
-                  <strong className="text-dark">Operator</strong> – GB+ Spółka z ograniczoną odpowiedzialnością,
-                  ul. Książkowa 9F/405, 03-134 Warszawa, NIP: 5242881811, e-mail: biuro@dragopartner.pl.
+                  <strong className="text-dark">Operator</strong> – Pewny Leasing,
+                  ul. Modlińska 310/312 lok. 2, 03-152 Warszawa, e-mail: kontakt@pewnyleasing.pl.
                 </li>
                 <li>
-                  <strong className="text-dark">Serwis</strong> – strona internetowa dragopartner.pl wraz
+                  <strong className="text-dark">Serwis</strong> – strona internetowa pewnyleasing.pl wraz
                   ze wszystkimi podstronami i funkcjonalnościami.
                 </li>
                 <li>
@@ -66,58 +66,52 @@ export default function TermsOfService() {
                   z Serwisu lub wypełnia Formularz zgłoszeniowy.
                 </li>
                 <li>
-                  <strong className="text-dark">Formularz</strong> – elektroniczny formularz rekrutacyjny
-                  dostępny w Serwisie, służący do zgłoszenia chęci podjęcia współpracy z Operatorem.
+                  <strong className="text-dark">Formularz</strong> – elektroniczny formularz zapytania
+                  dostępny w Serwisie, służący do złożenia zapytania leasingowego lub kontaktowego.
                 </li>
                 <li>
-                  <strong className="text-dark">Platformy</strong> – zewnętrzne aplikacje do zamawiania
-                  przejazdów i dostaw, tj. Uber, Bolt, FreeNow, Uber Eats, Bolt Food.
+                  <strong className="text-dark">Partnerzy finansowi</strong> – banki i firmy leasingowe
+                  współpracujące z Operatorem przy przygotowaniu ofert finansowania.
                 </li>
               </ul>
             </Section>
 
             <Section title="§3 Charakter serwisu">
               <p>
-                Serwis pełni funkcję informacyjno-rekrutacyjną. Prezentowane treści dotyczące wynagrodzeń,
-                warunków współpracy oraz oferty mają charakter wyłącznie informacyjny i nie stanowią oferty
+                Serwis pełni funkcję informacyjno-handlową. Prezentowane treści dotyczące warunków
+                finansowania oraz oferty leasingowej mają charakter wyłącznie informacyjny i nie stanowią oferty
                 handlowej w rozumieniu art. 66 §1 Kodeksu cywilnego. Są zaproszeniem do zawarcia umowy
                 zgodnie z art. 71 k.c.
               </p>
               <p>
-                Podane orientacyjne zarobki (np. „od 9 000 zł" dla kierowcy taxi, „od 6 000 zł" dla kuriera)
-                są wartościami przykładowymi i zależą od indywidualnych czynników, takich jak liczba
-                przepracowanych godzin, platforma współpracy, lokalizacja czy sezonowość. Operator nie
-                gwarantuje osiągnięcia określonego poziomu zarobków.
+                Podane orientacyjne wartości rat leasingowych są wyliczeniami szacunkowymi i zależą
+                od indywidualnych parametrów oferty, zdolności kredytowej i aktualnych warunków rynkowych.
+                Operator nie gwarantuje udzielenia finansowania.
               </p>
             </Section>
 
-            <Section title="§4 Formularz zgłoszeniowy">
+            <Section title="§4 Formularz zapytania">
               <p>
-                Wypełnienie Formularza jest dobrowolne i stanowi wyraz zainteresowania podjęciem
-                współpracy z Operatorem jako kierowca lub kurier. Przesłanie Formularza nie jest równoznaczne
-                z zawarciem umowy o współpracę.
+                Wypełnienie Formularza jest dobrowolne i stanowi wyraz zainteresowania usługami leasingowymi
+                Operatora. Przesłanie Formularza nie jest równoznaczne z zawarciem umowy leasingowej.
               </p>
               <p>
                 Użytkownik wypełniając Formularz zobowiązuje się podać prawdziwe i aktualne dane. Operator
-                skontaktuje się z Użytkownikiem w ciągu 24 godzin roboczych od przesłania zgłoszenia.
+                skontaktuje się z Użytkownikiem w ciągu 24 godzin roboczych od przesłania zapytania.
               </p>
               <p>
                 Przesłanie Formularza jest jednocześnie wyrażeniem zgody na przetwarzanie danych osobowych
-                podanych w Formularzu w celach rekrutacyjnych, zgodnie z Polityką Prywatności Operatora.
-              </p>
-              <p>
-                Operator zastrzega sobie prawo do odmowy nawiązania współpracy bez podania przyczyny.
+                podanych w Formularzu w celach obsługi zapytania, zgodnie z Polityką Prywatności Operatora.
               </p>
             </Section>
 
-            <Section title="§5 Rezerwacja wizyty">
+            <Section title="§5 Rezerwacja spotkania">
               <p>
-                Serwis umożliwia rezerwację wizyty w biurze Operatora za pośrednictwem systemu
-                CRM Operatora. Rezerwacja wizyty powinna być poprzedzona wypełnieniem Formularza
-                zgłoszeniowego i posiadaniem kompletu wymaganych dokumentów.
+                Serwis umożliwia rezerwację spotkania (online lub osobistego) z doradcą Operatora
+                za pośrednictwem systemu CRM Operatora.
               </p>
               <p>
-                Niestawienie się na zarezerwowaną wizytę bez wcześniejszego odwołania może skutkować
+                Niestawienie się na zarezerwowane spotkanie bez wcześniejszego odwołania może skutkować
                 odmową przyjęcia kolejnej rezerwacji.
               </p>
             </Section>
@@ -151,9 +145,9 @@ export default function TermsOfService() {
                 ani szkody wynikające z korzystania z Serwisu.
               </p>
               <p>
-                Operator nie ponosi odpowiedzialności za działania i politykę zewnętrznych platform
-                (Uber, Bolt, FreeNow i in.), w szczególności za zmiany warunków współpracy, prowizji,
-                wymogów technicznych czy statusu konta kierowcy/kuriera na tych platformach.
+                Operator nie ponosi odpowiedzialności za decyzje kredytowe banków i firm leasingowych,
+                w szczególności za odmowę udzielenia finansowania lub zmiany warunków oferty przez
+                te podmioty.
               </p>
               <p>
                 Serwis może zawierać linki do zewnętrznych stron internetowych. Operator nie ponosi
@@ -185,16 +179,15 @@ export default function TermsOfService() {
                 W przypadku pytań dotyczących Regulaminu prosimy o kontakt:
               </p>
               <ul className="list-none space-y-1">
-                <li><strong className="text-dark">GB+ Spółka z ograniczoną odpowiedzialnością</strong></li>
-                <li>ul. Książkowa 9F/405, 03-134 Warszawa</li>
-                <li>NIP: 5242881811</li>
+                <li><strong className="text-dark">Pewny Leasing</strong></li>
+                <li>ul. Modlińska 310/312 lok. 2, 03-152 Warszawa</li>
                 <li>
                   E-mail:{' '}
                   <a
-                    href="mailto:biuro@dragopartner.pl"
+                    href="mailto:kontakt@pewnyleasing.pl"
                     className="text-dark hover:underline"
                   >
-                    biuro@dragopartner.pl
+                    kontakt@pewnyleasing.pl
                   </a>
                 </li>
                 <li>

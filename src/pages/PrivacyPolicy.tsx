@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async'
-import logoDark from '@/assets/logo/logo-inline-dark.webp'
+import logoDark from '@/assets/logo/logo-dark-removebg.webp'
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -14,14 +14,14 @@ export default function PrivacyPolicy() {
   return (
     <>
       <Helmet>
-        <title>Polityka prywatności i cookies – Drago Partner</title>
+        <title>Polityka prywatności i cookies – Pewny Leasing</title>
         <meta name="robots" content="noindex, follow" />
       </Helmet>
 
       <div className="min-h-screen bg-white">
         <header className="border-b border-gray-100 px-4 sm:px-6 lg:px-8 py-4">
           <a href="/" className="inline-block">
-            <img src={logoDark} alt="Drago Partner" className="h-12 w-auto object-contain" />
+            <img src={logoDark} alt="Pewny Leasing" className="h-12 w-auto object-contain" />
           </a>
         </header>
 
@@ -37,16 +37,15 @@ export default function PrivacyPolicy() {
             <Section title="§1 Administrator danych osobowych">
               <p>
                 Administratorem Twoich danych osobowych jest{' '}
-                <strong className="text-dark">GB+ Spółka z ograniczoną odpowiedzialnością</strong> z siedzibą
-                przy ul. Książkowej 9F/405, 03-134 Warszawa, NIP: 5242881811, prowadząca serwis
-                pod marką Drago Partner (dalej: „Administrator").
+                <strong className="text-dark">Pewny Leasing</strong> z siedzibą
+                przy ul. Modlińskiej 310/312 lok. 2, 03-152 Warszawa (dalej: „Administrator").
               </p>
               <p>Kontakt z Administratorem w sprawach dotyczących danych osobowych:</p>
               <ul className="list-none space-y-1">
                 <li>
                   E-mail:{' '}
-                  <a href="mailto:biuro@dragopartner.pl" className="text-dark hover:underline">
-                    biuro@dragopartner.pl
+                  <a href="mailto:kontakt@pewnyleasing.pl" className="text-dark hover:underline">
+                    kontakt@pewnyleasing.pl
                   </a>
                 </li>
                 <li>
@@ -55,7 +54,7 @@ export default function PrivacyPolicy() {
                     +48 530 181 372
                   </a>
                 </li>
-                <li>Adres: ul. Książkowa 9F/405, 03-134 Warszawa</li>
+                <li>Adres: ul. Modlińska 310/312 lok. 2, 03-152 Warszawa</li>
               </ul>
             </Section>
 
@@ -148,8 +147,8 @@ export default function PrivacyPolicy() {
                   z Administratorem.
                 </li>
                 <li>
-                  <strong className="text-dark">Platformy partnerskie</strong> (Uber, Bolt, FreeNow)
-                  – wyłącznie w zakresie niezbędnym do rejestracji kierowcy/kuriera na platformie,
+                  <strong className="text-dark">Partnerzy finansowi</strong> (banki i firmy leasingowe)
+                  – wyłącznie w zakresie niezbędnym do przygotowania oferty leasingowej,
                   po wyrażeniu odrębnej zgody.
                 </li>
               </ul>
@@ -211,8 +210,8 @@ export default function PrivacyPolicy() {
               </ul>
               <p>
                 Aby skorzystać z powyższych praw, skontaktuj się z nami pod adresem:{' '}
-                <a href="mailto:biuro@dragopartner.pl" className="text-dark hover:underline">
-                  biuro@dragopartner.pl
+                <a href="mailto:kontakt@pewnyleasing.pl" className="text-dark hover:underline">
+                  kontakt@pewnyleasing.pl
                 </a>.
                 Odpowiemy w ciągu 30 dni.
               </p>
@@ -352,7 +351,7 @@ export default function PrivacyPolicy() {
               <p>
                 Administrator zastrzega sobie prawo do zmiany niniejszej Polityki Prywatności.
                 Aktualna wersja jest zawsze dostępna pod adresem{' '}
-                <strong className="text-dark">dragopartner.pl/privacy-policy</strong>. O istotnych
+                <strong className="text-dark">pewnyleasing.pl/privacy-policy</strong>. O istotnych
                 zmianach poinformujemy za pośrednictwem baneru informacyjnego na stronie.
               </p>
             </Section>
@@ -362,13 +361,12 @@ export default function PrivacyPolicy() {
                 W sprawach dotyczących ochrony danych osobowych lub cookies prosimy o kontakt:
               </p>
               <ul className="list-none space-y-1">
-                <li><strong className="text-dark">GB+ Spółka z ograniczoną odpowiedzialnością</strong></li>
-                <li>ul. Książkowa 9F/405, 03-134 Warszawa</li>
-                <li>NIP: 5242881811</li>
+                <li><strong className="text-dark">Pewny Leasing</strong></li>
+                <li>ul. Modlińska 310/312 lok. 2, 03-152 Warszawa</li>
                 <li>
                   E-mail:{' '}
-                  <a href="mailto:biuro@dragopartner.pl" className="text-dark hover:underline">
-                    biuro@dragopartner.pl
+                  <a href="mailto:kontakt@pewnyleasing.pl" className="text-dark hover:underline">
+                    kontakt@pewnyleasing.pl
                   </a>
                 </li>
                 <li>

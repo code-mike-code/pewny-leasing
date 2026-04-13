@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '@/hooks/useLanguage'
 
-const CONSENT_KEY = 'drago_cookie_consent'
+const CONSENT_KEY = 'pewnyleasing_cookie_consent'
 
 function loadGoogleAnalytics(measurementId: string) {
   if (!measurementId || document.getElementById('ga-script')) return
@@ -64,7 +64,7 @@ export function CookieConsent() {
     <div
       role="dialog"
       aria-label={t('cookies.title')}
-      className="fixed bottom-0 left-0 right-0 z-[100] bg-black border-t-2 border-[#f5df4d] shadow-2xl"
+      className="fixed bottom-0 left-0 right-0 z-[100] bg-black border-t-2 border-primary shadow-2xl"
     >
       <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-4">
         {/* Text */}
@@ -77,7 +77,7 @@ export function CookieConsent() {
           </p>
           <a
             href="/privacy-policy"
-            className="text-xs text-[#f5df4d] underline underline-offset-2 mt-1 inline-block hover:text-white transition-colors duration-150"
+            className="text-xs text-primary underline underline-offset-2 mt-1 inline-block hover:text-white transition-colors duration-150"
           >
             {t('cookies.learnMore')}
           </a>
@@ -94,7 +94,7 @@ export function CookieConsent() {
           <button
             ref={acceptButtonRef}
             onClick={handleAccept}
-            className="px-6 py-2.5 text-sm font-semibold text-black bg-[#f5df4d] hover:bg-[#f0d800] transition-colors duration-150 min-h-[44px]"
+            className="px-6 py-2.5 text-sm font-semibold text-dark bg-primary hover:bg-primary-hover transition-colors duration-150 min-h-[44px]"
           >
             {t('cookies.accept')}
           </button>

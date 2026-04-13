@@ -10,12 +10,11 @@ import about5 from '@/assets/img/about-5.webp'
 // import about6 from '@/assets/img/about-6.webp'
 
 const ABOUT_SLIDES = [
-  { src: about1, alt: 'Kierowca Drago Partner przy samochodzie' },
-  { src: about2, alt: 'Samochód flotowy Drago Partner' },
-  { src: about3, alt: 'Kierowca Uber w trakcie kursu' },
-  { src: about4, alt: 'Kierowca Bolt odbiera pasażera' },
-  { src: about5, alt: 'Nowoczesna flota pojazdów Drago Partner' },
-  // { src: about6, alt: 'Kierowca podczas szkoleń Drago Partner' },
+  { src: about1, alt: 'Doradca Pewny Leasing podczas konsultacji z klientem' },
+  { src: about2, alt: 'Pojazd sfinansowany przez Pewny Leasing' },
+  { src: about3, alt: 'Flota firmowa sfinansowana leasingiem operacyjnym' },
+  { src: about4, alt: 'Podpisanie umowy leasingowej w biurze Pewny Leasing' },
+  { src: about5, alt: 'Nowoczesne pojazdy w ofercie leasingowej Pewny Leasing' },
 ]
 
 export function AboutSection() {
