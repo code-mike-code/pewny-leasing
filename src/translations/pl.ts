@@ -22,8 +22,8 @@ export const pl = {
 
   // SEO Meta
   meta: {
-    description: 'Pewny Leasing – Twój partner w finansowaniu floty i pojazdów marzeń. Oferujemy szybkie decyzje, elastyczne warunki i pełne wsparcie w leasingu operacyjnym i konsumenckim.',
-    keywords: 'leasing warszawa, pewny leasing, finansowanie aut, leasing operacyjny, leasing konsumencki, szybki leasing, kalkulator leasingowy',
+    description: 'Pewny Leasing – profesjonalny broker leasingowy dla firm B2B. Leasing operacyjny, wynajem długoterminowy i krótkoterminowy, finansowanie flot, samochody premium, sprzęt specjalistyczny. Ponad 12 banków partnerskich, szybka decyzja, rabaty. Warszawa, Mazowieckie i cała Polska.',
+    keywords: 'leasing dla firm, leasing operacyjny, wynajem długoterminowy, wynajem krótkoterminowy, leasing samochodów premium, finansowanie floty, leasing sprzętu IT, leasing medyczny, leasing budowlany, leasing rolniczy, broker leasingowy Warszawa, leasing Mazowieckie, cash back leasing',
   },
 
   // Hero Section
@@ -111,28 +111,28 @@ export const pl = {
     heading: 'Najczęstsze pytania',
     items: [
       {
-        question: 'Jakie dokumenty są potrzebne do leasingu?',
-        answer: 'Do leasingu firmowego potrzebujesz: NIP, REGON, dokumenty rejestrowe firmy oraz wyciąg z konta bankowego. Dla osób fizycznych wystarczy dowód osobisty i zaświadczenie o dochodach.',
+        question: 'Czym różni się leasing operacyjny od finansowego?',
+        answer: 'Leasing operacyjny pozwala zaliczyć raty do kosztów uzyskania przychodu, a pojazd nie jest wpisywany do ewidencji środków trwałych. Leasing finansowy to forma nabycia środka trwałego — pojazd figuruje w majątku firmy, a odpisów amortyzacyjnych dokonuje leasingobiorca.',
       },
       {
-        question: 'Jaka jest minimalna wpłata własna przy leasingu pojazdu?',
-        answer: 'Minimalna wpłata własna zaczyna się już od 0%, jednak standardowo wynosi od 10% do 20% wartości pojazdu. Wyższa wpłata obniża miesięczną ratę leasingową.',
+        question: 'Ile banków obsługuje Pewny Leasing?',
+        answer: 'Współpracujemy z ponad 12 bankami i instytucjami finansowymi oraz obsługujemy finansowanie praktycznie wszystkich marek samochodowych dostępnych na polskim rynku.',
       },
       {
-        question: 'Czy mogę wziąć leasing na używany samochód?',
-        answer: 'Tak. Oferujemy leasing zarówno na nowe, jak i używane pojazdy. Wiek pojazdu i jego przebieg wpływają na dostępne warunki finansowania.',
+        question: 'Jak szybko można otrzymać decyzję leasingową?',
+        answer: 'Dzięki współpracy z wieloma instytucjami finansowymi, decyzja leasingowa może zostać wydana nawet tego samego dnia.',
       },
       {
-        question: 'Jak długo trwa decyzja leasingowa?',
-        answer: 'Decyzja kredytowa może być wydana nawet w ciągu 2 godzin od złożenia kompletnego wniosku online.',
+        question: 'Czy Pewny Leasing finansuje sprzęt specjalistyczny?',
+        answer: 'Tak — oferujemy leasing sprzętu dla branży IT, medycznej, budowlanej, przemysłowej, rolniczej i automotive. Finansujemy zarówno nowy, jak i używany sprzęt specjalistyczny.',
       },
       {
-        question: 'Czy Pewny Leasing obsługuje leasing konsumencki?',
-        answer: 'Tak. Obsługujemy zarówno leasing operacyjny dla firm, jak i leasing konsumencki dla osób fizycznych nieprowadzących działalności gospodarczej.',
+        question: 'Na jakim obszarze działa Pewny Leasing?',
+        answer: 'Działamy głównie na terenie województwa mazowieckiego, jednak świadczymy usługi dla firm z całej Polski.',
       },
       {
-        question: 'Z iloma firmami leasingowymi współpracujecie?',
-        answer: 'Współpracujemy z ponad 20 bankami i firmami leasingowymi w Polsce i Europie, co gwarantuje, że zawsze uzyskasz najkonkurencyjniejszą ofertę na rynku.',
+        question: 'Co to jest cash back w leasingu?',
+        answer: 'Cash back to oferta, w ramach której przy zawarciu umowy leasingowej lub wynajmu otrzymujesz zwrot części wartości pojazdu lub sprzętu w gotówce. Dostępna na wybrane modele i sprzęt.',
       },
     ],
   },

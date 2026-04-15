@@ -21,8 +21,8 @@ export const en = {
 
   // SEO Meta
   meta: {
-    description: 'Pewny Leasing – Your trusted vehicle and fleet financing partner in Warsaw. Fast decisions, flexible terms, and full support for operational and consumer leasing.',
-    keywords: 'leasing Warsaw, vehicle leasing, fleet financing, operational leasing, consumer leasing, fast leasing, lease calculator, car leasing Poland',
+    description: 'Pewny Leasing – professional B2B leasing broker. Operational leasing, long-term and short-term rental, fleet financing, premium cars and specialist equipment. 12+ partner banks, fast decisions, discounts. Warsaw, Mazowieckie and all Poland.',
+    keywords: 'leasing for business, operational leasing, long-term rental, short-term rental, premium car leasing, fleet financing, IT equipment leasing, medical leasing, construction leasing, agricultural leasing, leasing broker Warsaw, leasing Mazowieckie, cash back leasing',
   },
 
   hero: {

@@ -24,9 +24,66 @@ export default function FAQ() {
         <meta
           name="description"
           content={isPL
-            ? 'Odpowiedzi na najczęstsze pytania o leasing operacyjny, wymagane dokumenty, wpłatę własną i warunki finansowania w Pewny Leasing.'
-            : 'Answers to the most common questions about operational leasing, required documents, down payment and financing terms at Pewny Leasing.'}
+            ? 'Odpowiedzi na najczęstsze pytania o leasing operacyjny, wynajem długoterminowy, finansowanie flot i sprzętu specjalistycznego. Pewny Leasing – broker B2B, Warszawa.'
+            : 'Answers to the most common questions about operational leasing, long-term rental, fleet and specialist equipment financing at Pewny Leasing – B2B broker, Warsaw.'}
         />
+        <link rel="canonical" href="https://www.pewnyleasing24.pl/faq" />
+
+        {/* JSON-LD: FAQPage — enables Google FAQ rich results; HTML content must match */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Czym różni się leasing operacyjny od finansowego?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Leasing operacyjny pozwala zaliczyć raty do kosztów uzyskania przychodu, a pojazd nie jest wpisywany do ewidencji środków trwałych. Leasing finansowy to forma nabycia środka trwałego — pojazd figuruje w majątku firmy, a odpisów amortyzacyjnych dokonuje leasingobiorca."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ile banków obsługuje Pewny Leasing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Współpracujemy z ponad 12 bankami i instytucjami finansowymi oraz obsługujemy finansowanie praktycznie wszystkich marek samochodowych dostępnych na polskim rynku."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Jak szybko można otrzymać decyzję leasingową?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Dzięki współpracy z wieloma instytucjami finansowymi, decyzja leasingowa może zostać wydana nawet tego samego dnia."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy Pewny Leasing finansuje sprzęt specjalistyczny?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tak — oferujemy leasing sprzętu dla branży IT, medycznej, budowlanej, przemysłowej, rolniczej i automotive. Finansujemy zarówno nowy, jak i używany sprzęt specjalistyczny."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Na jakim obszarze działa Pewny Leasing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Działamy głównie na terenie województwa mazowieckiego, jednak świadczymy usługi dla firm z całej Polski."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Co to jest cash back w leasingu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cash back to oferta, w ramach której przy zawarciu umowy leasingowej lub wynajmu otrzymujesz zwrot części wartości pojazdu lub sprzętu w gotówce. Dostępna na wybrane modele i sprzęt."
+              }
+            }
+          ]
+        })}</script>
       </Helmet>
 
       <Header />

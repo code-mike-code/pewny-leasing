@@ -26,37 +26,50 @@ export default function Index() {
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <meta name="keywords" content={t('meta.keywords')} />
-        <link rel="canonical" href="https://pewnyleasing.pl/" />
+        <link rel="canonical" href="https://www.pewnyleasing24.pl/" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://pewnyleasing.pl/" />
+        <meta property="og:url" content="https://www.pewnyleasing24.pl/" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content="https://pewnyleasing.pl/og-image.jpg" />
+        <meta property="og:image" content="https://www.pewnyleasing24.pl/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Pewny Leasing – Broker Leasingowy dla Firm" />
         <meta property="og:locale" content="pl_PL" />
         <meta property="og:site_name" content="Pewny Leasing" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.pewnyleasing24.pl/" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content="https://pewnyleasing.pl/og-image.jpg" />
+        <meta name="twitter:image" content="https://www.pewnyleasing24.pl/og-image.png" />
 
-        {/* JSON-LD: LocalBusiness */}
+        {/* JSON-LD: FinancialService + LocalBusiness */}
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "LocalBusiness",
+          "@type": ["FinancialService", "LocalBusiness"],
+          "@id": "https://www.pewnyleasing24.pl/#organization",
           "name": "Pewny Leasing",
-          "description": "Profesjonalne finansowanie floty i pojazdów. Leasing operacyjny, konsumencki i wsparcie w wyborze najlepszej oferty.",
-          "url": "https://pewnyleasing.pl",
+          "description": "Broker leasingowy i finansowy dla firm B2B. Leasing operacyjny, wynajem długoterminowy i krótkoterminowy, finansowanie flot samochodowych, leasing samochodów premium oraz sprzętu specjalistycznego dla branż IT, medycznej, budowlanej, przemysłowej, rolniczej i automotive.",
+          "url": "https://www.pewnyleasing24.pl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.pewnyleasing24.pl/logo.webp",
+            "width": 300,
+            "height": 80
+          },
+          "image": "https://www.pewnyleasing24.pl/og-image.png",
           "telephone": "+48530181372",
-          "email": "kontakt@pewnyleasing.pl",
+          "email": "kontakt@pewnyleasing24.pl",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Modlińska 310/312 lok. 2",
             "addressLocality": "Warszawa",
             "postalCode": "03-152",
+            "addressRegion": "Mazowieckie",
             "addressCountry": "PL"
           },
           "geo": {
@@ -64,63 +77,90 @@ export default function Index() {
             "latitude": 52.3102,
             "longitude": 20.9947
           },
+          "areaServed": [
+            { "@type": "State", "name": "Mazowieckie" },
+            { "@type": "Country", "name": "Polska" }
+          ],
+          "serviceType": [
+            "Leasing operacyjny",
+            "Leasing finansowy",
+            "Wynajem długoterminowy",
+            "Wynajem krótkoterminowy",
+            "Finansowanie flot samochodowych",
+            "Leasing samochodów premium",
+            "Leasing sprzętu IT",
+            "Leasing sprzętu medycznego",
+            "Leasing maszyn budowlanych",
+            "Leasing maszyn rolniczych",
+            "Cash back leasing"
+          ],
+          "currenciesAccepted": "PLN",
           "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "opens": "10:00",
             "closes": "18:00"
           },
-          "image": "https://pewnyleasing.pl/og-image.jpg",
           "sameAs": [
             "https://www.instagram.com/pewnyleasing",
-            "https://www.facebook.com/pewnyleasing"
+            "https://www.facebook.com/pewnyleasing",
+            "https://www.youtube.com/@pewnyleasing"
           ]
         })}</script>
 
-        {/* JSON-LD: FAQPage — enables Google to surface FAQ answers directly in search results */}
+        {/* JSON-LD: OfferCatalog */}
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Jakie dokumenty są potrzebne do leasingu?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Do leasingu firmowego potrzebujesz: NIP, REGON, dokumenty rejestrowe firmy oraz wyciąg z konta bankowego. Dla osób fizycznych wystarczy dowód osobisty i zaświadczenie o dochodach."
+          "@type": "Service",
+          "serviceType": "Leasing i Wynajem dla Firm B2B",
+          "provider": {
+            "@type": "Organization",
+            "name": "Pewny Leasing",
+            "@id": "https://www.pewnyleasing24.pl/#organization"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Oferta Pewny Leasing",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Leasing operacyjny samochodów",
+                "description": "Leasing operacyjny samochodów osobowych i dostawczych klasy premium — nowych i używanych. Wszystkie marki, rabaty, szybka decyzja."
+              },
+              {
+                "@type": "Offer",
+                "name": "Wynajem długoterminowy (LTR)",
+                "description": "Wynajem długoterminowy pojazdów dla firm. Kompleksowa usługa bez ryzyka residualnego."
+              },
+              {
+                "@type": "Offer",
+                "name": "Finansowanie floty firmowej",
+                "description": "Kompleksowe finansowanie flot pojazdów dla firm. Negocjowane warunki, zarządzanie flotą, rabaty flotowe."
+              },
+              {
+                "@type": "Offer",
+                "name": "Leasing sprzętu specjalistycznego",
+                "description": "Leasing sprzętu IT, medycznego, budowlanego, przemysłowego, rolniczego. Finansowanie dla wszystkich branż."
+              },
+              {
+                "@type": "Offer",
+                "name": "Cash back leasing",
+                "description": "Zwrot gotówki przy zakupie pojazdu lub sprzętu w leasingu. Dodatkowe korzyści finansowe dla firm."
               }
-            },
+            ]
+          }
+        })}</script>
+
+        {/* JSON-LD: BreadcrumbList */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
             {
-              "@type": "Question",
-              "name": "Jaka jest minimalna wpłata własna przy leasingu pojazdu?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Minimalna wpłata własna zaczyna się już od 0%, jednak standardowo wynosi od 10% do 20% wartości pojazdu. Wyższa wpłata obniża miesięczną ratę leasingową."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Czy mogę wziąć leasing na używany samochód?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Tak. Oferujemy leasing zarówno na nowe, jak i używane pojazdy. Wiek pojazdu i jego przebieg wpływają na dostępne warunki finansowania."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Jak długo trwa decyzja leasingowa?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Decyzja kredytowa może być wydana nawet w ciągu 2 godzin od złożenia kompletnego wniosku online."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Czy Pewny Leasing obsługuje leasing konsumencki?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Tak. Obsługujemy zarówno leasing operacyjny dla firm, jak i leasing konsumencki dla osób fizycznych nieprowadzących działalności gospodarczej."
-              }
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Strona główna",
+              "item": "https://www.pewnyleasing24.pl/"
             }
           ]
         })}</script>

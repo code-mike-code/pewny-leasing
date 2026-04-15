@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-$to = "kontakt@pewnyleasing.pl";
+$to = "kontakt@pewnyleasing24.pl";
 $subject_prefix = "[Pewny Leasing - Kontakt] ";
 
 $json = file_get_contents('php://input');

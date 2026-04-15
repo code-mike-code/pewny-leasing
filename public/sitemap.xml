@@ -3,28 +3,53 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://dragopartner.pl/</loc>
-    <lastmod>2026-03-12</lastmod>
+    <loc>https://www.pewnyleasing24.pl/</loc>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://dragopartner.pl/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dragopartner.pl/" />
-    <xhtml:link rel="alternate" hreflang="uk" href="https://dragopartner.pl/" />
-    <xhtml:link rel="alternate" hreflang="sr" href="https://dragopartner.pl/" />
-    <xhtml:link rel="alternate" hreflang="ka" href="https://dragopartner.pl/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dragopartner.pl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.pewnyleasing24.pl/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pewnyleasing24.pl/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pewnyleasing24.pl/" />
   </url>
 
   <url>
-    <loc>https://dragopartner.pl/privacy-policy</loc>
-    <lastmod>2026-03-12</lastmod>
+    <loc>https://www.pewnyleasing24.pl/faq</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pewnyleasing24.pl/cashback</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pewnyleasing24.pl/discounts</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pewnyleasing24.pl/finansowanie-sprzetu</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pewnyleasing24.pl/privacy-policy</loc>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://dragopartner.pl/terms-of-service</loc>
-    <lastmod>2026-03-12</lastmod>
+    <loc>https://www.pewnyleasing24.pl/terms-of-service</loc>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
