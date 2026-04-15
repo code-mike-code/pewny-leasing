@@ -9,7 +9,7 @@ import masterLeaseLogo from '@/assets/partners-logos/master-lease-logo-removebg.
 import nestLogo from '@/assets/partners-logos/nest-lease-logo-removebg.webp'
 import vehisLogo from '@/assets/partners-logos/vehis-logo-removebg.webp'
 import mLeasingLogo from '@/assets/partners-logos/m-leasing-logo-removebg.webp'
-import milleniumLogo from '@/assets/partners-logos/milenium-logo-removebg.webp'
+import millenniumLogo from '@/assets/partners-logos/milenium-logo-removebg.webp'
 import santanderLogo from '@/assets/partners-logos/santander-logo-removebg.webp'
 import eflLogo from '@/assets/partners-logos/efl-logo-removebg.webp'
 import ingLogo from '@/assets/partners-logos/ing-logo-removebg.webp'
@@ -57,7 +57,7 @@ const financialPartners: Partner[] = [
   { name: 'Nest', logo: nestLogo },
   { name: 'VEHIS', logo: vehisLogo },
   { name: 'M Leasing', logo: mLeasingLogo },
-  { name: 'Millennium', logo: milleniumLogo },
+  { name: 'Millennium', logo: millenniumLogo },
   { name: 'Santander', logo: santanderLogo },
   { name: 'EFL', logo: eflLogo },
   { name: 'ING', logo: ingLogo },
@@ -105,6 +105,9 @@ const renderLogo = ({ name, logo }: Partner, index: number) => (
   </div>
 )
 
+const financialPartnersTripled = [...financialPartners, ...financialPartners, ...financialPartners]
+const carBrandsTripled = [...carBrands, ...carBrands, ...carBrands]
+
 export function BannerSection() {
   const { t } = useLanguage()
 
@@ -120,14 +123,14 @@ export function BannerSection() {
         {/* Row 1 — Financial partners: Right to Left */}
         <div className="flex overflow-hidden">
           <div className="marquee-track flex items-center">
-            {[...financialPartners, ...financialPartners, ...financialPartners].map((p, i) => renderLogo(p, i))}
+            {financialPartnersTripled.map((p, i) => renderLogo(p, i))}
           </div>
         </div>
 
         {/* Row 2 — Car brands: Left to Right */}
         <div className="flex overflow-hidden">
           <div className="marquee-track-reverse flex items-center">
-            {[...carBrands, ...carBrands, ...carBrands].map((p, i) => renderLogo(p, i))}
+            {carBrandsTripled.map((p, i) => renderLogo(p, i))}
           </div>
         </div>
       </div>

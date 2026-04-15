@@ -99,7 +99,7 @@ export default function EquipmentFinancing() {
             {/* Decorative — cycling sector icons */}
             <div className="hidden lg:flex items-center justify-center">
               <div className="relative flex items-center justify-center w-[320px] h-[320px]">
-                <span className="absolute text-[280px] font-black text-white/[0.03] leading-none select-none">⚙</span>
+                <span className="absolute text-[280px] font-black text-white/[0.03] leading-none select-none" aria-hidden="true">⚙</span>
                 <div className="flex flex-col items-center gap-4">
                   <div className="relative w-44 h-44 flex items-center justify-center">
                     {SECTOR_ICONS.map((icon, i) => (
@@ -153,11 +153,11 @@ export default function EquipmentFinancing() {
           <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <Reveal variant="left">
               <div>
-                <h2 className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.why.badge')}</h2>
-                <h3 className="text-4xl lg:text-6xl font-black text-dark leading-none tracking-tighter uppercase italic mb-8">
+                <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.why.badge')}</p>
+                <h2 className="text-4xl lg:text-6xl font-black text-dark leading-none tracking-tighter uppercase italic mb-8">
                   {t('equipmentFinancing.why.title')}<br />
                   <span className="text-primary">{t('equipmentFinancing.why.titleAccent')}</span>
-                </h3>
+                </h2>
                 <p className="text-gray-500 leading-relaxed mb-6">{t('equipmentFinancing.why.text1')}</p>
                 <p className="text-gray-500 leading-relaxed">{t('equipmentFinancing.why.text2')}</p>
               </div>
@@ -181,10 +181,10 @@ export default function EquipmentFinancing() {
           <div className="max-w-screen-xl mx-auto">
             <Reveal>
               <div className="mb-16 lg:mb-20 text-center">
-                <h2 className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.sectors.badge')}</h2>
-                <h3 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-none tracking-tighter uppercase italic">
+                <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.sectors.badge')}</p>
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-none tracking-tighter uppercase italic">
                   {t('equipmentFinancing.sectors.title')} <span className="text-primary">{t('equipmentFinancing.sectors.titleAccent')}</span>
-                </h3>
+                </h2>
               </div>
             </Reveal>
 
@@ -213,10 +213,10 @@ export default function EquipmentFinancing() {
           <div className="max-w-screen-xl mx-auto">
             <Reveal>
               <div className="text-center mb-16 lg:mb-20">
-                <h2 className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.how.badge')}</h2>
-                <h3 className="text-4xl md:text-5xl lg:text-7xl font-black text-dark leading-none tracking-tighter uppercase italic">
+                <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.how.badge')}</p>
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-dark leading-none tracking-tighter uppercase italic">
                   {t('equipmentFinancing.how.title')} <span className="text-primary">{t('equipmentFinancing.how.titleAccent')}</span>
-                </h3>
+                </h2>
               </div>
             </Reveal>
 
@@ -243,11 +243,11 @@ export default function EquipmentFinancing() {
           <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 items-start">
             <Reveal variant="left">
               <div className="lg:sticky lg:top-[100px]">
-                <h2 className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.benefits.badge')}</h2>
-                <h3 className="text-4xl lg:text-5xl font-black text-dark leading-none tracking-tighter uppercase italic">
+                <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.benefits.badge')}</p>
+                <h2 className="text-4xl lg:text-5xl font-black text-dark leading-none tracking-tighter uppercase italic">
                   {t('equipmentFinancing.benefits.title')}<br />
                   <span className="text-primary">{t('equipmentFinancing.benefits.titleAccent')}</span>
-                </h3>
+                </h2>
               </div>
             </Reveal>
 
@@ -282,18 +282,14 @@ export default function EquipmentFinancing() {
             </Reveal>
             <Reveal variant="right" delay={150}>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/#contact">
-                  <CTAButton variant="yellow" className="group" onClick={undefined}>
-                    {t('equipmentFinancing.cta.primary')}
-                    <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
-                  </CTAButton>
-                </a>
-                <a href="/#calculator">
-                  <CTAButton variant="outline-yellow" className="group" onClick={undefined}>
-                    {t('equipmentFinancing.cta.secondary')}
-                    <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
-                  </CTAButton>
-                </a>
+                <CTAButton href="/#contact" variant="yellow" className="group">
+                  {t('equipmentFinancing.cta.primary')}
+                  <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
+                </CTAButton>
+                <CTAButton href="/#calculator" variant="outline-yellow" className="group">
+                  {t('equipmentFinancing.cta.secondary')}
+                  <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
+                </CTAButton>
               </div>
             </Reveal>
           </div>

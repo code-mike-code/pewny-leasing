@@ -467,6 +467,159 @@ export const en = {
     },
   },
 
+  // Discounts Page
+  discounts: {
+    meta: {
+      title: 'Vehicles With Discount – Exclusive Fleet Discounts | Pewny Leasing',
+      description: 'Get exclusive fleet discounts on Mercedes, BMW, Toyota and BYD vehicles. Discount calculated based on brand, model and availability. Check the Pewny Leasing offer.',
+    },
+    nav: { home: 'Home' },
+    hero: {
+      title: 'Vehicles',
+      titleAccent: 'With Discount',
+      subtitle: 'Access exclusive fleet discounts unavailable to private buyers. Through our partnerships with Mercedes, BMW, Toyota and BYD dealers — your new vehicle costs less.',
+    },
+    brands: {
+      badge: 'Available Brands',
+      title: 'The best brands,',
+      titleAccent: 'the best prices',
+      intro: 'We work directly with authorised dealers of four key brands. Each offers a different level of fleet discount — depending on model, configuration and current availability.',
+      items: [
+        {
+          brand: 'Mercedes-Benz',
+          desc: 'Premium segment with fleet discounts up to 12%. Saloons, SUVs and electric vehicles with the full configuration range — from A-Class to GLE and EQS.',
+          models: ['A, C, E, S Class', 'GLA, GLC, GLE, GLS', 'EQA, EQB, EQC, EQS'],
+          note: 'Discount depends on model and equipment. Highest discounts on vehicles available off the shelf.',
+        },
+        {
+          brand: 'BMW',
+          desc: 'Icon of German engineering at fleet pricing. Series 3, 5, X3, X5 with discounts above standard dealer offers. Electric models iX and i4.',
+          models: ['Series 3, 5, 7', 'X3, X5, X7', 'iX, i4, i5'],
+          note: 'Higher discount for fleet orders of 3+ vehicles per year.',
+        },
+        {
+          brand: 'Toyota',
+          desc: 'Japanese reliability and the shortest delivery times. Hybrids, saloons and SUVs with the widest availability in Poland — Corolla, RAV4 and Camry.',
+          models: ['Corolla, Camry', 'RAV4, Land Cruiser', 'bZ4X, Yaris Cross'],
+          note: 'Shortest delivery times of all brands. Ideal for companies with urgent fleet needs.',
+        },
+        {
+          brand: 'BYD',
+          desc: "China's leading EV brand with the highest discounts on the market. Wide range of electric SUVs and saloons — Atto 3, Seal, Han and Dolphin.",
+          models: ['Atto 3', 'Seal, Han', 'Dolphin, Tang'],
+          note: 'Highest fleet discounts on the market. The ideal brand for EV fleets and ESG policy.',
+        },
+      ],
+    },
+    how: {
+      badge: 'How is the discount calculated?',
+      title: '3 discount',
+      titleAccent: 'factors',
+      steps: [
+        { n: '01', title: 'Vehicle brand', desc: 'Each manufacturer has its own fleet programme with dedicated rates. We work directly with dealers, giving us access to conditions unavailable in standard retail sales.' },
+        { n: '02', title: 'Model and configuration', desc: 'The specific model, engine and equipment package directly affect the discount level. Higher-segment models and electric vehicles often have more favourable fleet rates.' },
+        { n: '03', title: 'Availability', desc: 'Vehicles available immediately from a dealer may have additional clearance discounts. Made-to-order cars have fixed fleet rates, though negotiation is possible for larger orders.' },
+      ],
+    },
+    benefits: {
+      badge: 'Why through us?',
+      title: 'More than',
+      titleAccent: 'a good price',
+      items: [
+        'Access to fleet discounts unavailable to private buyers',
+        'Option to combine a fleet discount with the Pewny Leasing Cash Back programme',
+        'One place — financing + discount + after-sales support',
+        'Your advisor guides you through the entire process — from model selection to vehicle collection',
+        'We negotiate with multiple dealers simultaneously',
+        'Transparent pricing — you see every cost component',
+      ],
+    },
+    cta: {
+      badge: 'Fleet Discounts',
+      title: 'Ask about a discount',
+      titleAccent: 'on your vehicle',
+      subtitle: 'Contact our advisor and find out what discount we can secure for you on your chosen model.',
+      primary: 'Check availability',
+      secondary: 'Leasing calculator',
+    },
+  },
+
+  // Cash Back Page
+  cashBack: {
+    meta: {
+      title: 'Cash Back Programme – Get Money Back on Leasing | Pewny Leasing',
+      description: 'Recover part of your payments on every leasing transaction. Transparent Cash Back programme for private and business clients at Pewny Leasing.',
+    },
+    nav: { home: 'Home' },
+    hero: {
+      badge: 'Loyalty programme',
+      title: 'Cash',
+      titleAccent: 'Back',
+      subtitle: 'A real cash refund — no points, no vouchers. Real money in your account after every completed leasing transaction.',
+    },
+    what: {
+      badge: 'What is Cash Back?',
+      title: 'Earn money',
+      titleAccent: 'on leasing',
+      text1: 'The Cash Back programme is our way of saying thank you for your trust. With every completed leasing agreement, we return part of the commission directly to your bank account — no hidden conditions, no complicated terms.',
+      text2: 'The higher the leased item value or the longer your partnership with Pewny Leasing, the greater the refund. The programme is open to both private individuals and businesses of any size.',
+      stats: [
+        { value: '100%', label: 'Cash, not points' },
+        { value: '14 days', label: 'To payout' },
+        { value: 'PLN 0', label: 'Min. threshold' },
+        { value: '∞', label: 'Transactions' },
+      ],
+    },
+    how: {
+      badge: 'How does it work?',
+      title: '3 simple',
+      titleAccent: 'steps',
+      steps: [
+        { n: '01', title: 'Sign a leasing agreement', desc: 'Finalise your leasing through Pewny Leasing — vehicle, machinery, IT equipment or other financing. No minimum amount — the programme applies from the first transaction.' },
+        { n: '02', title: 'We calculate your refund', desc: 'Once financing is activated, we automatically calculate your Cash Back based on the transaction value and your cooperation terms. Transparent and confirmed with documentation.' },
+        { n: '03', title: 'Money in your account', desc: 'Funds are transferred to your bank account within 14 business days of the agreement being activated. No applications, no waiting — it happens automatically.' },
+      ],
+    },
+    who: {
+      badge: 'Who is it for?',
+      title: 'For every',
+      titleAccent: 'client',
+      cards: [
+        {
+          title: 'Private individuals',
+          desc: 'Leasing a car for personal use? Cash Back works for you too. Every completed consumer agreement generates a real cash refund.',
+          points: ['Consumer vehicle leasing', 'Electric car leasing', 'Personal equipment financing'],
+        },
+        {
+          title: 'Businesses',
+          desc: 'Financing a fleet, machinery or company equipment? The more transactions, the higher the refund rate. The programme scales with your business.',
+          points: ['Operational fleet leasing', 'Machinery and equipment financing', 'IT and medical equipment leasing'],
+        },
+      ],
+    },
+    benefits: {
+      badge: 'What do you gain?',
+      title: 'Only real',
+      titleAccent: 'benefits',
+      items: [
+        'Real cash refund — no points, no coupons, no prizes',
+        'No minimum transaction threshold — the programme applies from any amount',
+        'Combines with fleet discounts and other Pewny Leasing promotions',
+        'Transparent settlement confirmed with documentation after each transaction',
+        'Automatic payment — no additional applications required',
+        'Available for private individuals and businesses',
+        'Higher refund for returning clients — loyalty rate grows over time',
+      ],
+    },
+    cta: {
+      title: 'Start earning',
+      titleAccent: 'on leasing',
+      subtitle: 'Contact our advisor and ask about the Cash Back programme details for your transaction.',
+      primary: 'Ask about Cash Back',
+      secondary: 'Leasing calculator',
+    },
+  },
+
   // Equipment Financing Page
   equipmentFinancing: {
     meta: {

@@ -475,6 +475,159 @@ export const pl = {
     },
   },
 
+  // Discounts Page
+  discounts: {
+    meta: {
+      title: 'Pojazdy z Rabatem – Ekskluzywne Rabaty Flotowe | Pewny Leasing',
+      description: 'Uzyskaj ekskluzywne rabaty flotowe na pojazdy Mercedes, BMW, Toyota i BYD. Rabat wyliczany na podstawie marki, modelu i dostępności. Sprawdź ofertę Pewny Leasing.',
+    },
+    nav: { home: 'Strona główna' },
+    hero: {
+      title: 'Pojazdy',
+      titleAccent: 'Z Rabatem',
+      subtitle: 'Korzystaj z ekskluzywnych rabatów flotowych niedostępnych dla klientów indywidualnych. Dzięki naszej współpracy z dealerami Mercedes, BMW, Toyota i BYD — Twój nowy pojazd kosztuje mniej.',
+    },
+    brands: {
+      badge: 'Dostępne Marki',
+      title: 'Najlepsze marki,',
+      titleAccent: 'najlepsze ceny',
+      intro: 'Współpracujemy bezpośrednio z autoryzowanymi dealerami czterech kluczowych marek. Każda z nich oferuje inny poziom rabatu flotowego — zależny od modelu, konfiguracji i aktualnej dostępności.',
+      items: [
+        {
+          brand: 'Mercedes-Benz',
+          desc: 'Segment premium z flotowymi zniżkami do 12%. Sedany, SUV-y i elektryki z pełną gamą konfiguracji — od klasy A po GLE i EQS.',
+          models: ['Klasa A, C, E, S', 'GLA, GLC, GLE, GLS', 'EQA, EQB, EQC, EQS'],
+          note: 'Rabat zależy od modelu i wyposażenia. Najwyższe zniżki na modele dostępne od ręki.',
+        },
+        {
+          brand: 'BMW',
+          desc: 'Ikona niemieckiej motoryzacji w cenie floty. Serie 3, 5, X3, X5 z rabatami powyżej standardowych ofert dealerskich. Modele elektryczne iX i i4.',
+          models: ['Seria 3, 5, 7', 'X3, X5, X7', 'iX, i4, i5'],
+          note: 'Wyższy rabat dla zamówień flotowych powyżej 3 pojazdów rocznie.',
+        },
+        {
+          brand: 'Toyota',
+          desc: 'Japońska niezawodność i najkrótsze czasy dostawy. Hybrydy, sedany i SUV-y z najszerszą dostępnością w Polsce — Corolla, RAV4 i Camry.',
+          models: ['Corolla, Camry', 'RAV4, Land Cruiser', 'bZ4X, Yaris Cross'],
+          note: 'Najkrótsze czasy dostawy spośród wszystkich marek. Idealna dla firm z pilnymi potrzebami.',
+        },
+        {
+          brand: 'BYD',
+          desc: 'Chiński lider elektromobilności z najwyższymi rabatami na rynku. Szeroka gama elektrycznych SUV-ów i sedanów — Atto 3, Seal, Han i Dolphin.',
+          models: ['Atto 3', 'Seal, Han', 'Dolphin, Tang'],
+          note: 'Najwyższe rabaty flotowe na rynku. Idealna marka dla flot elektrycznych i polityki ESG.',
+        },
+      ],
+    },
+    how: {
+      badge: 'Jak obliczamy rabat?',
+      title: '3 czynniki',
+      titleAccent: 'rabatu',
+      steps: [
+        { n: '01', title: 'Marka pojazdu', desc: 'Każdy producent posiada własny program flotowy z dedykowanymi stawkami. Współpracujemy bezpośrednio z dealerami, dzięki czemu uzyskujemy warunki niedostępne w standardowej sprzedaży.' },
+        { n: '02', title: 'Model i konfiguracja', desc: 'Konkretny model, silnik i pakiet wyposażenia bezpośrednio wpływają na poziom rabatu. Modele z wyższego segmentu oraz auta elektryczne często mają korzystniejsze stawki flotowe.' },
+        { n: '03', title: 'Dostępność', desc: 'Pojazdy dostępne od ręki u dealera mogą posiadać dodatkowe rabaty likwidacyjne. Auta na zamówienie mają stałe stawki flotowe, ale możliwa jest negocjacja przy większych zleceniach.' },
+      ],
+    },
+    benefits: {
+      badge: 'Dlaczego przez nas?',
+      title: 'Więcej niż',
+      titleAccent: 'dobra cena',
+      items: [
+        'Dostęp do rabatów flotowych niedostępnych dla klientów indywidualnych',
+        'Możliwość łączenia rabatu flotowego z programem Cash Back Pewny Leasing',
+        'Jedno miejsce — finansowanie + rabat + obsługa posprzedażna',
+        'Doradca przeprowadza Cię przez cały proces — od wyboru modelu do odbioru',
+        'Negocjujemy warunki z kilkoma dealerami równocześnie',
+        'Transparentne rozliczenie — widzisz każdy element ceny',
+      ],
+    },
+    cta: {
+      badge: 'Rabaty Flotowe',
+      title: 'Zapytaj o rabat',
+      titleAccent: 'na Twój pojazd',
+      subtitle: 'Skontaktuj się z naszym doradcą i dowiedz się, jaki rabat możemy uzyskać dla Ciebie przy wybranym modelu.',
+      primary: 'Sprawdź dostępność',
+      secondary: 'Kalkulator leasingowy',
+    },
+  },
+
+  // Cash Back Page
+  cashBack: {
+    meta: {
+      title: 'Program Cash Back – zwrot gotówki za leasing | Pewny Leasing',
+      description: 'Odzyskaj część środków przy każdej transakcji leasingowej. Transparentny program Cash Back dla klientów indywidualnych i firmowych Pewny Leasing.',
+    },
+    nav: { home: 'Strona główna' },
+    hero: {
+      badge: 'Program lojalnościowy',
+      title: 'Cash',
+      titleAccent: 'Back',
+      subtitle: 'Realny zwrot gotówki — nie punkty, nie vouchery. Prawdziwe pieniądze na Twoim koncie po każdej zrealizowanej transakcji leasingowej.',
+    },
+    what: {
+      badge: 'Czym jest Cash Back?',
+      title: 'Zarabiasz',
+      titleAccent: 'na leasingu',
+      text1: 'Program Cash Back to nasza forma podziękowania za zaufanie. Przy każdej zrealizowanej umowie leasingowej zwracamy Ci część prowizji — bezpośrednio na wskazany rachunek bankowy, bez ukrytych warunków i skomplikowanych regulaminów.',
+      text2: 'Im większa wartość leasingowanego przedmiotu lub im dłuższa współpraca z Pewny Leasing, tym wyższy zwrot. Program jest otwarty zarówno dla klientów indywidualnych, jak i dla firm każdej wielkości.',
+      stats: [
+        { value: '100%', label: 'Gotówka, nie punkty' },
+        { value: '14 dni', label: 'Do wypłaty' },
+        { value: '0 zł', label: 'Próg minimalny' },
+        { value: '∞', label: 'Liczba transakcji' },
+      ],
+    },
+    how: {
+      badge: 'Jak to działa?',
+      title: '3 proste',
+      titleAccent: 'kroki',
+      steps: [
+        { n: '01', title: 'Zawierasz umowę leasingową', desc: 'Finalizujesz leasing za pośrednictwem Pewny Leasing — pojazd, maszyna, sprzęt IT lub inne finansowanie. Bez znaczenia jaka kwota — program działa od pierwszej złotówki.' },
+        { n: '02', title: 'Naliczamy Twój zwrot', desc: 'Po uruchomieniu finansowania automatycznie obliczamy należny Ci Cash Back na podstawie wartości transakcji i warunków współpracy. Wszystko transparentnie i potwierdzane dokumentem.' },
+        { n: '03', title: 'Pieniądze na Twoim koncie', desc: 'Środki trafiają na Twoje konto bankowe w ciągu 14 dni roboczych od uruchomienia umowy. Żadnych wniosków, żadnego czekania — dzieje się automatycznie.' },
+      ],
+    },
+    who: {
+      badge: 'Dla kogo?',
+      title: 'Dla każdego',
+      titleAccent: 'klienta',
+      cards: [
+        {
+          title: 'Klienci indywidualni',
+          desc: 'Leasingujesz samochód na własny użytek? Cash Back działa również dla Ciebie. Każda zrealizowana umowa konsumencka generuje realny zwrot gotówki.',
+          points: ['Leasing konsumencki pojazdu', 'Leasing samochodu elektrycznego', 'Finansowanie sprzętu osobistego'],
+        },
+        {
+          title: 'Firmy i przedsiębiorcy',
+          desc: 'Finansujesz flotę, maszyny lub sprzęt firmowy? Im więcej transakcji, tym wyższy wskaźnik zwrotu. Program skaluje się wraz z Twoim biznesem.',
+          points: ['Leasing operacyjny floty', 'Finansowanie maszyn i urządzeń', 'Leasing sprzętu IT i medycznego'],
+        },
+      ],
+    },
+    benefits: {
+      badge: 'Co zyskujesz?',
+      title: 'Tylko realne',
+      titleAccent: 'korzyści',
+      items: [
+        'Realny zwrot gotówki — nie punkty, nie kupony, nie nagrody rzeczowe',
+        'Brak minimalnego progu transakcyjnego — program działa od każdej kwoty',
+        'Łączy się z rabatami flotowymi i innymi promocjami Pewny Leasing',
+        'Transparentne rozliczenie potwierdzone dokumentem po każdej transakcji',
+        'Automatyczna wypłata bez składania dodatkowych wniosków',
+        'Program dostępny dla klientów indywidualnych i firmowych',
+        'Wyższy zwrot dla stałych klientów — lojalnościowy wskaźnik rośnie',
+      ],
+    },
+    cta: {
+      title: 'Zacznij zarabiać',
+      titleAccent: 'na leasingu',
+      subtitle: 'Skontaktuj się z naszym doradcą i zapytaj o szczegóły programu Cash Back dla Twojej transakcji.',
+      primary: 'Zapytaj o Cash Back',
+      secondary: 'Kalkulator leasingowy',
+    },
+  },
+
   // Equipment Financing Page
   equipmentFinancing: {
     meta: {
