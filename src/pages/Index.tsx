@@ -75,7 +75,7 @@ export default function Index() {
           ]
         })}</script>
 
-        {/* JSON-LD: FAQPage — Google może wyświetlić FAQ bezpośrednio w wynikach */}
+        {/* JSON-LD: FAQPage — enables Google to surface FAQ answers directly in search results */}
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",

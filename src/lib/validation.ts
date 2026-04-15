@@ -1,8 +1,8 @@
 export function validateNIP(nip: string): boolean {
-  // Usuń myślniki i spacje
+  // Strip hyphens and spaces
   const cleanNip = nip.replace(/[\s-]/g, '');
   if (cleanNip.length !== 10) return false;
-  
+
   if (!/^\d{10}$/.test(cleanNip)) return false;
 
   const weights = [6, 5, 7, 2, 3, 4, 5, 6, 7];
@@ -17,18 +17,18 @@ export function validateNIP(nip: string): boolean {
 }
 
 export function validateEmail(email: string): boolean {
-  // Prosty regex weryfikujący standardowy format x@y.z
+  // Simple regex validating the standard x@y.z format
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
 
 export function validatePhone(phone: string): boolean {
-  // Długość: typowo 9 cyfr, możliwość prefiksu dającego do 15 cyfr np. +48 123 456 789
+  // Length: typically 9 digits; prefix allowed up to 15 digits total (e.g. +48 123 456 789)
   const digitsOnly = phone.replace(/[\s\-\+]/g, '');
-  
+
   if (digitsOnly.length < 9 || digitsOnly.length > 15) return false;
-  
-  // Zezwalaj tylko na opcjonalny +, cyfry, myślniki i spacje
+
+  // Allow optional leading +, digits, hyphens and spaces only
   const phoneStructureRegex = /^\+?[0-9\s\-]+$/;
   return phoneStructureRegex.test(phone);
 }

@@ -1,8 +1,8 @@
 /**
- * Wspólna logika formularza zgłoszeniowego rozproszonego na dwie sekcje:
- * BusinessCalculatorSection (dane kalkulatora) + MeetingSection (dane kontaktowe).
+ * Shared logic for the lead submission form split across two sections:
+ * BusinessCalculatorSection (calculator data) + MeetingSection (contact data).
  *
- * Funkcje są czyste (bez efektów ubocznych) — łatwe do testowania.
+ * All functions are pure (no side effects) — easy to unit-test.
  */
 
 export interface CalcSectionData {
@@ -16,10 +16,10 @@ export interface CalcSectionData {
 }
 
 /**
- * Czy przycisk "Dalej" w kroku 2 kalkulatora Hero (Calculator.tsx) powinien być zablokowany.
+ * Whether the "Next" button in step 2 of the hero calculator (Calculator.tsx) should be disabled.
  *
- * Dla 'other': wymaga tylko wypełnionego financingObject (min. 4 znaki).
- * Dla 'vehicle': wymaga vehicleCondition + searchOption + vehicleDetails (min. 2 znaki).
+ * For 'other': requires a non-empty financingObject (min. 4 characters).
+ * For 'vehicle': requires vehicleCondition + searchOption + vehicleDetails (min. 2 characters).
  */
 export function isHeroCalcStep2Disabled(
   calculatorType: 'vehicle' | 'other',
@@ -35,10 +35,10 @@ export function isHeroCalcStep2Disabled(
 }
 
 /**
- * Czy dane z sekcji Kalkulator są gotowe do wysłania zgłoszenia przez MeetingSection.
+ * Whether the calculator section data is ready for the MeetingSection to submit a lead.
  *
- * Dla 'other': financingObject musi mieć min. 4 znaki.
- * Dla 'new'/'used': suwaki zawsze mają wartości — wystarczy że calcData nie jest null.
+ * For 'other': financingObject must be at least 4 characters.
+ * For 'new'/'used': sliders always have values — calcData being non-null is sufficient.
  */
 export function isCalcSectionReady(data: CalcSectionData | null): boolean {
   if (!data) return false
@@ -49,7 +49,7 @@ export function isCalcSectionReady(data: CalcSectionData | null): boolean {
 }
 
 /**
- * Buduje czytelny string financingObject do emaila na podstawie danych z kalkulatora.
+ * Builds a human-readable financingObject string for the email body from calculator data.
  */
 export function buildCalcFinancingObject(data: CalcSectionData): string {
   if (data.activeTab === 'other') return data.financingObject.trim()

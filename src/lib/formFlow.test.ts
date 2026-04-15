@@ -20,60 +20,60 @@ const baseCalcData: CalcSectionData = {
 // isHeroCalcStep2Disabled
 // ---------------------------------------------------------------------------
 describe('isHeroCalcStep2Disabled', () => {
-  describe('typ: pojazd (vehicle)', () => {
-    it('blokuje gdy brak vehicleCondition', () => {
+  describe('type: vehicle', () => {
+    it('blocks when vehicleCondition is missing', () => {
       expect(isHeroCalcStep2Disabled('vehicle', null, 'find', 'BMW 3', '')).toBe(true)
     })
 
-    it('blokuje gdy brak searchOption', () => {
+    it('blocks when searchOption is missing', () => {
       expect(isHeroCalcStep2Disabled('vehicle', 'new', null, 'BMW 3', '')).toBe(true)
     })
 
-    it('blokuje gdy vehicleDetails jest za krótki (< 2 znaki)', () => {
+    it('blocks when vehicleDetails is too short (< 2 characters)', () => {
       expect(isHeroCalcStep2Disabled('vehicle', 'new', 'find', 'B', '')).toBe(true)
     })
 
-    it('blokuje gdy vehicleDetails pusty', () => {
+    it('blocks when vehicleDetails is empty', () => {
       expect(isHeroCalcStep2Disabled('vehicle', 'used', 'have', '', '')).toBe(true)
     })
 
-    it('przepuszcza gdy vehicleCondition + searchOption + vehicleDetails wypełnione', () => {
+    it('passes when vehicleCondition + searchOption + vehicleDetails are all filled', () => {
       expect(isHeroCalcStep2Disabled('vehicle', 'new', 'find', 'BMW 3 seria', '')).toBe(false)
     })
 
-    it('przepuszcza dla used + have', () => {
+    it('passes for used + have', () => {
       expect(isHeroCalcStep2Disabled('vehicle', 'used', 'have', 'Audi A4', '')).toBe(false)
     })
 
-    it('financingObject jest ignorowane dla vehicle', () => {
-      // financingObject nie ma znaczenia dla vehicle, liczą się inne warunki
-      expect(isHeroCalcStep2Disabled('vehicle', 'new', 'find', 'BMW 3', 'cokolwiek')).toBe(false)
+    it('financingObject is ignored for vehicle type', () => {
+      // financingObject does not matter for vehicle — other conditions are checked
+      expect(isHeroCalcStep2Disabled('vehicle', 'new', 'find', 'BMW 3', 'anything')).toBe(false)
     })
   })
 
-  describe('typ: inne (other)', () => {
-    it('blokuje gdy financingObject pusty', () => {
+  describe('type: other', () => {
+    it('blocks when financingObject is empty', () => {
       expect(isHeroCalcStep2Disabled('other', null, null, '', '')).toBe(true)
     })
 
-    it('blokuje gdy financingObject za krótki (< 4 znaki)', () => {
+    it('blocks when financingObject is too short (< 4 characters)', () => {
       expect(isHeroCalcStep2Disabled('other', null, null, '', 'abc')).toBe(true)
     })
 
-    it('blokuje gdy financingObject ma tylko spacje', () => {
+    it('blocks when financingObject contains only spaces', () => {
       expect(isHeroCalcStep2Disabled('other', null, null, '', '    ')).toBe(true)
     })
 
-    it('NIE blokuje gdy financingObject ma min. 4 znaki — vehicleCondition nie jest wymagany', () => {
+    it('does NOT block when financingObject has at least 4 characters — vehicleCondition not required', () => {
       expect(isHeroCalcStep2Disabled('other', null, null, '', 'Masz')).toBe(false)
     })
 
-    it('NIE blokuje dla dłuższego opisu', () => {
+    it('does NOT block for a longer description', () => {
       expect(isHeroCalcStep2Disabled('other', null, null, '', 'Maszyna budowlana JCB')).toBe(false)
     })
 
-    it('vehicleCondition nie ma znaczenia dla other', () => {
-      // Nawet z vehicleCondition=null i searchOption=null — liczy się tylko financingObject
+    it('vehicleCondition is irrelevant for other type', () => {
+      // Even with vehicleCondition=null and searchOption=null — only financingObject matters
       expect(isHeroCalcStep2Disabled('other', null, null, 'BMW 3', 'Koparka')).toBe(false)
     })
   })
@@ -83,39 +83,39 @@ describe('isHeroCalcStep2Disabled', () => {
 // isCalcSectionReady
 // ---------------------------------------------------------------------------
 describe('isCalcSectionReady', () => {
-  it('zwraca false dla null (użytkownik nie przeszedł przez kalkulator)', () => {
+  it('returns false for null (user has not completed the calculator)', () => {
     expect(isCalcSectionReady(null)).toBe(false)
   })
 
-  it('zwraca true dla activeTab: new — suwaki zawsze mają wartości', () => {
+  it('returns true for activeTab: new — sliders always have values', () => {
     expect(isCalcSectionReady({ ...baseCalcData, activeTab: 'new' })).toBe(true)
   })
 
-  it('zwraca true dla activeTab: used — suwaki zawsze mają wartości', () => {
+  it('returns true for activeTab: used — sliders always have values', () => {
     expect(isCalcSectionReady({ ...baseCalcData, activeTab: 'used' })).toBe(true)
   })
 
-  it('zwraca true dla new z vehicleDetails (opcjonalne)', () => {
+  it('returns true for new with vehicleDetails (optional)', () => {
     expect(isCalcSectionReady({ ...baseCalcData, activeTab: 'new', vehicleDetails: 'Toyota Corolla' })).toBe(true)
   })
 
-  it('zwraca false dla activeTab: other z pustym financingObject', () => {
+  it('returns false for activeTab: other with empty financingObject', () => {
     expect(isCalcSectionReady({ ...baseCalcData, activeTab: 'other', financingObject: '' })).toBe(false)
   })
 
-  it('zwraca false dla activeTab: other z za krótkim financingObject (< 4 znaki)', () => {
+  it('returns false for activeTab: other with financingObject too short (< 4 characters)', () => {
     expect(isCalcSectionReady({ ...baseCalcData, activeTab: 'other', financingObject: 'abc' })).toBe(false)
   })
 
-  it('zwraca false gdy financingObject to same spacje', () => {
+  it('returns false when financingObject contains only spaces', () => {
     expect(isCalcSectionReady({ ...baseCalcData, activeTab: 'other', financingObject: '   ' })).toBe(false)
   })
 
-  it('zwraca true dla activeTab: other z wypełnionym financingObject (>= 4 znaki)', () => {
+  it('returns true for activeTab: other with financingObject filled (>= 4 characters)', () => {
     expect(isCalcSectionReady({ ...baseCalcData, activeTab: 'other', financingObject: 'Masz' })).toBe(true)
   })
 
-  it('zwraca true dla activeTab: other z pełnym opisem', () => {
+  it('returns true for activeTab: other with full description', () => {
     expect(isCalcSectionReady({ ...baseCalcData, activeTab: 'other', financingObject: 'Maszyna budowlana' })).toBe(true)
   })
 })
@@ -124,37 +124,37 @@ describe('isCalcSectionReady', () => {
 // buildCalcFinancingObject
 // ---------------------------------------------------------------------------
 describe('buildCalcFinancingObject', () => {
-  it('dla other zwraca financingObject (przycięty)', () => {
+  it('for other: returns trimmed financingObject', () => {
     const data: CalcSectionData = { ...baseCalcData, activeTab: 'other', financingObject: '  Koparka  ' }
     expect(buildCalcFinancingObject(data)).toBe('Koparka')
   })
 
-  it('dla other zwraca pełny opis', () => {
+  it('for other: returns full description', () => {
     const data: CalcSectionData = { ...baseCalcData, activeTab: 'other', financingObject: 'Maszyna budowlana JCB' }
     expect(buildCalcFinancingObject(data)).toBe('Maszyna budowlana JCB')
   })
 
-  it('dla new bez vehicleDetails zwraca "Pojazd: Nowy"', () => {
+  it('for new without vehicleDetails: returns "Pojazd: Nowy"', () => {
     const data: CalcSectionData = { ...baseCalcData, activeTab: 'new', vehicleDetails: '' }
     expect(buildCalcFinancingObject(data)).toBe('Pojazd: Nowy')
   })
 
-  it('dla new z vehicleDetails zwraca pełny string z ukośnikiem', () => {
+  it('for new with vehicleDetails: returns full string with separator', () => {
     const data: CalcSectionData = { ...baseCalcData, activeTab: 'new', vehicleDetails: 'BMW 3 seria' }
     expect(buildCalcFinancingObject(data)).toBe('Pojazd: Nowy / BMW 3 seria')
   })
 
-  it('dla used bez vehicleDetails zwraca "Pojazd: Używany"', () => {
+  it('for used without vehicleDetails: returns "Pojazd: Używany"', () => {
     const data: CalcSectionData = { ...baseCalcData, activeTab: 'used', vehicleDetails: '' }
     expect(buildCalcFinancingObject(data)).toBe('Pojazd: Używany')
   })
 
-  it('dla used z vehicleDetails zwraca pełny string', () => {
+  it('for used with vehicleDetails: returns full trimmed string', () => {
     const data: CalcSectionData = { ...baseCalcData, activeTab: 'used', vehicleDetails: '  Audi A4 2019  ' }
     expect(buildCalcFinancingObject(data)).toBe('Pojazd: Używany / Audi A4 2019')
   })
 
-  it('vehicleDetails z samymi spacjami traktuje jak pusty', () => {
+  it('vehicleDetails with only spaces is treated as empty', () => {
     const data: CalcSectionData = { ...baseCalcData, activeTab: 'new', vehicleDetails: '   ' }
     expect(buildCalcFinancingObject(data)).toBe('Pojazd: Nowy')
   })
