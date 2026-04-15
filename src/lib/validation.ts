@@ -3,7 +3,7 @@ export function validateNIP(nip: string): boolean {
   const cleanNip = nip.replace(/[\s-]/g, '');
   if (cleanNip.length !== 10) return false;
 
-  if (!/^\d{10}$/.test(cleanNip)) return false;
+  if (/\D/.test(cleanNip)) return false;
 
   const weights = [6, 5, 7, 2, 3, 4, 5, 6, 7];
   let sum = 0;

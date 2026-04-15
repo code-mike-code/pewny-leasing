@@ -17,28 +17,30 @@ import { WhatsAppWidget } from '@/components/ui/WhatsAppWidget'
 export default function Index() {
   const { t } = useLanguage()
   const [calcData, setCalcData] = useState<CalcSectionData | null>(null)
+  const pageTitle = `Pewny Leasing – ${t('footer.tagline')}`
+  const pageDescription = t('meta.description')
 
   return (
     <>
       <Helmet>
-        <title>Pewny Leasing – {t('footer.tagline')}</title>
-        <meta name="description" content={t('meta.description')} />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
         <meta name="keywords" content={t('meta.keywords')} />
         <link rel="canonical" href="https://pewnyleasing.pl/" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://pewnyleasing.pl/" />
-        <meta property="og:title" content={`Pewny Leasing – ${t('footer.tagline')}`} />
-        <meta property="og:description" content={t('meta.description')} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content="https://pewnyleasing.pl/og-image.jpg" />
         <meta property="og:locale" content="pl_PL" />
         <meta property="og:site_name" content="Pewny Leasing" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`Pewny Leasing – ${t('footer.tagline')}`} />
-        <meta name="twitter:description" content={t('meta.description')} />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content="https://pewnyleasing.pl/og-image.jpg" />
 
         {/* JSON-LD: LocalBusiness */}

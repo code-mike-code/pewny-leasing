@@ -4,7 +4,7 @@ import { calculateLeaseInstallment, formatCurrency } from '@/lib/calculator'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { Reveal } from '@/components/ui/Reveal'
 import { useLanguage } from '@/hooks/useLanguage'
-import { type CalcSectionData } from '@/lib/formFlow'
+import { type CalcSectionData, isCalcSectionReady } from '@/lib/formFlow'
 import Icon1 from '@/assets/icons/bmw-yellow.webp';
 import Icon2 from '@/assets/icons/auto-used.webp';
 import Icon3 from '@/assets/icons/spec-tools.webp';
@@ -39,7 +39,7 @@ export function BusinessCalculatorSection({ onConfirm }: BusinessCalculatorSecti
     subtitle: t(`businessCalc.cards.${i}.subtitle`),
   }))
 
-  const isDalajDisabled = activeTab === 'other' && financingObject.trim().length < 4
+  const isDalajDisabled = !isCalcSectionReady({ activeTab, value, contribution, buyout, period, vehicleDetails, financingObject })
 
   function handleDalej() {
     onConfirm({ activeTab, value, contribution, buyout, period, vehicleDetails, financingObject })
