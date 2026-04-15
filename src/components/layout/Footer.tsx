@@ -64,7 +64,7 @@ export function Footer() {
 
       {/* Tło - Gigantyczny napis Watermark */}
       <div className="absolute inset-0 w-full h-full pointer-events-none select-none z-0 overflow-hidden">
-        <span className="hidden lg:block absolute bottom-24 left-0 w-full text-center text-[14.5vw] font-black tracking-tighter text-[#EDF2F7] leading-none whitespace-nowrap opacity-60 px-2">
+        <span className="hidden lg:block absolute bottom-24 left-0 w-full text-center text-[12.5vw] font-black tracking-tighter text-[#EDF2F7] leading-none whitespace-nowrap opacity-60">
           PEWNY LEASING
         </span>
         <div className="hidden md:flex lg:hidden absolute bottom-24 left-12 flex-col leading-[0.8] text-[#EDF2F7] opacity-60 font-black text-[20vw] tracking-tighter">

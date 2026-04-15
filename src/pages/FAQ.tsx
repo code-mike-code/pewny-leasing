@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { ArrowRight } from 'lucide-react'
-import logoDark from '@/assets/logo/logo-dark-removebg.webp'
 import { useLanguage } from '@/hooks/useLanguage'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'

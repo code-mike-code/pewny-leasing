@@ -59,6 +59,7 @@
 .cta-btn--yellow:hover,
 .cta-btn--yellow:focus-visible {
   color: #ffffff;
+  border-bottom: 2px solid #FBBF24;
 }
 
 /* Dark variant */

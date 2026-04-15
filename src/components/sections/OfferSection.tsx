@@ -1,15 +1,16 @@
 import { Zap, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { useLanguage } from '@/hooks/useLanguage'
-import supercarImg from '@/assets/img/supercar_offer_premium_1775045858058.png'
-import equipmentImg from '@/assets/img/specialized_equipment_financing_1775045894211.png'
-import Icon4 from '@/assets/icons/bmw-yellow.svg';
-import Icon5 from '@/assets/icons/rent.svg';
-import Icon6 from '@/assets/icons/spec-tools.svg';
-import Icon7 from '@/assets/icons/sale.svg';
+import supercarImg from '@/assets/img/supercar-offer.webp'
+import equipmentImg from '@/assets/img/specialized-equipment.webp'
+import Icon4 from '@/assets/icons/bmw-yellow.webp';
+import Icon5 from '@/assets/icons/rent.webp';
+import Icon6 from '@/assets/icons/spec-tools.webp';
+import Icon7 from '@/assets/icons/sale.webp';
 
 const CATEGORY_ICONS = [
-  <img src={Icon4} alt='bmw-m3-yellow' className='w-[100px] h-auto bg-white' />,
+  <img src={Icon4} alt='bmw-m3-yellow' className='w-[100px] h-auto' />,
   <img src={Icon5} alt='rent' className='w-[100px] h-auto' />,
   <img src={Icon6} alt='spec-tools' className='w-[100px] h-auto' />,
   <img src={Icon7} alt='sale' className='w-[100px] h-auto' />,
@@ -48,8 +49,9 @@ export function OfferSection() {
         {/* Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {categories.map((cat, idx) => (
-            <div key={idx} className="group p-8 border border-gray-100 rounded-2xl hover:border-primary transition-all duration-300 hover:shadow-xl bg-white flex flex-col h-full">
-              <div className="mb-6 bg-gray-50 rounded-xl group-hover:bg-yellow-50 transition-colors self-start">
+            <div key={idx} className="group relative p-8 border border-gray-100 transition-all duration-300 hover:shadow-xl bg-white flex flex-col h-full border-anim">
+              {/* Fixed-height icon container to align card content across all cards */}
+              <div className="mb-6 h-[80px] flex items-end justify-start self-start">
                 {cat.icon}
               </div>
               <h4 className="text-xl font-bold text-navy mb-3">{cat.title}</h4>
@@ -58,7 +60,7 @@ export function OfferSection() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {cat.tags.map((tag, tIdx) => (
-                  <span key={tIdx} className="text-[10px] font-bold text-gray-400 bg-gray-50 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                  <span key={tIdx} className="text-[10px] font-bold text-gray-400 bg-gray-50 px-2.5 py-1 uppercase tracking-wider">
                     {tag}
                   </span>
                 ))}
@@ -71,7 +73,7 @@ export function OfferSection() {
         <div className="space-y-8">
 
           {/* Supercars Block */}
-          <div className="relative rounded-[2.5rem] overflow-hidden bg-navy min-h-[500px] flex items-center">
+          <div className="relative overflow-hidden bg-navy min-h-[500px] flex items-center">
             <div className="absolute inset-0 z-0">
               <img
                 src={supercarImg}
@@ -93,7 +95,7 @@ export function OfferSection() {
               <p className="text-gray-300 font-medium text-sm md:text-base mb-10 leading-relaxed">
                 {t('offer.supercar.description')}
               </p>
-              <CTAButton variant="yellow" className="w-full sm:w-auto group">
+              <CTAButton variant="yellow" href="#contact" className="w-full sm:w-auto group">
                 {t('offer.supercar.cta')}
                 <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
               </CTAButton>
@@ -102,7 +104,7 @@ export function OfferSection() {
 
           {/* Equipment Block */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-gray-50 rounded-[2.5rem] p-10 md:p-16 flex flex-col justify-center border border-gray-100">
+            <div className="bg-gray-50 p-10 md:p-16 flex flex-col justify-center border border-gray-100">
               <h3 className="text-3xl md:text-4xl font-black text-navy mb-6 leading-tight uppercase italic">
                 {t('offer.equipment.title')} <br />
                 <span className="text-primary">{t('offer.equipment.titleAccent')}</span>
@@ -113,18 +115,20 @@ export function OfferSection() {
               <div className="grid grid-cols-2 gap-6 mb-10">
                 {equipmentSectors.map((sector, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full" />
+                    <div className="w-2 h-2 bg-primary" />
                     <span className="text-xs font-bold text-navy uppercase">{sector}</span>
                   </div>
                 ))}
               </div>
-              <CTAButton variant="outline-yellow" size="sm" className="self-start group !text-primary hover:!text-dark">
-                {t('offer.equipment.cta')}
-                <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
-              </CTAButton>
+              <Link to="/finansowanie-sprzetu" className="self-start">
+                <CTAButton variant="outline-yellow" size="sm" className="group !text-primary hover:!text-dark">
+                  {t('offer.equipment.cta')}
+                  <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
+                </CTAButton>
+              </Link>
             </div>
 
-            <div className="rounded-[2.5rem] overflow-hidden min-h-[400px]">
+            <div className="overflow-hidden min-h-[400px]">
               <img
                 src={equipmentImg}
                 alt={t('offer.equipment.imgAlt')}

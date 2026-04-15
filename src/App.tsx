@@ -5,6 +5,8 @@ import PrivacyPolicy from '@/pages/PrivacyPolicy'
 import TermsOfService from '@/pages/TermsOfService'
 import FAQ from '@/pages/FAQ'
 import CashBack from '@/pages/CashBack'
+import Discounts from '@/pages/Discounts'
+import EquipmentFinancing from '@/pages/EquipmentFinancing'
 import NotFound from '@/pages/NotFound'
 import { CookieConsent } from '@/components/ui/CookieConsent'
 import { ScrollToTop } from '@/components/ScrollToTop'
@@ -20,6 +22,8 @@ function App() {
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/cashback" element={<CashBack />} />
+          <Route path="/discounts" element={<Discounts />} />
+          <Route path="/finansowanie-sprzetu" element={<EquipmentFinancing />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieConsent />

@@ -348,7 +348,7 @@ export const pl = {
       title: 'Sprzęt dla',
       titleAccent: 'profesjonalistów',
       description: 'Leasing i wynajem sprzętu specjalistycznego to klucz do rozwoju Twojego biznesu. Finansujemy urządzenia medyczne, maszyny budowlane, serwery IT oraz wyposażenie biur.',
-      sectors: ['Medicina', 'Industria', 'Technologia', 'Transport'],
+      sectors: ['Medycyna', 'Przemysł', 'Technologia', 'Transport'],
       cta: 'DOWIEDZ SIĘ WIĘCEJ',
       imgAlt: 'Finansowanie maszyn i sprzętu medycznego leasing profesjonalny',
     },

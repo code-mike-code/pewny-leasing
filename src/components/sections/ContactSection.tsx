@@ -69,7 +69,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-24 lg:py-32 xl:py-40 bg-[#050505] text-white relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/10 -skew-x-12 translate-x-1/2 pointer-events-none" />
       
       <div className="max-w-screen-xl xl:max-w-screen-2xl mx-auto px-4 lg:px-8 xl:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">

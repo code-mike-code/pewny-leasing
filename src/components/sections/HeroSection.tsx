@@ -42,7 +42,7 @@ export function HeroSection() {
               {/* CTA widoczne tylko na desktop */}
               <div className="hidden lg:flex flex-row gap-4">
                 <HeroCTAButton href="#kontakt" label={t('hero.ctaPrimary').toUpperCase()} />
-                <HeroCTAButton href="#oferta" label={t('hero.ctaSecondary').toUpperCase()} />
+                <HeroCTAButton href="/discounts" label={t('hero.ctaSecondary').toUpperCase()} />
               </div>
             </div>
 
@@ -55,7 +55,7 @@ export function HeroSection() {
               {/* CTA widoczne tylko na mobile i tablet (pod kalkulatorem) */}
               <div className="flex lg:hidden flex-col sm:flex-row gap-4 w-full max-w-lg md:max-w-2xl justify-center">
                 <HeroCTAButton href="#kontakt" label={t('hero.ctaPrimary').toUpperCase()} />
-                <HeroCTAButton href="#oferta" label={t('hero.ctaSecondary').toUpperCase()} />
+                <HeroCTAButton href="/discounts" label={t('hero.ctaSecondary').toUpperCase()} />
               </div>
             </div>
 

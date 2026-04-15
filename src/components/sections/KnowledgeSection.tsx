@@ -17,7 +17,7 @@ export function KnowledgeSection() {
         <div className="flex flex-col lg:flex-row gap-8 items-stretch">
 
           {/* Left panel — FAQ */}
-          <div className="relative w-full lg:w-[65%] rounded-[2.5rem] bg-gray-50 p-10 lg:p-14 text-navy overflow-hidden shadow-sm border border-gray-100 flex flex-col justify-between items-start">
+          <div className="relative w-full lg:w-[65%] bg-gray-50 p-10 lg:p-14 text-navy shadow-sm border border-gray-100 flex flex-col justify-between items-start border-anim">
 
             <div className="relative z-10 w-full flex flex-col">
               <span className="inline-flex items-center gap-2 bg-[#FEFCE8] text-primary font-black text-[10px] uppercase tracking-widest px-3 py-1 mb-8 self-start border border-yellow-100">
@@ -36,7 +36,7 @@ export function KnowledgeSection() {
               {/* FAQ preview */}
               <ul className="w-full space-y-3 mb-10">
                 {previewItems.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 bg-white rounded-xl px-5 py-4 border border-gray-100">
+                  <li key={i} className="flex items-start gap-3 bg-white px-5 py-4 border border-gray-100">
                     <ChevronRight size={16} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={3} />
                     <span className="text-sm font-medium text-navy leading-snug">{item.question}</span>
                   </li>
@@ -54,12 +54,10 @@ export function KnowledgeSection() {
           </div>
 
           {/* Right panel — Cash Back */}
-          <div className="w-full lg:w-[35%] rounded-[2.5rem] bg-white p-10 lg:p-12 shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-gray-50 flex flex-col relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-full h-[3px] bg-gradient-to-r from-transparent to-primary/80" />
-            <div className="absolute top-0 right-0 h-full w-[3px] bg-gradient-to-b from-primary/80 to-transparent" />
+          <div className="w-full lg:w-[35%] bg-white p-10 lg:p-12 shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-gray-50 flex flex-col relative group border-anim">
 
             <div className="mb-8">
-              <div className="bg-[#FEFCE8] p-3 rounded-lg inline-flex items-center justify-center text-primary mb-6">
+              <div className="bg-[#FEFCE8] p-3 inline-flex items-center justify-center text-primary mb-6">
                 <Coins size={24} strokeWidth={2} />
               </div>
               <h3 className="text-2xl lg:text-3xl font-black text-navy tracking-tight mb-4 uppercase italic">

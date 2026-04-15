@@ -14,7 +14,7 @@ export function WhatsAppWidget() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Napisz do nas na WhatsApp"
-        className="relative flex items-center justify-center w-14 h-14 rounded-circle bg-white shadow-lg hover:bg-gray-100 transition-colors duration-200"
+        className="relative flex items-center justify-center w-14 h-14 rounded-circle bg-white border-2 border-black shadow-[0_4px_24px_rgba(0,0,0,0.6)] hover:bg-gray-100 transition-colors duration-200"
       >
         {/* Ikona czatu (MessageCircle - bez brandingu WhatsApp) */}
         <svg

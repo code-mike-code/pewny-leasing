@@ -166,6 +166,61 @@
   @apply text-dark;
 }
 
+/* ─── Border Draw Animation ─────────────────────────────────────────
+   Gradient border drawing from two diagonal corners simultaneously:
+   top-right corner (::before) and bottom-left corner (::after).
+   Each arm fades from solid yellow at the corner to transparent at
+   the tip. Reaches 2/3 of the edge length.
+   Uses background gradients — no visible dot at 0×0.
+   Add .border-anim to any card; .border-anim-active for always-on.
+   ─────────────────────────────────────────────────────────────────── */
+
+.border-anim {
+  position: relative;
+}
+
+.border-anim::before,
+.border-anim::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  transition: width 380ms cubic-bezier(0.4, 0, 0.2, 1),
+              height 380ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* top-right corner:
+   horizontal arm → fades from yellow (right/corner) to transparent (left/tip)
+   vertical arm   → fades from yellow (top/corner) to transparent (bottom/tip) */
+.border-anim::before {
+  top: 0;
+  right: 0;
+  background:
+    linear-gradient(to right, transparent, #FBBF24) top right / 100% 2px no-repeat,
+    linear-gradient(to bottom, #FBBF24, transparent) top right / 2px 100% no-repeat;
+}
+
+/* bottom-left corner:
+   horizontal arm → fades from yellow (left/corner) to transparent (right/tip)
+   vertical arm   → fades from yellow (bottom/corner) to transparent (top/tip) */
+.border-anim::after {
+  bottom: 0;
+  left: 0;
+  background:
+    linear-gradient(to left, transparent, #FBBF24) bottom left / 100% 2px no-repeat,
+    linear-gradient(to top, #FBBF24, transparent) bottom left / 2px 100% no-repeat;
+}
+
+.border-anim:hover::before,
+.border-anim:hover::after,
+.border-anim-active::before,
+.border-anim-active::after {
+  width: 66.67%;
+  height: 66.67%;
+}
+
 /* ─── Custom Scrollbar ────────────────────────────────────────────── */
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -196,5 +251,10 @@
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .border-anim::before,
+  .border-anim::after {
+    transition: none !important;
   }
 }

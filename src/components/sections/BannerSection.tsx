@@ -107,7 +107,7 @@ export function BannerSection() {
   const { t } = useLanguage()
 
   return (
-    <section className="bg-white py-8 lg:py-12 w-full border-y border-black/5 overflow-hidden">
+    <section className="bg-white py-8 lg:py-12 w-full overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-4 lg:px-8 mb-8">
         <p className="text-center text-[10px] font-black text-gray-500 uppercase tracking-[0.4em]">
           {t('banner.tagline')}

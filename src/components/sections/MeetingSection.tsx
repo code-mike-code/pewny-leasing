@@ -4,8 +4,8 @@ import { useLanguage } from '@/hooks/useLanguage'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { InquiryForm, type InquiryFormHandle } from '@/components/forms/InquiryForm'
 import { isCalcSectionReady, buildCalcFinancingObject, type CalcSectionData } from '@/lib/formFlow'
-import IconOnline from '@/assets/icons/online-meet-removebg-preview.png'
-import IconPersonal from '@/assets/icons/personal-meet-removebg-preview.png'
+import IconOnline from '@/assets/icons/online-meet.webp'
+import IconPersonal from '@/assets/icons/personal-meet.webp'
 
 interface MeetingSectionProps {
   calcData: CalcSectionData | null
@@ -69,10 +69,10 @@ export function MeetingSection({ calcData }: MeetingSectionProps) {
               <button
                 onClick={() => setActiveMeeting('online')}
                 className={`
-                  w-full text-left flex items-center p-6 rounded-xl transition-all duration-300 outline-none
+                  w-full text-left flex items-center p-6 transition-all duration-300 outline-none border-anim
                   ${activeMeeting === 'online'
-                    ? 'bg-[#F2F5F9] border-transparent shadow-sm'
-                    : 'bg-[#F8FAFC] border border-transparent hover:bg-[#F2F5F9]'
+                    ? 'bg-[#F2F5F9] shadow-sm border-anim-active'
+                    : 'bg-[#F8FAFC] hover:bg-[#F2F5F9]'
                   }
                 `}
               >
@@ -89,10 +89,10 @@ export function MeetingSection({ calcData }: MeetingSectionProps) {
               <button
                 onClick={() => setActiveMeeting('personal')}
                 className={`
-                  w-full text-left flex items-center p-6 rounded-xl transition-all duration-300 outline-none
+                  w-full text-left flex items-center p-6 transition-all duration-300 outline-none border-anim
                   ${activeMeeting === 'personal'
-                    ? 'bg-[#F2F5F9] border-transparent shadow-sm'
-                    : 'bg-[#F8FAFC] border border-transparent hover:bg-[#F2F5F9]'
+                    ? 'bg-[#F2F5F9] shadow-sm border-anim-active'
+                    : 'bg-[#F8FAFC] hover:bg-[#F2F5F9]'
                   }
                 `}
               >

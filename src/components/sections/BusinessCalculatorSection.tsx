@@ -5,9 +5,9 @@ import { CTAButton } from '@/components/ui/CTAButton'
 import { Reveal } from '@/components/ui/Reveal'
 import { useLanguage } from '@/hooks/useLanguage'
 import { type CalcSectionData } from '@/lib/formFlow'
-import Icon1 from '@/assets/icons/bmw-yellow.svg';
-import Icon2 from '@/assets/icons/auto-used-removebg-preview.png';
-import Icon3 from '@/assets/icons/spec-tools-removebg-preview.png';
+import Icon1 from '@/assets/icons/bmw-yellow.webp';
+import Icon2 from '@/assets/icons/auto-used.webp';
+import Icon3 from '@/assets/icons/spec-tools.webp';
 
 const CARD_ICONS = [Icon1, Icon2, Icon3]
 const CARD_ALTS = ['bmw-m3-yellow', 'auto-used', 'sale']

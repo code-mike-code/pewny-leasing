@@ -12,7 +12,7 @@ export function WhyUsSection() {
   return (
     <section id="why-us" className="py-24 lg:py-32 bg-black text-white w-full border-t border-white/5 relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-0 left-0 w-1/3 h-full bg-primary/5 -skew-x-12 -translate-x-1/2 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-1/3 h-full bg-primary/10 -skew-x-12 -translate-x-1/2 pointer-events-none" />
       <div className="max-w-screen-xl mx-auto px-4 lg:px-8 relative z-10">
 
         <div className="flex flex-col items-center text-center mb-20 px-4">
@@ -25,7 +25,7 @@ export function WhyUsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
           {features.map((feature) => (
-            <div key={feature.id} className="group flex flex-col items-center text-center p-8 rounded-[2rem] border border-white/5 hover:border-primary/50 transition-all duration-500 bg-[#0A0A0A] hover:shadow-[0_0_40px_rgba(251,191,36,0.05)]">
+            <div key={feature.id} className="group flex flex-col items-center text-center p-8 border border-white/5 transition-all duration-500 bg-[#0A0A0A] hover:shadow-[0_0_40px_rgba(251,191,36,0.05)] border-anim">
               <h3 className="text-xl font-black tracking-tight mb-4 whitespace-nowrap uppercase italic">
                 {feature.title}
               </h3>
