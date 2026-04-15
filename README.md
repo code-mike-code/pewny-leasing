@@ -2,6 +2,8 @@
 
 Corporate leasing platform with an interactive lease calculator and lead generation landing page. Built with React 18, TypeScript, Vite and Tailwind CSS.
 
+![Pewny Leasing — podgląd strony](src/assets/rwd-mockup-for%20readme.webp)
+
 ## Quick Start
 
 ```bash

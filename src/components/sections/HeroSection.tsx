@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import { Calculator } from '@/components/calculator/Calculator'
 import { useLanguage } from '@/hooks/useLanguage'
-import heroBg from '@/assets/img/hero-taxi.webp'
+// import heroBg from '@/assets/img/hero-taxi.webp'
 
 export function HeroSection() {
   const { t } = useLanguage()
@@ -16,7 +16,7 @@ export function HeroSection() {
         <div
            className="absolute inset-0 opacity-40 mix-blend-overlay"
            style={{
-             backgroundImage: `url(${heroBg})`,
+            //  backgroundImage: `url(${heroBg})`,
              backgroundSize: 'cover',
              backgroundPosition: 'center',
            }}
