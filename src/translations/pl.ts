@@ -475,6 +475,79 @@ export const pl = {
     },
   },
 
+  // Equipment Financing Page
+  equipmentFinancing: {
+    meta: {
+      title: 'Finansowanie Sprzętu Specjalistycznego dla Firm | Pewny Leasing',
+      description: 'Leasing i finansowanie sprzętu specjalistycznego dla medycyny, budownictwa, IT, transportu, produkcji i rolnictwa. Wspieramy rozwój biznesu w każdej branży.',
+    },
+    nav: { home: 'Strona główna' },
+    hero: {
+      badge: 'Sprzęt Specjalistyczny',
+      title: 'Finansowanie',
+      titleAccent: 'Sprzętu',
+      subtitle: 'Profesjonalne finansowanie sprzętu specjalistycznego dla każdej branży. Rozwijaj swój biznes bez angażowania kapitału obrotowego — my zajmujemy się finansowaniem.',
+    },
+    why: {
+      badge: 'Dlaczego finansowanie?',
+      title: 'Rozwijaj biznes',
+      titleAccent: 'bez zamrażania kapitału',
+      stats: [
+        { value: '100%', label: 'Finansowanie' },
+        { value: '24h', label: 'Decyzja' },
+        { value: '0 zł', label: 'Wkład własny od' },
+        { value: '20+', label: 'Partnerów leasingowych' },
+      ],
+      text1: 'Finansowanie sprzętu przez leasing lub pożyczkę leasingową pozwala zachować pełną płynność finansową. Zamiast jednorazowego wydatku — przewidywalna rata miesięczna, która jest kosztem uzyskania przychodu.',
+      text2: 'Obsługujemy sprzęt o wartości od 5 000 zł netto. Bez względu na branżę — znajdziemy dla Ciebie optymalne rozwiązanie finansowe.',
+    },
+    sectors: {
+      badge: 'Branże',
+      title: 'Finansujemy sprzęt',
+      titleAccent: 'w każdej branży',
+      items: [
+        { title: 'Medycyna i zdrowie', desc: 'Aparaty USG, tomografy, fotele stomatologiczne, sprzęt chirurgiczny i diagnostyczny. Znamy wymagania regulacyjne branży medycznej i dopasowujemy finansowanie do specyfiki działalności.' },
+        { title: 'Budownictwo i przemysł', desc: 'Dźwigi, koparki, rusztowania, kompresory i maszyny budowlane. Finansujemy zarówno nowe urządzenia, jak i sprzęt używany od sprawdzonych dostawców.' },
+        { title: 'IT i technologia', desc: 'Serwery, stacje robocze, systemy sieciowe, sprzęt produkcyjny. Szybkie decyzje kredytowe dla dynamicznie rozwijających się firm technologicznych i software house\'ów.' },
+        { title: 'Transport i logistyka', desc: 'Wózki widłowe, pojazdy dostawcze, systemy magazynowe i flota logistyczna. Kompleksowe finansowanie dla firm transportowych — od jednego wózka po całą flotę magazynową.' },
+        { title: 'Produkcja', desc: 'Linie produkcyjne, maszyny CNC, urządzenia spawalnicze, systemy automatyzacji. Inwestuj w nowoczesność i przewagę konkurencyjną bez uszczuplania rezerw gotówkowych.' },
+        { title: 'Rolnictwo', desc: 'Traktory, kombajny, opryskiwacze, systemy nawadniania i sprzęt rolniczy. Finansowanie sezonowe dopasowane do specyfiki i cykli działalności rolniczej.' },
+      ],
+    },
+    how: {
+      badge: 'Jak to działa?',
+      title: '3 proste',
+      titleAccent: 'kroki',
+      steps: [
+        { n: '01', title: 'Wybierz sprzęt', desc: 'Wskaż sprzęt, który chcesz sfinansować. Może to być nowe urządzenie od dealera, maszyna używana lub dowolny przedmiot o wartości powyżej 5 000 zł netto. Nie musisz znać wszystkich szczegółów — pomożemy.' },
+        { n: '02', title: 'Konfigurujemy finansowanie', desc: 'Analizujemy warunki i porównujemy oferty ponad 20 funduszy leasingowych. Dobieramy optymalne rozwiązanie: leasing operacyjny, finansowy, pożyczka leasingowa lub najem długoterminowy.' },
+        { n: '03', title: 'Uruchamiamy umowę', desc: 'Po podpisaniu umowy sprzęt trafia do Ciebie. Obsługujemy cały proces formalny — od złożenia wniosku do odbioru przedmiotu. Jeden doradca, jedno biuro.' },
+      ],
+    },
+    benefits: {
+      badge: 'Korzyści',
+      title: 'Tylko realne',
+      titleAccent: 'korzyści',
+      items: [
+        'Zachowanie płynności finansowej — nie zamrażasz kapitału obrotowego',
+        'Korzyści podatkowe — rata leasingowa jest kosztem uzyskania przychodu',
+        'Możliwość wymiany sprzętu na nowszy po zakończeniu umowy leasingowej',
+        'Szybka decyzja — nawet w ciągu 24 godzin od złożenia kompletnego wniosku',
+        'Finansowanie 100% wartości — bez wkładu własnego lub z minimalną wpłatą',
+        'Dostęp do najnowszego sprzętu bez jednorazowych wydatków',
+        'Jeden doradca, jedno biuro, kompleksowa obsługa od A do Z',
+      ],
+    },
+    cta: {
+      badge: 'Finansowanie Sprzętu',
+      title: 'Sfinansuj swój sprzęt',
+      titleAccent: 'już dziś',
+      subtitle: 'Skontaktuj się z naszym doradcą i zapytaj o możliwości finansowania sprzętu dla Twojej branży.',
+      primary: 'Zapytaj o finansowanie',
+      secondary: 'Kalkulator leasingowy',
+    },
+  },
+
   // Inquiry Form
   inquiryForm: {
     name: 'Imię i Nazwisko',

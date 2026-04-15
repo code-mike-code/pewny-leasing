@@ -1,6 +1,12 @@
+import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { ArrowRight, CheckCircle, Zap } from 'lucide-react'
 import { useLanguage } from '@/hooks/useLanguage'
+import SaleIcon from '@/assets/icons/sale.webp'
+import BmwYellowIcon from '@/assets/icons/bmw-yellow.webp'
+import AutoUsedIcon from '@/assets/icons/auto-used.webp'
+
+const HERO_ICONS = [SaleIcon, BmwYellowIcon, AutoUsedIcon]
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { CTAButton } from '@/components/ui/CTAButton'
@@ -9,6 +15,7 @@ import { Reveal } from '@/components/ui/Reveal'
 import mercedesLogo from '@/assets/partners-logos/mercedes-logo-removebg.webp'
 import bmwLogo from '@/assets/partners-logos/bmw-logo-removebg.webp'
 import toyotaLogo from '@/assets/partners-logos/toyota-logo-removebg.webp'
+import bydLogo from '@/assets/partners-logos/byd-logo.webp'
 
 // ─── Content ─────────────────────────────────────────────────────────────────
 
@@ -207,12 +214,7 @@ function BrandLogo({ name }: { name: string }) {
   if (name === 'toyota') {
     return <img src={toyotaLogo} alt="Toyota" className="h-10 w-auto object-contain opacity-80" />
   }
-  // BYD — no logo asset, use styled text badge
-  return (
-    <span className="inline-block bg-[#1db954]/15 text-[#1a9946] font-black text-sm uppercase tracking-widest px-3 py-1 shape-rhombus">
-      BYD
-    </span>
-  )
+  return <img src={bydLogo} alt="BYD" className="h-10 w-auto object-contain opacity-80" />
 }
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -220,6 +222,14 @@ function BrandLogo({ name }: { name: string }) {
 export default function Discounts() {
   const { language } = useLanguage()
   const c = content[language]
+  const [activeIcon, setActiveIcon] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIcon(prev => (prev + 1) % HERO_ICONS.length)
+    }, 2200)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <>
@@ -264,14 +274,35 @@ export default function Discounts() {
               </Reveal>
             </div>
 
-            {/* Decorative */}
+            {/* Decorative — cycling icons */}
             <div className="hidden lg:flex items-center justify-center">
-              <div className="relative">
-                <span className="text-[200px] font-black text-white/5 leading-none tracking-tighter select-none">%</span>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-primary/20 p-8 shape-rhombus">
-                    <span className="text-5xl font-black text-primary leading-none">%</span>
-                  </div>
+              <div className="relative flex items-center justify-center w-[320px] h-[320px]">
+                <div className="relative w-56 h-56 flex items-center justify-center">
+                  {HERO_ICONS.map((icon, i) => (
+                    <img
+                      key={i}
+                      src={icon}
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute w-48 h-auto transition-all duration-700"
+                      style={{
+                        opacity: i === activeIcon ? 1 : 0,
+                        transform: i === activeIcon ? 'scale(1) translateY(0)' : 'scale(0.85) translateY(12px)',
+                      }}
+                    />
+                  ))}
+                </div>
+                <div className="absolute bottom-4 flex gap-2">
+                  {HERO_ICONS.map((_, i) => (
+                    <div
+                      key={i}
+                      className="h-1 transition-all duration-500"
+                      style={{
+                        width: i === activeIcon ? '20px' : '6px',
+                        backgroundColor: i === activeIcon ? '#F5A623' : 'rgba(255,255,255,0.2)',
+                      }}
+                    />
+                  ))}
                 </div>
               </div>
             </div>

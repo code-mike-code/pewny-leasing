@@ -42,6 +42,7 @@ import mitsubishiLogo from '@/assets/partners-logos/mitsubishi-logo-removebg.web
 import nissanLogo from '@/assets/partners-logos/nissan-logo-removebg.webp'
 import suzukiLogo from '@/assets/partners-logos/suzuki-logo-removebg.webp'
 import lexusLogo from '@/assets/partners-logos/lexus-logo-removebg.webp'
+import bydLogo from '@/assets/partners-logos/byd-logo.webp'
 
 interface Partner {
   name: string
@@ -90,6 +91,7 @@ const carBrands: Partner[] = [
   { name: 'Nissan', logo: nissanLogo },
   { name: 'Suzuki', logo: suzukiLogo },
   { name: 'Lexus', logo: lexusLogo },
+  { name: 'BYD', logo: bydLogo },
 ]
 
 const renderLogo = ({ name, logo }: Partner, index: number) => (

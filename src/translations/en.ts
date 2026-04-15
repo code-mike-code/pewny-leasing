@@ -467,6 +467,79 @@ export const en = {
     },
   },
 
+  // Equipment Financing Page
+  equipmentFinancing: {
+    meta: {
+      title: 'Specialist Equipment Financing for Businesses | Pewny Leasing',
+      description: 'Leasing and financing for specialist equipment in healthcare, construction, IT, transport, manufacturing and agriculture. We support business growth across all industries.',
+    },
+    nav: { home: 'Home' },
+    hero: {
+      badge: 'Specialist Equipment',
+      title: 'Equipment',
+      titleAccent: 'Financing',
+      subtitle: 'Professional financing for specialist equipment across all industries. Grow your business without tying up working capital — we handle the financing.',
+    },
+    why: {
+      badge: 'Why financing?',
+      title: 'Grow your business',
+      titleAccent: 'without tying up capital',
+      stats: [
+        { value: '100%', label: 'Financing' },
+        { value: '24h', label: 'Decision' },
+        { value: 'PLN 0', label: 'Min. deposit from' },
+        { value: '20+', label: 'Leasing partners' },
+      ],
+      text1: 'Financing equipment through leasing or a lease loan lets you preserve full financial liquidity. Instead of a one-off expense — a predictable monthly instalment that is a tax-deductible business cost.',
+      text2: 'We handle equipment worth from PLN 5,000 net. Regardless of industry — we will find the optimal financing solution for you.',
+    },
+    sectors: {
+      badge: 'Industries',
+      title: 'We finance equipment',
+      titleAccent: 'in every industry',
+      items: [
+        { title: 'Healthcare & Medicine', desc: 'Ultrasound equipment, CT scanners, dental chairs, surgical and diagnostic devices. We understand the regulatory requirements of the medical industry and tailor financing to the specifics of your practice.' },
+        { title: 'Construction & Industry', desc: 'Cranes, excavators, scaffolding, compressors and heavy machinery. We finance both new equipment and used machinery from verified suppliers.' },
+        { title: 'IT & Technology', desc: 'Servers, workstations, network systems, production equipment. Fast credit decisions for fast-growing technology companies and software houses.' },
+        { title: 'Transport & Logistics', desc: 'Forklifts, delivery vehicles, warehouse systems and logistics fleets. Comprehensive financing for transport companies — from a single forklift to an entire warehouse fleet.' },
+        { title: 'Manufacturing', desc: 'Production lines, CNC machines, welding equipment and automation systems. Invest in modernity and competitive advantage without depleting your cash reserves.' },
+        { title: 'Agriculture', desc: 'Tractors, combine harvesters, sprayers, irrigation systems and agricultural equipment. Seasonal financing tailored to the specifics and cycles of agricultural activity.' },
+      ],
+    },
+    how: {
+      badge: 'How does it work?',
+      title: '3 simple',
+      titleAccent: 'steps',
+      steps: [
+        { n: '01', title: 'Choose your equipment', desc: 'Specify the equipment you want to finance. It can be a new device from a dealer, a used machine, or any item worth over PLN 5,000 net. You do not need to know all the details — we will help.' },
+        { n: '02', title: 'We configure the financing', desc: 'We analyse the conditions and compare offers from 20+ leasing funds. We select the optimal solution: operational or financial leasing, lease loan, or long-term rental.' },
+        { n: '03', title: 'We activate the agreement', desc: 'Once the contract is signed, the equipment is delivered to you. We handle the entire formal process — from application to item collection. One advisor, one office.' },
+      ],
+    },
+    benefits: {
+      badge: 'Benefits',
+      title: 'Only real',
+      titleAccent: 'benefits',
+      items: [
+        'Preserve cash flow — no tying up working capital',
+        'Tax advantages — the leasing instalment is a tax-deductible business expense',
+        'Option to upgrade to newer equipment at the end of the leasing agreement',
+        'Fast decision — within 24 hours of submitting a complete application',
+        '100% financing — no deposit required or minimum down payment',
+        'Access to the latest equipment without one-off capital expenditure',
+        'One advisor, one office, comprehensive service from A to Z',
+      ],
+    },
+    cta: {
+      badge: 'Equipment Financing',
+      title: 'Finance your equipment',
+      titleAccent: 'today',
+      subtitle: 'Contact our advisor and ask about equipment financing options for your industry.',
+      primary: 'Ask about financing',
+      secondary: 'Leasing calculator',
+    },
+  },
+
   // Inquiry Form
   inquiryForm: {
     name: 'Full Name',

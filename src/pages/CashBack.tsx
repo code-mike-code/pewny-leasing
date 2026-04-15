@@ -1,6 +1,12 @@
+import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { ArrowRight, Coins, CheckCircle, Building2, User, Zap } from 'lucide-react'
 import { useLanguage } from '@/hooks/useLanguage'
+import CashBackIcon from '@/assets/icons/cash-back.webp'
+import SpecToolsIcon from '@/assets/icons/spec-tools.webp'
+import PersonalMeetIcon from '@/assets/icons/personal-meet.webp'
+
+const HERO_ICONS = [CashBackIcon, SpecToolsIcon, PersonalMeetIcon]
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 
@@ -197,6 +203,14 @@ const content = {
 export default function CashBack() {
   const { language } = useLanguage()
   const c = content[language]
+  const [activeIcon, setActiveIcon] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIcon(prev => (prev + 1) % HERO_ICONS.length)
+    }, 2200)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <>
@@ -257,14 +271,35 @@ export default function CashBack() {
               </Reveal>
             </div>
 
-            {/* decorative */}
+            {/* decorative — cycling icons */}
             <div className="hidden lg:flex items-center justify-center">
-              <div className="relative">
-                <span className="text-[200px] font-black text-white/5 leading-none tracking-tighter select-none">%</span>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-primary/20 p-8 shape-rhombus">
-                    <Coins size={64} className="text-primary" strokeWidth={1.5} />
-                  </div>
+              <div className="relative flex items-center justify-center w-[320px] h-[320px]">
+                <div className="relative w-56 h-56 flex items-center justify-center">
+                  {HERO_ICONS.map((icon, i) => (
+                    <img
+                      key={i}
+                      src={icon}
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute w-48 h-auto transition-all duration-700"
+                      style={{
+                        opacity: i === activeIcon ? 1 : 0,
+                        transform: i === activeIcon ? 'scale(1) translateY(0)' : 'scale(0.85) translateY(12px)',
+                      }}
+                    />
+                  ))}
+                </div>
+                <div className="absolute bottom-4 flex gap-2">
+                  {HERO_ICONS.map((_, i) => (
+                    <div
+                      key={i}
+                      className="h-1 transition-all duration-500"
+                      style={{
+                        width: i === activeIcon ? '20px' : '6px',
+                        backgroundColor: i === activeIcon ? '#F5A623' : 'rgba(255,255,255,0.2)',
+                      }}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
