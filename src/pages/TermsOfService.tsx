@@ -37,9 +37,11 @@ export default function TermsOfService() {
             <Section title="§1 Postanowienia ogólne">
               <p>
                 Niniejszy Regulamin określa zasady korzystania z serwisu internetowego dostępnego pod adresem{' '}
-                <strong className="text-dark">pewnyleasing.pl</strong> (dalej: „Serwis"), prowadzonego przez
-                GB+ Spółka z ograniczoną odpowiedzialnością z siedzibą przy ul. Książkowej 9F/405,
-                03-134 Warszawa, NIP: 5242881811 (dalej: „Operator").
+                <strong className="text-dark">pewnyleasing24.pl</strong> (dalej: „Serwis"), prowadzonego przez{' '}
+                <strong className="text-dark">[PEŁNA NAZWA FIRMY]</strong> z siedzibą przy ul.{' '}
+                <strong className="text-dark">[ADRES]</strong>, NIP:{' '}
+                <strong className="text-dark">[NIP]</strong>, KRS:{' '}
+                <strong className="text-dark">[KRS]</strong> (dalej: „Operator").
               </p>
               <p>
                 Korzystanie z Serwisu jest dobrowolne i oznacza akceptację niniejszego Regulaminu w całości.
@@ -47,7 +49,7 @@ export default function TermsOfService() {
               </p>
               <p>
                 Operator zastrzega sobie prawo do zmiany Regulaminu. Aktualna wersja jest zawsze dostępna
-                pod adresem <strong className="text-dark">pewnyleasing.pl/terms-of-service</strong>.
+                pod adresem <strong className="text-dark">pewnyleasing24.pl/terms-of-service</strong>.
               </p>
             </Section>
 

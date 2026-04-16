@@ -693,6 +693,15 @@ export const en = {
     },
   },
 
+  // 404 Not Found
+  notFound: {
+    badge: 'Pewny Leasing',
+    title: '404',
+    heading: 'Page not found',
+    description: 'The page you are looking for has been moved, deleted, or never existed. Go back to the homepage and find what you need.',
+    cta: 'BACK TO HOMEPAGE',
+  },
+
   // Inquiry Form
   inquiryForm: {
     name: 'Full Name',

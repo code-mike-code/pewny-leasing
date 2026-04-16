@@ -39,8 +39,8 @@ export function Footer() {
           <h4 className="text-navy font-bold text-xs uppercase tracking-widest mb-6">{t('footer.company.heading')}</h4>
           <ul className="space-y-2">
             <li><NavLink href="#contact" className="text-gray-500 hover-wipe-v hover-wipe-v-yellow px-4 py-2 inline-flex items-center text-sm font-medium transition-colors">{t('footer.company.contact')}</NavLink></li>
-            <li><NavLink href="#regulamin" className="text-gray-500 hover-wipe-v hover-wipe-v-yellow px-4 py-2 inline-flex items-center text-sm font-medium transition-colors">{t('footer.company.terms')}</NavLink></li>
-            <li><NavLink href="#polityka-prywatnosci" className="text-gray-500 hover-wipe-v hover-wipe-v-yellow px-4 py-2 inline-flex items-center text-sm font-medium transition-colors">{t('footer.company.privacy')}</NavLink></li>
+            <li><a href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover-wipe-v hover-wipe-v-yellow px-4 py-2 inline-flex items-center text-sm font-medium transition-colors">{t('footer.company.terms')}</a></li>
+            <li><a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover-wipe-v hover-wipe-v-yellow px-4 py-2 inline-flex items-center text-sm font-medium transition-colors">{t('footer.company.privacy')}</a></li>
           </ul>
         </div>
 

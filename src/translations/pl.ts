@@ -701,6 +701,15 @@ export const pl = {
     },
   },
 
+  // 404 Not Found
+  notFound: {
+    badge: 'Pewny Leasing',
+    title: '404',
+    heading: 'Strona nie istnieje',
+    description: 'Szukana strona została przeniesiona, usunięta lub nigdy nie istniała. Wróć na stronę główną i znajdź to, czego szukasz.',
+    cta: 'WRÓĆ NA STRONĘ GŁÓWNĄ',
+  },
+
   // Inquiry Form
   inquiryForm: {
     name: 'Imię i Nazwisko',
