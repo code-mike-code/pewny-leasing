@@ -22,7 +22,7 @@ export const pl = {
 
   // SEO Meta
   meta: {
-    description: 'Pewny Leasing – profesjonalny broker leasingowy dla firm B2B. Leasing operacyjny, wynajem długoterminowy i krótkoterminowy, finansowanie flot, samochody premium, sprzęt specjalistyczny. Ponad 12 banków partnerskich, szybka decyzja, rabaty. Warszawa, Mazowieckie i cała Polska.',
+    description: 'Profesjonalny broker leasingowy B2B. Leasing operacyjny, wynajem długoterminowy, finansowanie flot i sprzętu specjalistycznego. Ponad 12 banków, szybka decyzja. Warszawa, Mazowieckie i cała Polska.',
     keywords: 'leasing dla firm, leasing operacyjny, wynajem długoterminowy, wynajem krótkoterminowy, leasing samochodów premium, finansowanie floty, leasing sprzętu IT, leasing medyczny, leasing budowlany, leasing rolniczy, broker leasingowy Warszawa, leasing Mazowieckie, cash back leasing',
   },
 
