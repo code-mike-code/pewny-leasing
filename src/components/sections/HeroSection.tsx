@@ -1,10 +1,20 @@
+import { useEffect, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { Calculator } from '@/components/calculator/Calculator'
 import { useLanguage } from '@/hooks/useLanguage'
-// import heroBg from '@/assets/img/hero-taxi.webp'
+import posterImg from '@/assets/img/poster.webp'
 
 export function HeroSection() {
   const { t } = useLanguage()
+  const [isDesktop, setIsDesktop] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)')
+    setIsDesktop(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
   return (
     <>
@@ -12,16 +22,21 @@ export function HeroSection() {
         id="hero"
         className="relative flex items-center bg-[#050505] overflow-hidden pt-[116px] pb-16 min-h-screen"
       >
-        {/* Background Image / Placeholder */}
-        <div
-           className="absolute inset-0 opacity-40 mix-blend-overlay"
-           style={{
-            //  backgroundImage: `url(${heroBg})`,
-             backgroundSize: 'cover',
-             backgroundPosition: 'center',
-           }}
-           aria-hidden="true"
-        />
+        {/* Background Video — desktop only */}
+        {isDesktop && (
+          <video
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+            poster={posterImg}
+            aria-hidden="true"
+          >
+            <source src="/hero-video.webm" type="video/webm" />
+          </video>
+        )}
 
         {/* Content Container */}
         <div className="relative z-10 max-w-screen-2xl mx-auto px-4 lg:px-8 w-full">
