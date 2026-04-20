@@ -38,10 +38,11 @@ export default function TermsOfService() {
               <p>
                 Niniejszy Regulamin określa zasady korzystania z serwisu internetowego dostępnego pod adresem{' '}
                 <strong className="text-dark">pewnyleasing24.pl</strong> (dalej: „Serwis"), prowadzonego przez{' '}
-                <strong className="text-dark">[PEŁNA NAZWA FIRMY]</strong> z siedzibą przy ul.{' '}
-                <strong className="text-dark">[ADRES]</strong>, NIP:{' '}
-                <strong className="text-dark">[NIP]</strong>, KRS:{' '}
-                <strong className="text-dark">[KRS]</strong> (dalej: „Operator").
+                <strong className="text-dark">Pewny Leasing Spółka z ograniczoną odpowiedzialnością</strong> z siedzibą
+                przy ul. Książkowej 9F/405, 03-134 Warszawa, NIP:{' '}
+                <strong className="text-dark">5242973163</strong>, KRS:{' '}
+                <strong className="text-dark">0001037592</strong>, REGON:{' '}
+                <strong className="text-dark">525374889</strong>, kapitał zakładowy: 50 000,00 zł (dalej: „Operator").
               </p>
               <p>
                 Korzystanie z Serwisu jest dobrowolne i oznacza akceptację niniejszego Regulaminu w całości.
@@ -56,8 +57,8 @@ export default function TermsOfService() {
             <Section title="§2 Definicje">
               <ul className="list-disc list-inside space-y-2">
                 <li>
-                  <strong className="text-dark">Operator</strong> – Pewny Leasing,
-                  ul. Modlińska 310/312 lok. 2, 03-152 Warszawa, e-mail: kontakt@pewnyleasing.pl.
+                  <strong className="text-dark">Operator</strong> – Pewny Leasing Sp. z o.o.,
+                  ul. Książkowa 9F/405, 03-134 Warszawa, e-mail: kontakt@pewnyleasing24.pl.
                 </li>
                 <li>
                   <strong className="text-dark">Serwis</strong> – strona internetowa pewnyleasing.pl wraz
@@ -181,15 +182,15 @@ export default function TermsOfService() {
                 W przypadku pytań dotyczących Regulaminu prosimy o kontakt:
               </p>
               <ul className="list-none space-y-1">
-                <li><strong className="text-dark">Pewny Leasing</strong></li>
-                <li>ul. Modlińska 310/312 lok. 2, 03-152 Warszawa</li>
+                <li><strong className="text-dark">Pewny Leasing Sp. z o.o.</strong></li>
+                <li>ul. Książkowa 9F/405, 03-134 Warszawa</li>
                 <li>
                   E-mail:{' '}
                   <a
-                    href="mailto:kontakt@pewnyleasing.pl"
+                    href="mailto:kontakt@pewnyleasing24.pl"
                     className="text-dark hover:underline"
                   >
-                    kontakt@pewnyleasing.pl
+                    kontakt@pewnyleasing24.pl
                   </a>
                 </li>
                 <li>

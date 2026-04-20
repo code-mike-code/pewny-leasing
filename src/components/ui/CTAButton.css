@@ -50,6 +50,7 @@
 .cta-btn--yellow {
   background: #FBBF24;
   color: #111111;
+  border-bottom: 2px solid #FBBF24;
 }
 
 .cta-btn--yellow::before {

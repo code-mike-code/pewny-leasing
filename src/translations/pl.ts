@@ -167,11 +167,11 @@ export const pl = {
     headingAccent: 'NAPISZ DO NAS',
     subheading: 'Nasi doradcy są do Twojej dyspozycji. Skontaktuj się z nami bezpośrednio lub wypełnij krótki formularz.',
     info: {
-      phone: '+48 530 181 372',
+      phone: '+48 535 454 858',
       phoneNote: 'Dostępni 24/7',
       email: 'kontakt@pewnyleasing.pl',
       address: 'Modlińska 310/312 lok. 2, 03-152 Warszawa',
-      hours: 'Pon – Pt: 09:00 – 17:00',
+      hours: 'Pon – Pt: 09:00 – 19:00',
       emailSub: 'Napisz do nas',
       addressSub: 'Odwiedź nas',
       hoursSub: 'Godziny otwarcia',

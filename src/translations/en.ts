@@ -160,11 +160,11 @@ export const en = {
     headingAccent: 'WRITE TO US',
     subheading: 'Our advisors are at your disposal. Contact us directly or fill out the short form.',
     info: {
-      phone: '+48 530 181 372',
+      phone: '+48 535 454 858',
       phoneNote: 'Available 24/7',
       email: 'kontakt@pewnyleasing.pl',
       address: 'Modlińska 310/312 lok. 2, 03-152 Warsaw',
-      hours: 'Mon – Fri: 09:00 – 17:00',
+      hours: 'Mon – Fri: 09:00 – 19:00',
       emailSub: 'Write to us',
       addressSub: 'Visit us',
       hoursSub: 'Opening hours',

@@ -37,11 +37,21 @@ export default function PrivacyPolicy() {
             <Section title="§1 Administrator danych osobowych">
               <p>
                 Administratorem Twoich danych osobowych jest{' '}
-                <strong className="text-dark">Pewny Leasing</strong> z siedzibą
-                przy ul. Modlińskiej 310/312 lok. 2, 03-152 Warszawa (dalej: „Administrator").
+                <strong className="text-dark">Pewny Leasing Spółka z ograniczoną odpowiedzialnością</strong> z siedzibą
+                przy ul. Książkowej 9F/405, 03-134 Warszawa (dalej: „Administrator").
               </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs border-collapse">
+                  <tbody>
+                    <tr className="border-b border-gray-100"><td className="py-1.5 pr-4 font-semibold text-dark w-32">NIP</td><td className="py-1.5">5242973163</td></tr>
+                    <tr className="border-b border-gray-100"><td className="py-1.5 pr-4 font-semibold text-dark">REGON</td><td className="py-1.5">525374889</td></tr>
+                    <tr className="border-b border-gray-100"><td className="py-1.5 pr-4 font-semibold text-dark">KRS</td><td className="py-1.5">0001037592</td></tr>
+                    <tr><td className="py-1.5 pr-4 font-semibold text-dark">Kapitał zakładowy</td><td className="py-1.5">50 000,00 zł</td></tr>
+                  </tbody>
+                </table>
+              </div>
               <p>
-                Pewny Leasing jest niezależnym pośrednikiem finansowym i leasingowym działającym
+                Pewny Leasing Sp. z o.o. jest niezależnym pośrednikiem finansowym i leasingowym działającym
                 na polskim rynku B2B. W ramach swojej działalności pośredniczymy pomiędzy
                 klientami biznesowymi a instytucjami finansowymi (bankami i firmami leasingowymi)
                 w zakresie pozyskania finansowania: leasingu operacyjnego, leasingu finansowego,
@@ -62,7 +72,7 @@ export default function PrivacyPolicy() {
                     +48 530 181 372
                   </a>
                 </li>
-                <li>Adres: ul. Modlińska 310/312 lok. 2, 03-152 Warszawa</li>
+                <li>Adres: ul. Książkowa 9F/405, 03-134 Warszawa</li>
               </ul>
             </Section>
 
@@ -416,8 +426,8 @@ export default function PrivacyPolicy() {
                 realizacji praw przysługujących na podstawie RODO, prosimy o kontakt:
               </p>
               <ul className="list-none space-y-1">
-                <li><strong className="text-dark">Pewny Leasing</strong></li>
-                <li>ul. Modlińska 310/312 lok. 2, 03-152 Warszawa</li>
+                <li><strong className="text-dark">Pewny Leasing Sp. z o.o.</strong></li>
+                <li>ul. Książkowa 9F/405, 03-134 Warszawa</li>
                 <li>
                   E-mail:{' '}
                   <a href="mailto:kontakt@pewnyleasing24.pl" className="text-dark hover:underline">

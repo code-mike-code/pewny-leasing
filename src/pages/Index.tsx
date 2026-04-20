@@ -62,7 +62,7 @@ export default function Index() {
             "height": 80
           },
           "image": "https://www.pewnyleasing24.pl/og-image.png",
-          "telephone": "+48530181372",
+          "telephone": "+48535454858",
           "email": "kontakt@pewnyleasing24.pl",
           "address": {
             "@type": "PostalAddress",
