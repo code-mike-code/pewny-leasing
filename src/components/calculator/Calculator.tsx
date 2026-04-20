@@ -5,7 +5,7 @@ import { CTAButton } from '@/components/ui/CTAButton'
 import { InquiryForm, type InquiryFormHandle } from '@/components/forms/InquiryForm'
 import { useLanguage } from '@/hooks/useLanguage'
 import { cn } from '@/lib/utils'
-import { isHeroCalcStep2Disabled } from '@/lib/formFlow'
+import { isHeroCalcStep2Disabled, buildCalcFinancingObject } from '@/lib/formFlow'
 
 export function Calculator() {
   const { t } = useLanguage()
@@ -288,14 +288,13 @@ export function Calculator() {
                 <InquiryForm
                   ref={formRef}
                   variant="compact"
+                  showNameField={true}
                   hideSubmit={true}
                   onStatusChange={setFormStatus}
                   onSuccess={() => {}}
                   contextData={{
                     calculatorType,
-                    financingObject: calculatorType === 'vehicle'
-                      ? `Vehicle: ${vehicleCondition === 'new' ? 'New' : 'Used'} / ${searchOption === 'find' ? 'Find' : 'Have selected'} / ${vehicleDetails}`
-                      : financingObject,
+                    financingObject: buildCalcFinancingObject({ activeTab: calculatorType === 'vehicle' ? (vehicleCondition ?? 'new') : 'other', value, contribution, buyout, period, vehicleDetails, financingObject }),
                     value,
                     contribution,
                     buyout,

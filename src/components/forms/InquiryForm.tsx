@@ -30,6 +30,7 @@ export interface InquiryFormHandle {
 interface InquiryFormProps {
   variant?: 'compact' | 'full'
   showAdvancedFields?: boolean
+  showNameField?: boolean
   contextData?: InquiryContextData
   onSuccess?: () => void
   onStatusChange?: (status: 'idle' | 'loading' | 'success' | 'error') => void
@@ -40,6 +41,7 @@ interface InquiryFormProps {
 export const InquiryForm = forwardRef<InquiryFormHandle, InquiryFormProps>(({
   variant = 'compact',
   showAdvancedFields = false,
+  showNameField = false,
   contextData = {},
   onSuccess,
   onStatusChange,
@@ -88,7 +90,7 @@ export const InquiryForm = forwardRef<InquiryFormHandle, InquiryFormProps>(({
         period: 0,
         wantsCashback: false,
         ...contextData,
-        name: (variant === 'full' || showAdvancedFields) ? name : (contextData.name || 'Klient'),
+        name: (variant === 'full' || showAdvancedFields || showNameField) ? name : (contextData.name || 'Klient'),
         email,
         phone,
         nip,
@@ -134,8 +136,8 @@ export const InquiryForm = forwardRef<InquiryFormHandle, InquiryFormProps>(({
   return (
     <form onSubmit={handleSubmit} className={cn("space-y-6", isFull ? "lg:space-y-8 xl:space-y-12" : "space-y-3")}>
       <div className={cn("grid gap-6", isFull ? "md:grid-cols-2 lg:gap-8 xl:gap-12" : "grid-cols-1 gap-3")}>
-        {/* Name (for business/advanced) */}
-        {(isFull || showAdvancedFields) && (
+        {/* Name */}
+        {(isFull || showAdvancedFields || showNameField) && (
           <FormInput
             label={t('inquiryForm.name')}
             value={name}

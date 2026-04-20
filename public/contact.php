@@ -39,7 +39,7 @@ $email_content .= "Telefon: $phone\n";
 $email_content .= "Temat: $topic\n\n";
 $email_content .= "Wiadomość:\n$message\n";
 
-$headers = "From: $name <no-reply@pewnyleasing.pl>\r\n";
+$headers = "From: $name <kontakt@pewnyleasing24.pl>\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 

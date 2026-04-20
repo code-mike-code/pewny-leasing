@@ -44,3 +44,7 @@ Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
+
+# emailjs templates
+emailjs-autoreplay-template.html
+emailjs-template.html

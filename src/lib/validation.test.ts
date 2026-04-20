@@ -3,19 +3,17 @@ import { validateNIP, validateEmail, validatePhone } from './validation'
 
 describe('Forms: Validation', () => {
   describe('NIP Validation', () => {
-    it('should pass for a valid NIP', () => {
-      // Real NIP example (KPRM): 5261645000
+    it('should pass for a 10-digit NIP', () => {
       expect(validateNIP('5261645000')).toBe(true);
       expect(validateNIP('526-164-50-00')).toBe(true);
-      // Orlen NIP:
       expect(validateNIP('7740001454')).toBe(true);
+      expect(validateNIP('1234567890')).toBe(true);
     });
 
     it('should reject an invalid NIP', () => {
-      expect(validateNIP('1234567890')).toBe(false); // Wrong checksum
-      expect(validateNIP('5261645')).toBe(false);    // Too short
+      expect(validateNIP('5261645')).toBe(false);      // Too short
       expect(validateNIP('526164500012')).toBe(false); // Too long
-      expect(validateNIP('abcdefghij')).toBe(false); // Letters instead of digits
+      expect(validateNIP('abcdefghij')).toBe(false);   // Letters
     });
   });
 

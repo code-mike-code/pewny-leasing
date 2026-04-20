@@ -4,6 +4,7 @@ import { useLanguage } from '@/hooks/useLanguage'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { InquiryForm, type InquiryFormHandle } from '@/components/forms/InquiryForm'
 import { isCalcSectionReady, buildCalcFinancingObject, type CalcSectionData } from '@/lib/formFlow'
+import { cn } from '@/lib/utils'
 import IconOnline from '@/assets/icons/online-meet.webp'
 import IconPersonal from '@/assets/icons/personal-meet.webp'
 
@@ -14,6 +15,7 @@ interface MeetingSectionProps {
 export function MeetingSection({ calcData }: MeetingSectionProps) {
   const { t } = useLanguage()
   const [activeMeeting, setActiveMeeting] = useState<'online' | 'personal'>('online')
+  const [wantsCashback, setWantsCashback] = useState(false)
   const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [showCalcError, setShowCalcError] = useState(false)
   const formRef = useRef<InquiryFormHandle>(null)
@@ -37,14 +39,14 @@ export function MeetingSection({ calcData }: MeetingSectionProps) {
         buyout: calcData.buyout,
         period: calcData.period,
         vehicleCondition: calcData.activeTab === 'other' ? null : calcData.activeTab,
-        wantsCashback: true,
-        meetingType: activeMeeting === 'online' ? 'online' as const : 'in_person' as const,
+        wantsCashback,
+        meetingType: wantsCashback ? (activeMeeting === 'online' ? 'online' as const : 'in_person' as const) : null,
       }
     : {
         calculatorType: 'other' as const,
         financingObject: `Spotkanie: ${activeMeeting === 'online' ? 'Online' : 'Osobiście'}`,
-        wantsCashback: true,
-        meetingType: activeMeeting === 'online' ? 'online' as const : 'in_person' as const,
+        wantsCashback,
+        meetingType: wantsCashback ? (activeMeeting === 'online' ? 'online' as const : 'in_person' as const) : null,
       }
 
   return (
@@ -138,11 +140,54 @@ export function MeetingSection({ calcData }: MeetingSectionProps) {
                 </div>
               )}
 
+              {formStatus !== 'success' && (
+                <div className="flex items-center gap-4 mb-6 pb-4 border-b border-gray-200">
+                  <label className="flex items-center gap-2 cursor-pointer group flex-shrink-0">
+                    <input
+                      type="checkbox"
+                      checked={wantsCashback}
+                      onChange={(e) => setWantsCashback(e.target.checked)}
+                      className="w-4 h-4 accent-primary"
+                    />
+                    <div className="flex flex-col">
+                      <span className="font-black text-[11px] uppercase italic text-navy leading-none">{t('calculator.cashback.title')}</span>
+                      <span className="text-[9px] text-gray-400 font-bold leading-none mt-0.5 whitespace-nowrap">{t('calculator.cashback.subtitle')}</span>
+                    </div>
+                  </label>
+
+                  <div className={cn(
+                    "flex items-center gap-4 transition-all duration-300",
+                    wantsCashback ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 pointer-events-none"
+                  )}>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="meeting-section-type"
+                        checked={activeMeeting === 'online'}
+                        onChange={() => setActiveMeeting('online')}
+                        className="w-3.5 h-3.5 accent-primary"
+                      />
+                      <span className={cn("text-[10px] font-black uppercase tracking-wider", activeMeeting === 'online' ? "text-primary" : "text-gray-400")}>{t('calculator.meeting.online')}</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="meeting-section-type"
+                        checked={activeMeeting === 'personal'}
+                        onChange={() => setActiveMeeting('personal')}
+                        className="w-3.5 h-3.5 accent-primary"
+                      />
+                      <span className={cn("text-[10px] font-black uppercase tracking-wider", activeMeeting === 'personal' ? "text-primary" : "text-gray-400")}>{t('calculator.meeting.inPerson')}</span>
+                    </label>
+                  </div>
+                </div>
+              )}
+
               <InquiryForm
                 ref={formRef}
                 variant="compact"
+                showNameField={true}
                 hideSubmit
-                showAdvancedFields={false}
                 onStatusChange={setFormStatus}
                 onSuccess={() => setShowCalcError(false)}
                 contextData={contextData}

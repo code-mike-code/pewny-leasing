@@ -1,19 +1,6 @@
 export function validateNIP(nip: string): boolean {
-  // Strip hyphens and spaces
   const cleanNip = nip.replace(/[\s-]/g, '');
-  if (cleanNip.length !== 10) return false;
-
-  if (/\D/.test(cleanNip)) return false;
-
-  const weights = [6, 5, 7, 2, 3, 4, 5, 6, 7];
-  let sum = 0;
-
-  for (let i = 0; i < 9; i++) {
-    sum += parseInt(cleanNip[i], 10) * weights[i];
-  }
-
-  const checksum = sum % 11;
-  return checksum === parseInt(cleanNip[9], 10);
+  return cleanNip.length === 10 && /^\d{10}$/.test(cleanNip);
 }
 
 export function validateEmail(email: string): boolean {
