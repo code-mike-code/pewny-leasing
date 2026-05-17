@@ -162,7 +162,7 @@ export const en = {
     info: {
       phone: '+48 535 454 858',
       phoneNote: 'Available 24/7',
-      email: 'kontakt@pewnyleasing.pl',
+      email: 'kontakt@pewnyleasing24.pl',
       address: 'Modlińska 310/312 lok. 2, 03-152 Warsaw',
       hours: 'Mon – Fri: 09:00 – 19:00',
       emailSub: 'Write to us',

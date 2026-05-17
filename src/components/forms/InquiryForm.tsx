@@ -36,6 +36,7 @@ interface InquiryFormProps {
   onStatusChange?: (status: 'idle' | 'loading' | 'success' | 'error') => void
   submitLabel?: string
   hideSubmit?: boolean
+  beforeGdpr?: React.ReactNode
 }
 
 export const InquiryForm = forwardRef<InquiryFormHandle, InquiryFormProps>(({
@@ -46,7 +47,8 @@ export const InquiryForm = forwardRef<InquiryFormHandle, InquiryFormProps>(({
   onSuccess,
   onStatusChange,
   submitLabel,
-  hideSubmit = false
+  hideSubmit = false,
+  beforeGdpr,
 }, ref) => {
   const { t } = useLanguage()
   const [name, setName] = useState('')
@@ -134,8 +136,8 @@ export const InquiryForm = forwardRef<InquiryFormHandle, InquiryFormProps>(({
   const resolvedSubmitLabel = submitLabel ?? t('inquiryForm.submitDefault')
 
   return (
-    <form onSubmit={handleSubmit} className={cn("space-y-6", isFull ? "lg:space-y-8 xl:space-y-12" : "space-y-3")}>
-      <div className={cn("grid gap-6", isFull ? "md:grid-cols-2 lg:gap-8 xl:gap-12" : "grid-cols-1 gap-3")}>
+    <form onSubmit={handleSubmit} className={cn(isFull ? "space-y-6 lg:space-y-8 xl:space-y-12" : "space-y-2")}>
+      <div className={cn("grid", isFull ? "gap-6 md:grid-cols-2 lg:gap-8 xl:gap-12" : "grid-cols-1 gap-2")}>
         {/* Name */}
         {(isFull || showAdvancedFields || showNameField) && (
           <FormInput
@@ -196,13 +198,13 @@ export const InquiryForm = forwardRef<InquiryFormHandle, InquiryFormProps>(({
         />
       )}
 
-      <div className="pt-2">
-        <RhombusCheckbox
-          checked={gdpr}
-          onChange={() => setGdpr(!gdpr)}
-          label={t('contact.form.gdpr')}
-        />
-      </div>
+      {beforeGdpr}
+
+      <RhombusCheckbox
+        checked={gdpr}
+        onChange={() => setGdpr(!gdpr)}
+        label={t('contact.form.gdpr')}
+      />
 
       {status === 'error' && (
         <div className="flex items-center gap-3 text-red-500 text-xs font-black bg-red-500/5 p-4 border border-red-500/20 rounded-xl">

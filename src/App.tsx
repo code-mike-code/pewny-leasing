@@ -14,7 +14,7 @@ import { ScrollToTop } from '@/components/ScrollToTop'
 function App() {
   return (
     <LanguageProvider>
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_relativeSplatPath: true }}>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />

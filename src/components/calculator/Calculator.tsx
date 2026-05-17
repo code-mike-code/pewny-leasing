@@ -196,9 +196,9 @@ export function Calculator() {
                   <fieldset>
                     <legend className="sr-only">{t('calculator.option.legend')}</legend>
                     <div className="space-y-3">
-                      <div className={`transition-opacity duration-300 ${vehicleCondition !== 'new' ? 'opacity-40 grayscale pointer-events-none' : ''}`}>
+                      <div className={`transition-opacity duration-300 ${!vehicleCondition ? 'opacity-40 grayscale pointer-events-none' : ''}`}>
                         <label className="flex items-start gap-2 cursor-pointer">
-                          <input type="checkbox" checked={searchOption === 'find'} onChange={() => { setSearchOption(searchOption === 'find' ? null : 'find'); setVehicleDetails(''); }} disabled={vehicleCondition !== 'new'} className="w-4 h-4 mt-1 accent-primary" />
+                          <input type="checkbox" checked={searchOption === 'find'} onChange={() => { setSearchOption(searchOption === 'find' ? null : 'find'); setVehicleDetails(''); }} disabled={!vehicleCondition} className="w-4 h-4 mt-1 accent-primary" />
                           <div className="flex-1">
                             <span className="font-bold text-sm block">{t('calculator.option.find')}</span>
                             {searchOption === 'find' && (
@@ -207,9 +207,9 @@ export function Calculator() {
                           </div>
                         </label>
                       </div>
-                      <div className={`transition-opacity duration-300 ${vehicleCondition !== 'used' ? 'opacity-40 grayscale pointer-events-none' : ''}`}>
+                      <div className={`transition-opacity duration-300 ${!vehicleCondition ? 'opacity-40 grayscale pointer-events-none' : ''}`}>
                         <label className="flex items-start gap-2 cursor-pointer">
-                          <input type="checkbox" checked={searchOption === 'have'} onChange={() => { setSearchOption(searchOption === 'have' ? null : 'have'); setVehicleDetails(''); }} disabled={vehicleCondition !== 'used'} className="w-4 h-4 mt-1 accent-primary" />
+                          <input type="checkbox" checked={searchOption === 'have'} onChange={() => { setSearchOption(searchOption === 'have' ? null : 'have'); setVehicleDetails(''); }} disabled={!vehicleCondition} className="w-4 h-4 mt-1 accent-primary" />
                           <div className="flex-1">
                             <span className="font-bold text-sm block">{t('calculator.option.have')}</span>
                             {searchOption === 'have' && (
@@ -236,55 +236,6 @@ export function Calculator() {
 
             {step === 3 && (
               <div className="animate-fade-in h-full">
-                {formStatus !== 'success' && (
-                  <div className="flex items-center gap-4 mb-4 pt-1 border-b border-gray-50 pb-3">
-                    <label className="flex items-center gap-2 cursor-pointer group flex-shrink-0">
-                      <div className="relative flex items-center">
-                        <input
-                          type="checkbox"
-                          checked={wantsCashback}
-                          onChange={(e) => {
-                            setWantsCashback(e.target.checked);
-                            if (e.target.checked && !meetingType) setMeetingType('online');
-                            if (!e.target.checked) setMeetingType(null);
-                          }}
-                          className="w-4 h-4 accent-primary"
-                        />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="font-black text-[11px] uppercase italic text-navy leading-none">{t('calculator.cashback.title')}</span>
-                        <span className="text-[9px] text-gray-400 font-bold leading-none mt-0.5 whitespace-nowrap">{t('calculator.cashback.subtitle')}</span>
-                      </div>
-                    </label>
-
-                    <div className={cn(
-                      "flex items-center gap-4 transition-all duration-300",
-                      wantsCashback ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 pointer-events-none"
-                    )}>
-                      <label className="flex items-center gap-2 cursor-pointer">
-                        <input
-                          type="radio"
-                          name="meeting"
-                          checked={meetingType === 'online'}
-                          onChange={() => setMeetingType('online')}
-                          className="w-3.5 h-3.5 accent-primary"
-                        />
-                        <span className={cn("text-[10px] font-black uppercase tracking-wider", meetingType === 'online' ? "text-primary" : "text-gray-400")}>{t('calculator.meeting.online')}</span>
-                      </label>
-                      <label className="flex items-center gap-2 cursor-pointer">
-                        <input
-                          type="radio"
-                          name="meeting"
-                          checked={meetingType === 'in_person'}
-                          onChange={() => setMeetingType('in_person')}
-                          className="w-3.5 h-3.5 accent-primary"
-                        />
-                        <span className={cn("text-[10px] font-black uppercase tracking-wider", meetingType === 'in_person' ? "text-primary" : "text-gray-400")}>{t('calculator.meeting.inPerson')}</span>
-                      </label>
-                    </div>
-                  </div>
-                )}
-
                 <InquiryForm
                   ref={formRef}
                   variant="compact"
@@ -292,6 +243,51 @@ export function Calculator() {
                   hideSubmit={true}
                   onStatusChange={setFormStatus}
                   onSuccess={() => {}}
+                  beforeGdpr={
+                    <div className="flex items-center gap-4">
+                      <label className="flex items-center gap-2 cursor-pointer group flex-shrink-0">
+                        <div className="relative">
+                          <input
+                            type="checkbox"
+                            checked={wantsCashback}
+                            onChange={(e) => {
+                              setWantsCashback(e.target.checked);
+                              if (e.target.checked && !meetingType) setMeetingType('online');
+                              if (!e.target.checked) setMeetingType(null);
+                            }}
+                            className="sr-only"
+                          />
+                          <div className={cn(
+                            "w-5 h-5 border-2 transition-all duration-300 flex items-center justify-center shape-rhombus-checkbox",
+                            wantsCashback ? "border-primary bg-primary" : "border-navy/20 group-hover:border-primary/50"
+                          )}>
+                            {wantsCashback && (
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" className="w-3 h-3 text-navy">
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                            )}
+                          </div>
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="font-black text-[11px] uppercase italic text-navy leading-none">{t('calculator.cashback.title')}</span>
+                          <span className="text-[9px] text-gray-400 font-bold leading-none mt-0.5 whitespace-nowrap">{t('calculator.cashback.subtitle')}</span>
+                        </div>
+                      </label>
+                      <div className={cn(
+                        "flex items-center gap-4 transition-all duration-300",
+                        wantsCashback ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 pointer-events-none"
+                      )}>
+                        <label className="flex items-center gap-2 cursor-pointer">
+                          <input type="radio" name="meeting" checked={meetingType === 'online'} onChange={() => setMeetingType('online')} className="w-3.5 h-3.5 accent-primary" />
+                          <span className={cn("text-[10px] font-black uppercase tracking-wider", meetingType === 'online' ? "text-primary" : "text-gray-400")}>{t('calculator.meeting.online')}</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer">
+                          <input type="radio" name="meeting" checked={meetingType === 'in_person'} onChange={() => setMeetingType('in_person')} className="w-3.5 h-3.5 accent-primary" />
+                          <span className={cn("text-[10px] font-black uppercase tracking-wider", meetingType === 'in_person' ? "text-primary" : "text-gray-400")}>{t('calculator.meeting.inPerson')}</span>
+                        </label>
+                      </div>
+                    </div>
+                  }
                   contextData={{
                     calculatorType,
                     financingObject: buildCalcFinancingObject({ activeTab: calculatorType === 'vehicle' ? (vehicleCondition ?? 'new') : 'other', value, contribution, buyout, period, vehicleDetails, financingObject }),

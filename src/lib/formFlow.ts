@@ -24,8 +24,8 @@ export interface CalcSectionData {
 export function isHeroCalcStep2Disabled(
   calculatorType: 'vehicle' | 'other',
   vehicleCondition: 'new' | 'used' | null,
-  searchOption: 'find' | 'have' | null,
-  vehicleDetails: string,
+  _searchOption: 'find' | 'have' | null,
+  _vehicleDetails: string,
   financingObject: string,
 ): boolean {
   if (calculatorType === 'other') {

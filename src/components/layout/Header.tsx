@@ -9,12 +9,21 @@ export function Header() {
   const { t, language, setLanguage } = useLanguage()
   const phone = t('contact.info.phone')
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [topBarVisible, setTopBarVisible] = useState(true)
   const navigate = useNavigate()
   const { pathname } = useLocation()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
+    let lastY = window.scrollY
+    const handleScroll = () => {
+      const currentY = window.scrollY
+      if (currentY < 10) {
+        setTopBarVisible(true)
+      } else {
+        setTopBarVisible(currentY < lastY)
+      }
+      lastY = currentY
+    }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -33,7 +42,7 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Top Bar */}
       <div className={`bg-primary text-dark font-medium text-sm flex justify-end items-center z-50 overflow-hidden transition-all duration-300 ease-in-out ${
-        scrolled ? 'h-10 opacity-100' : 'h-0 opacity-0 lg:h-10 lg:opacity-100'
+        topBarVisible ? 'h-10 opacity-100' : 'h-0 opacity-0'
       }`}>
         <div className="h-full pr-4 lg:pr-[clamp(1rem,3vw,2.5rem)] tracking-widest font-semibold flex items-center">
           <a href={`tel:${phone.replace(/\s/g, '')}`} className="hover-wipe hover-wipe-dark px-6 flex items-center h-full transition-colors ml-[-12px]">
