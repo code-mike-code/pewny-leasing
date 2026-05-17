@@ -117,7 +117,7 @@ export default function FAQ() {
             <Reveal delay={140}>
               <h1 className="text-[clamp(2.8rem,8vw,5.5rem)] font-black text-white leading-none tracking-tighter uppercase italic mb-5">
                 {isPL ? 'Najczęstsze' : 'Frequently'}<br />
-                <span className="text-primary">{isPL ? 'Pytania' : 'Asked Questions'}</span>
+                <span className="text-white">{isPL ? 'Pytania' : 'Asked Questions'}</span>
               </h1>
             </Reveal>
             <Reveal delay={200}>
@@ -228,7 +228,7 @@ export default function FAQ() {
                 <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-3">Pewny Leasing</p>
                 <h2 className="text-4xl lg:text-6xl font-black text-white leading-none tracking-tighter uppercase italic">
                   {isPL ? 'Gotowy na' : 'Ready to'}<br />
-                  <span className="text-primary">{isPL ? 'Finansowanie?' : 'Start?'}</span>
+                  <span className="text-white">{isPL ? 'Finansowanie?' : 'Start?'}</span>
                 </h2>
               </div>
             </Reveal>
