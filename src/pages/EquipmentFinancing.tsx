@@ -86,7 +86,7 @@ export default function EquipmentFinancing() {
               <Reveal delay={100}>
                 <h1 className="text-[clamp(3.5rem,10vw,7rem)] font-black text-white leading-none tracking-tighter uppercase italic mb-5">
                   {t('equipmentFinancing.hero.title')}<br />
-                  <span className="text-primary">{t('equipmentFinancing.hero.titleAccent')}</span>
+                  <span className="text-white">{t('equipmentFinancing.hero.titleAccent')}</span>
                 </h1>
               </Reveal>
               <Reveal delay={180}>
@@ -156,7 +156,7 @@ export default function EquipmentFinancing() {
                 <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.why.badge')}</p>
                 <h2 className="text-4xl lg:text-6xl font-black text-dark leading-none tracking-tighter uppercase italic mb-8">
                   {t('equipmentFinancing.why.title')}<br />
-                  <span className="text-primary">{t('equipmentFinancing.why.titleAccent')}</span>
+                  <span className="text-dark">{t('equipmentFinancing.why.titleAccent')}</span>
                 </h2>
                 <p className="text-gray-500 leading-relaxed mb-6">{t('equipmentFinancing.why.text1')}</p>
                 <p className="text-gray-500 leading-relaxed">{t('equipmentFinancing.why.text2')}</p>
@@ -183,7 +183,7 @@ export default function EquipmentFinancing() {
               <div className="mb-16 lg:mb-20 text-center">
                 <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.sectors.badge')}</p>
                 <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-none tracking-tighter uppercase italic">
-                  {t('equipmentFinancing.sectors.title')} <span className="text-primary">{t('equipmentFinancing.sectors.titleAccent')}</span>
+                  {t('equipmentFinancing.sectors.title')} <span className="text-white">{t('equipmentFinancing.sectors.titleAccent')}</span>
                 </h2>
               </div>
             </Reveal>
@@ -195,7 +195,7 @@ export default function EquipmentFinancing() {
                     <div className="h-14 flex items-end">
                       <img src={SECTOR_ICONS[i]} alt={item.title} className="w-14 h-auto" />
                     </div>
-                    <h4 className="text-lg font-black text-white uppercase italic tracking-tight group-hover:text-primary transition-colors duration-300">
+                    <h4 className="text-lg font-black text-white uppercase italic tracking-tight transition-colors duration-300">
                       {item.title}
                     </h4>
                     <p className="text-gray-500 text-sm leading-relaxed flex-1 group-hover:text-gray-400 transition-colors">
@@ -215,7 +215,7 @@ export default function EquipmentFinancing() {
               <div className="text-center mb-16 lg:mb-20">
                 <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.how.badge')}</p>
                 <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-dark leading-none tracking-tighter uppercase italic">
-                  {t('equipmentFinancing.how.title')} <span className="text-primary">{t('equipmentFinancing.how.titleAccent')}</span>
+                  {t('equipmentFinancing.how.title')} <span className="text-dark">{t('equipmentFinancing.how.titleAccent')}</span>
                 </h2>
               </div>
             </Reveal>
@@ -225,7 +225,7 @@ export default function EquipmentFinancing() {
                 <Reveal key={step.n} delay={i * 100}>
                   <div className="border-2 border-gray-100 p-8 lg:p-10 group transition-all duration-300 h-full flex flex-col border-anim">
                     <span className="text-6xl font-black text-primary/30 leading-none mb-6 block">{step.n}</span>
-                    <h4 className="text-xl font-black text-dark uppercase italic tracking-tight mb-4 group-hover:text-primary transition-colors duration-300">
+                    <h4 className="text-xl font-black text-dark uppercase italic tracking-tight mb-4 transition-colors duration-300">
                       {step.title}
                     </h4>
                     <p className="text-gray-500 text-sm leading-relaxed flex-1">
@@ -246,7 +246,7 @@ export default function EquipmentFinancing() {
                 <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.benefits.badge')}</p>
                 <h2 className="text-4xl lg:text-5xl font-black text-dark leading-none tracking-tighter uppercase italic">
                   {t('equipmentFinancing.benefits.title')}<br />
-                  <span className="text-primary">{t('equipmentFinancing.benefits.titleAccent')}</span>
+                  <span className="text-dark">{t('equipmentFinancing.benefits.titleAccent')}</span>
                 </h2>
               </div>
             </Reveal>
@@ -275,7 +275,7 @@ export default function EquipmentFinancing() {
                 </span>
                 <h2 className="text-4xl lg:text-6xl font-black text-white leading-none tracking-tighter uppercase italic">
                   {t('equipmentFinancing.cta.title')}<br />
-                  <span className="text-primary">{t('equipmentFinancing.cta.titleAccent')}</span>
+                  <span className="text-white">{t('equipmentFinancing.cta.titleAccent')}</span>
                 </h2>
                 <p className="text-gray-400 mt-4 max-w-md text-sm leading-relaxed">{t('equipmentFinancing.cta.subtitle')}</p>
               </div>

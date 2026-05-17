@@ -96,7 +96,7 @@ export default function Discounts() {
               <Reveal delay={100}>
                 <h1 className="text-[clamp(3.5rem,10vw,7rem)] font-black text-white leading-none tracking-tighter uppercase italic mb-5">
                   {t('discounts.hero.title')}<br />
-                  <span className="text-primary">{t('discounts.hero.titleAccent')}</span>
+                  <span className="text-white">{t('discounts.hero.titleAccent')}</span>
                 </h1>
               </Reveal>
               <Reveal delay={180}>
@@ -149,7 +149,7 @@ export default function Discounts() {
                 <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('discounts.brands.badge')}</p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-dark leading-none tracking-tighter uppercase italic mb-6">
                   {t('discounts.brands.title')}<br />
-                  <span className="text-primary">{t('discounts.brands.titleAccent')}</span>
+                  <span className="text-dark">{t('discounts.brands.titleAccent')}</span>
                 </h2>
                 <p className="text-gray-500 font-medium max-w-2xl leading-relaxed">{t('discounts.brands.intro')}</p>
               </div>
@@ -189,7 +189,7 @@ export default function Discounts() {
               <div className="text-center mb-16 lg:mb-20">
                 <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('discounts.how.badge')}</p>
                 <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-none tracking-tighter uppercase italic">
-                  {t('discounts.how.title')} <span className="text-primary">{t('discounts.how.titleAccent')}</span>
+                  {t('discounts.how.title')} <span className="text-white">{t('discounts.how.titleAccent')}</span>
                 </h2>
               </div>
             </Reveal>
@@ -199,7 +199,7 @@ export default function Discounts() {
                 <Reveal key={step.n} delay={i * 100}>
                   <div className="border border-white/5 p-8 lg:p-10 group transition-all duration-500 bg-[#111] h-full flex flex-col border-anim">
                     <span className="text-6xl font-black text-primary/20 leading-none mb-6 block">{step.n}</span>
-                    <h4 className="text-xl font-black text-white uppercase italic tracking-tight mb-4 group-hover:text-primary transition-colors duration-300">
+                    <h4 className="text-xl font-black text-white uppercase italic tracking-tight mb-4 transition-colors duration-300">
                       {step.title}
                     </h4>
                     <p className="text-gray-500 text-sm leading-relaxed flex-1 group-hover:text-gray-400 transition-colors">
@@ -220,7 +220,7 @@ export default function Discounts() {
                 <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('discounts.benefits.badge')}</p>
                 <h2 className="text-4xl lg:text-5xl font-black text-dark leading-none tracking-tighter uppercase italic">
                   {t('discounts.benefits.title')}<br />
-                  <span className="text-primary">{t('discounts.benefits.titleAccent')}</span>
+                  <span className="text-dark">{t('discounts.benefits.titleAccent')}</span>
                 </h2>
               </div>
             </Reveal>
@@ -249,7 +249,7 @@ export default function Discounts() {
                 </span>
                 <h2 className="text-4xl lg:text-6xl font-black text-white leading-none tracking-tighter uppercase italic">
                   {t('discounts.cta.title')}<br />
-                  <span className="text-primary">{t('discounts.cta.titleAccent')}</span>
+                  <span className="text-white">{t('discounts.cta.titleAccent')}</span>
                 </h2>
                 <p className="text-gray-400 mt-4 max-w-md text-sm leading-relaxed">{t('discounts.cta.subtitle')}</p>
               </div>

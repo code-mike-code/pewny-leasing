@@ -4,6 +4,8 @@ import { Calculator } from '@/components/calculator/Calculator'
 import { useLanguage } from '@/hooks/useLanguage'
 import posterImg from '@/assets/img/poster.webp'
 
+const PHONE = '+48535454858'
+
 export function HeroSection() {
   const { t } = useLanguage()
   const [isDesktop, setIsDesktop] = useState(false)
@@ -47,7 +49,7 @@ export function HeroSection() {
               <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">Pewny Leasing</p>
               <h1 className="text-[clamp(2.5rem,10vw,3.5rem)] md:text-[clamp(4rem,10vw,5.5rem)] lg:text-[clamp(3.5rem,6vw,5.5rem)] font-black text-white leading-[0.9] tracking-tighter uppercase italic mb-8 transition-all duration-300">
                 <span className="block">{t('hero.title').split(' ')[0]}</span>
-                <span className="block text-primary italic">{t('hero.title').split(' ').slice(1).join(' ')}</span>
+                <span className="block text-white italic">{t('hero.title').split(' ').slice(1).join(' ')}</span>
               </h1>
 
               <p className="text-gray-300 font-medium text-sm md:text-lg max-w-xl mb-10 leading-relaxed">
@@ -56,7 +58,7 @@ export function HeroSection() {
 
               {/* CTA widoczne tylko na desktop */}
               <div className="hidden lg:flex flex-row gap-4">
-                <HeroCTAButton href="#kontakt" label={t('hero.ctaPrimary').toUpperCase()} />
+                <HeroCTAButton href={`tel:${PHONE}`} label={t('hero.ctaPrimary').toUpperCase()} />
                 <HeroCTAButton href="/discounts" label={t('hero.ctaSecondary').toUpperCase()} />
               </div>
             </div>
@@ -69,7 +71,7 @@ export function HeroSection() {
 
               {/* CTA widoczne tylko na mobile i tablet (pod kalkulatorem) */}
               <div className="flex lg:hidden flex-col sm:flex-row gap-4 w-full max-w-lg md:max-w-2xl justify-center">
-                <HeroCTAButton href="#kontakt" label={t('hero.ctaPrimary').toUpperCase()} />
+                <HeroCTAButton href={`tel:${PHONE}`} label={t('hero.ctaPrimary').toUpperCase()} />
                 <HeroCTAButton href="/discounts" label={t('hero.ctaSecondary').toUpperCase()} />
               </div>
             </div>

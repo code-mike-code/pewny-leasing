@@ -26,7 +26,7 @@ export function KnowledgeSection() {
               </span>
 
               <h3 className="text-3xl lg:text-5xl font-black text-navy leading-[1] tracking-tighter mb-6 uppercase italic">
-                {t('knowledge.faq.title')} <span className="text-primary italic">{t('knowledge.faq.titleAccent')}</span>
+                {t('knowledge.faq.title')} <span className="text-navy italic">{t('knowledge.faq.titleAccent')}</span>
               </h3>
 
               <p className="text-gray-500 font-medium text-sm lg:text-base leading-relaxed mb-8 max-w-xl">
@@ -61,7 +61,7 @@ export function KnowledgeSection() {
                 <Coins size={24} strokeWidth={2} />
               </div>
               <h3 className="text-2xl lg:text-3xl font-black text-navy tracking-tight mb-4 uppercase italic">
-                {t('knowledge.cashback.title')} <span className="text-primary italic">{t('knowledge.cashback.titleAccent')}</span>
+                {t('knowledge.cashback.title')} <span className="text-navy italic">{t('knowledge.cashback.titleAccent')}</span>
               </h3>
               <p className="text-gray-500 text-sm md:text-base leading-relaxed">
                 {t('knowledge.cashback.description')}

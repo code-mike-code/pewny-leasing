@@ -198,7 +198,7 @@ export function Calculator() {
                     <div className="space-y-3">
                       <div className={`transition-opacity duration-300 ${vehicleCondition !== 'new' ? 'opacity-40 grayscale pointer-events-none' : ''}`}>
                         <label className="flex items-start gap-2 cursor-pointer">
-                          <input type="radio" name="searchOption" checked={searchOption === 'find'} onChange={() => setSearchOption('find')} disabled={vehicleCondition !== 'new'} className="w-4 h-4 mt-1 accent-primary" />
+                          <input type="checkbox" checked={searchOption === 'find'} onChange={() => { setSearchOption(searchOption === 'find' ? null : 'find'); setVehicleDetails(''); }} disabled={vehicleCondition !== 'new'} className="w-4 h-4 mt-1 accent-primary" />
                           <div className="flex-1">
                             <span className="font-bold text-sm block">{t('calculator.option.find')}</span>
                             {searchOption === 'find' && (
@@ -209,7 +209,7 @@ export function Calculator() {
                       </div>
                       <div className={`transition-opacity duration-300 ${vehicleCondition !== 'used' ? 'opacity-40 grayscale pointer-events-none' : ''}`}>
                         <label className="flex items-start gap-2 cursor-pointer">
-                          <input type="radio" name="searchOption" checked={searchOption === 'have'} onChange={() => setSearchOption('have')} disabled={vehicleCondition !== 'used'} className="w-4 h-4 mt-1 accent-primary" />
+                          <input type="checkbox" checked={searchOption === 'have'} onChange={() => { setSearchOption(searchOption === 'have' ? null : 'have'); setVehicleDetails(''); }} disabled={vehicleCondition !== 'used'} className="w-4 h-4 mt-1 accent-primary" />
                           <div className="flex-1">
                             <span className="font-bold text-sm block">{t('calculator.option.have')}</span>
                             {searchOption === 'have' && (

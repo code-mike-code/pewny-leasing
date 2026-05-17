@@ -77,12 +77,12 @@ export function ContactSection() {
           {/* Left: Info */}
           <div className="lg:col-span-5 flex flex-col justify-center">
             <Reveal>
-              <h2 className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">
+              <h2 className="text-xs font-black text-white uppercase tracking-[0.3em] mb-4">
                 {t('nav.contact')}
               </h2>
               <h3 className="text-[clamp(1.8rem,10vw,2.8rem)] md:text-[clamp(2.8rem,8vw,3.8rem)] lg:text-[clamp(2.5rem,5vw,4.5rem)] xl:text-6xl font-black text-white leading-[1] tracking-tighter uppercase italic mb-8">
                 {t('contact.heading')} <br />
-                <span className="text-primary italic">{t('contact.headingAccent')}</span>
+                <span className="text-white italic">{t('contact.headingAccent')}</span>
               </h3>
               <p className="text-gray-400 font-medium text-sm lg:text-base xl:text-lg leading-relaxed mb-12 max-w-md">
                 {t('contact.subheading')}

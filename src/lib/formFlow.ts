@@ -19,7 +19,7 @@ export interface CalcSectionData {
  * Whether the "Next" button in step 2 of the hero calculator (Calculator.tsx) should be disabled.
  *
  * For 'other': requires a non-empty financingObject (min. 4 characters).
- * For 'vehicle': requires vehicleCondition + searchOption + vehicleDetails (min. 2 characters).
+ * For 'vehicle': requires vehicleCondition only; searchOption and vehicleDetails are optional.
  */
 export function isHeroCalcStep2Disabled(
   calculatorType: 'vehicle' | 'other',
@@ -31,7 +31,7 @@ export function isHeroCalcStep2Disabled(
   if (calculatorType === 'other') {
     return financingObject.trim().length < 4
   }
-  return !vehicleCondition || !searchOption || vehicleDetails.trim().length < 2
+  return !vehicleCondition
 }
 
 /**

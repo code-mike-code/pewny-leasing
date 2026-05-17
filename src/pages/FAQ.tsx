@@ -153,7 +153,7 @@ export default function FAQ() {
             {/* sticky label */}
             <Reveal variant="left">
               <div className="lg:sticky lg:top-[100px]">
-                <h2 className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">
+                <h2 className="text-xs font-black text-dark uppercase tracking-[0.3em] mb-4">
                   {isPL ? 'Baza wiedzy' : 'Knowledge base'}
                 </h2>
                 <h3 className="text-4xl lg:text-5xl font-black text-dark leading-none tracking-tighter uppercase italic mb-6">

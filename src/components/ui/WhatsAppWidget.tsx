@@ -1,4 +1,4 @@
-const WA_NUMBER = '48530181372'
+const WA_NUMBER = '48535454858'
 const WA_URL = `https://wa.me/${WA_NUMBER}`
 
 export function WhatsAppWidget() {

@@ -89,7 +89,7 @@ export default function CashBack() {
               <Reveal delay={140}>
                 <h1 className="text-[clamp(3.5rem,10vw,7rem)] font-black text-white leading-none tracking-tighter uppercase italic mb-5">
                   {t('cashBack.hero.title')}<br />
-                  <span className="text-primary">{t('cashBack.hero.titleAccent')}</span>
+                  <span className="text-white">{t('cashBack.hero.titleAccent')}</span>
                 </h1>
               </Reveal>
               <Reveal delay={200}>
@@ -148,7 +148,7 @@ export default function CashBack() {
                 <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('cashBack.what.badge')}</p>
                 <h2 className="text-4xl lg:text-6xl font-black text-dark leading-none tracking-tighter uppercase italic mb-8">
                   {t('cashBack.what.title')}<br />
-                  <span className="text-primary">{t('cashBack.what.titleAccent')}</span>
+                  <span className="text-dark">{t('cashBack.what.titleAccent')}</span>
                 </h2>
                 <p className="text-gray-500 leading-relaxed mb-6">{t('cashBack.what.text1')}</p>
                 <p className="text-gray-500 leading-relaxed">{t('cashBack.what.text2')}</p>
@@ -175,7 +175,7 @@ export default function CashBack() {
               <div className="text-center mb-16 lg:mb-20">
                 <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('cashBack.how.badge')}</p>
                 <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-none tracking-tighter uppercase italic">
-                  {t('cashBack.how.title')} <span className="text-primary">{t('cashBack.how.titleAccent')}</span>
+                  {t('cashBack.how.title')} <span className="text-white">{t('cashBack.how.titleAccent')}</span>
                 </h2>
               </div>
             </Reveal>
@@ -185,7 +185,7 @@ export default function CashBack() {
                 <Reveal key={step.n} delay={i * 100}>
                   <div className="border border-white/5 p-8 lg:p-10 group hover:border-primary/50 transition-all duration-500 bg-[#111] hover:shadow-[0_0_40px_rgba(251,191,36,0.05)] h-full flex flex-col">
                     <span className="text-6xl font-black text-primary/20 leading-none mb-6 block">{step.n}</span>
-                    <h4 className="text-xl font-black text-white uppercase italic tracking-tight mb-4 group-hover:text-primary transition-colors duration-300">
+                    <h4 className="text-xl font-black text-white uppercase italic tracking-tight mb-4 transition-colors duration-300">
                       {step.title}
                     </h4>
                     <p className="text-gray-500 text-sm leading-relaxed flex-1 group-hover:text-gray-400 transition-colors">
@@ -205,7 +205,7 @@ export default function CashBack() {
               <div className="mb-16 lg:mb-20">
                 <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('cashBack.who.badge')}</p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-dark leading-none tracking-tighter uppercase italic">
-                  {t('cashBack.who.title')} <span className="text-primary">{t('cashBack.who.titleAccent')}</span>
+                  {t('cashBack.who.title')} <span className="text-dark">{t('cashBack.who.titleAccent')}</span>
                 </h2>
               </div>
             </Reveal>
@@ -221,7 +221,7 @@ export default function CashBack() {
                       }
                     </div>
                     <div>
-                      <h4 className="text-2xl font-black text-dark uppercase italic tracking-tight mb-3 group-hover:text-primary transition-colors duration-300">
+                      <h4 className="text-2xl font-black text-dark uppercase italic tracking-tight mb-3 transition-colors duration-300">
                         {card.title}
                       </h4>
                       <p className="text-gray-500 text-sm leading-relaxed mb-6">{card.desc}</p>
@@ -249,7 +249,7 @@ export default function CashBack() {
                 <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('cashBack.benefits.badge')}</p>
                 <h2 className="text-4xl lg:text-5xl font-black text-dark leading-none tracking-tighter uppercase italic">
                   {t('cashBack.benefits.title')}<br />
-                  <span className="text-primary">{t('cashBack.benefits.titleAccent')}</span>
+                  <span className="text-dark">{t('cashBack.benefits.titleAccent')}</span>
                 </h2>
               </div>
             </Reveal>
@@ -278,7 +278,7 @@ export default function CashBack() {
                 </span>
                 <h2 className="text-4xl lg:text-6xl font-black text-white leading-none tracking-tighter uppercase italic">
                   {t('cashBack.cta.title')}<br />
-                  <span className="text-primary">{t('cashBack.cta.titleAccent')}</span>
+                  <span className="text-white">{t('cashBack.cta.titleAccent')}</span>
                 </h2>
                 <p className="text-gray-400 mt-4 max-w-md text-sm leading-relaxed">{t('cashBack.cta.subtitle')}</p>
               </div>

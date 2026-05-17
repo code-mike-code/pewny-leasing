@@ -35,10 +35,10 @@ export function OfferSection() {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 lg:mb-24">
           <div className="max-w-3xl">
-            <h2 className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('offer.badge')}</h2>
+            <h2 className="text-xs font-black text-navy uppercase tracking-[0.3em] mb-4">{t('offer.badge')}</h2>
             <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-navy leading-[1.1] tracking-tighter uppercase italic">
               {t('offer.title')} <br className="hidden md:block" />
-              <span className="text-primary">{t('offer.titleAccent')}</span>
+              <span className="text-navy">{t('offer.titleAccent')}</span>
             </h3>
           </div>
           <p className="text-gray-500 font-medium max-w-sm lg:mb-2">
@@ -90,7 +90,7 @@ export function OfferSection() {
               </span>
               <h3 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight uppercase italic">
                 {t('offer.supercar.title')} <br />
-                <span className="text-primary italic">{t('offer.supercar.titleAccent')}</span>
+                <span className="text-white italic">{t('offer.supercar.titleAccent')}</span>
               </h3>
               <p className="text-gray-300 font-medium text-sm md:text-base mb-10 leading-relaxed">
                 {t('offer.supercar.description')}
@@ -107,7 +107,7 @@ export function OfferSection() {
             <div className="bg-gray-50 p-10 md:p-16 flex flex-col justify-center border border-gray-100">
               <h3 className="text-3xl md:text-4xl font-black text-navy mb-6 leading-tight uppercase italic">
                 {t('offer.equipment.title')} <br />
-                <span className="text-primary">{t('offer.equipment.titleAccent')}</span>
+                <span className="text-navy">{t('offer.equipment.titleAccent')}</span>
               </h3>
               <p className="text-gray-500 font-medium mb-8 leading-relaxed">
                 {t('offer.equipment.description')}

@@ -52,9 +52,9 @@ export function BusinessCalculatorSection({ onConfirm }: BusinessCalculatorSecti
 
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16 px-4">
-          <h2 className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('businessCalc.heading')}</h2>
+          <h2 className="text-xs font-black text-navy uppercase tracking-[0.3em] mb-4">{t('businessCalc.heading')}</h2>
           <h3 className="text-[clamp(1.8rem,8vw,2.5rem)] md:text-[clamp(2.5rem,6vw,3.2rem)] lg:text-[clamp(2.2rem,5vw,3.8rem)] xl:text-6xl font-black text-navy leading-[1.1] tracking-tighter uppercase italic">
-            {t('businessCalc.title')} <span className="text-primary italic">{t('businessCalc.titleAccent')}</span>
+            {t('businessCalc.title')} <span className="text-navy italic">{t('businessCalc.titleAccent')}</span>
           </h3>
         </div>
 
@@ -136,10 +136,10 @@ export function BusinessCalculatorSection({ onConfirm }: BusinessCalculatorSecti
 
             {/* Left panel */}
             <div className="bg-gray-50 p-10 lg:p-14 xl:p-20 w-full lg:w-[45%] flex flex-col justify-center border-r border-gray-100">
-              <h4 className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-6">{t('businessCalc.left.badge')}</h4>
+              <h4 className="text-[10px] font-black text-navy uppercase tracking-[0.3em] mb-6">{t('businessCalc.left.badge')}</h4>
               <h3 className="text-[clamp(1.5rem,6vw,2.2rem)] md:text-[clamp(2rem,5vw,2.8rem)] lg:text-[clamp(1.75rem,4vw,3.2rem)] xl:text-5xl font-black text-navy mb-8 tracking-tighter leading-[1] uppercase italic">
                 {t('businessCalc.left.title')} <br/>
-                <span className="text-primary italic">{t('businessCalc.left.titleAccent')}</span>
+                <span className="text-navy italic">{t('businessCalc.left.titleAccent')}</span>
               </h3>
 
               <p className="text-gray-500 font-medium text-sm lg:text-base xl:text-lg leading-relaxed mb-10 max-w-sm">

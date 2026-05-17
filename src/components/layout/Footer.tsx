@@ -1,4 +1,3 @@
-import { Instagram, Facebook, Youtube } from 'lucide-react'
 import { NavLink } from '@/components/NavLink'
 import { useLanguage } from '@/hooks/useLanguage'
 import logoLight from '@/assets/logo/logo-pl-light-removebg.webp'
@@ -11,7 +10,7 @@ export function Footer() {
     <footer className="bg-[#F8FAFC] pt-20 pb-8 overflow-hidden relative flex flex-col justify-between min-h-[400px]">
 
       {/* Główne kolumny */}
-      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[30%_20%_20%_20%] gap-12 lg:gap-8 mb-24 z-10 relative">
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[30%_20%_20%] gap-12 lg:gap-8 mb-24 z-10 relative">
 
         {/* Kolumna 1: Marka */}
         <div className="flex flex-col">
@@ -42,22 +41,6 @@ export function Footer() {
             <li><a href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover-wipe-v hover-wipe-v-yellow px-4 py-2 inline-flex items-center text-sm font-medium transition-colors">{t('footer.company.terms')}</a></li>
             <li><a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover-wipe-v hover-wipe-v-yellow px-4 py-2 inline-flex items-center text-sm font-medium transition-colors">{t('footer.company.privacy')}</a></li>
           </ul>
-        </div>
-
-        {/* Kolumna 4: Social Media */}
-        <div className="flex flex-col">
-          <h4 className="text-navy font-bold text-xs uppercase tracking-widest mb-6">{t('footer.social.heading')}</h4>
-          <div className="flex gap-2">
-            <a href="#" aria-label="Instagram" className="w-12 h-12 bg-white border border-gray-100 flex items-center justify-center text-gray-400 hover-wipe hover-wipe-yellow transition-all">
-              <Instagram size={20} strokeWidth={2} />
-            </a>
-            <a href="#" aria-label="Facebook" className="w-12 h-12 bg-white border border-gray-100 ml-[-8px] flex items-center justify-center text-gray-400 hover-wipe hover-wipe-yellow transition-all">
-              <Facebook size={20} strokeWidth={2} />
-            </a>
-            <a href="#" aria-label="YouTube" className="w-12 h-12 bg-white border border-gray-100 ml-[-8px] flex items-center justify-center text-gray-400 hover-wipe hover-wipe-yellow transition-all">
-              <Youtube size={20} strokeWidth={2} />
-            </a>
-          </div>
         </div>
 
       </div>

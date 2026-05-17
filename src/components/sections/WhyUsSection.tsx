@@ -16,10 +16,10 @@ export function WhyUsSection() {
       <div className="max-w-screen-xl mx-auto px-4 lg:px-8 relative z-10">
 
         <div className="flex flex-col items-center text-center mb-20 px-4">
-          <h2 className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('whyUs.heading')}</h2>
+          <h2 className="text-xs font-black text-white uppercase tracking-[0.3em] mb-4">{t('whyUs.heading')}</h2>
           <h3 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1] tracking-tighter uppercase italic">
             {t('whyUs.title')} <br className="md:hidden" />
-            <span className="text-primary italic">{t('whyUs.titleAccent')}</span>
+            <span className="text-white italic">{t('whyUs.titleAccent')}</span>
           </h3>
         </div>
 

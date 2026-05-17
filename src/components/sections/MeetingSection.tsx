@@ -57,10 +57,10 @@ export function MeetingSection({ calcData }: MeetingSectionProps) {
 
           {/* Left: Meeting choice */}
           <div className="w-full lg:w-1/2 flex flex-col pt-4">
-            <h2 className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4 text-left">{t('meeting.heading')}</h2>
+            <h2 className="text-xs font-black text-navy uppercase tracking-[0.3em] mb-4 text-left">{t('meeting.heading')}</h2>
             <h3 className="text-[clamp(1.8rem,10vw,2.5rem)] md:text-[clamp(2.5rem,8vw,3.5rem)] lg:text-[clamp(2.5rem,7vw,4.5rem)] xl:text-7xl font-black text-navy leading-[1.1] tracking-tighter uppercase italic mb-6">
               {t('meeting.title')} <br className="hidden md:block" />
-              <span className="text-primary italic">{t('meeting.titleAccent')}</span>
+              <span className="text-navy italic">{t('meeting.titleAccent')}</span>
             </h3>
             <p className="text-gray-500 font-medium mb-10 max-w-sm leading-relaxed text-sm md:text-base xl:text-lg">
               {t('meeting.subtitle')}
@@ -113,7 +113,7 @@ export function MeetingSection({ calcData }: MeetingSectionProps) {
           <div className="w-full lg:w-1/2">
             <div className="bg-[#F9FAFB] rounded-[2.5rem] p-10 md:p-12 xl:p-16 shadow-sm border border-gray-100 relative overflow-hidden">
               <h3 className="text-xl font-black text-navy tracking-tight mb-10 uppercase italic">
-                {t('meeting.form.heading')} <span className="text-primary italic">{t('meeting.form.headingAccent')}</span>
+                {t('meeting.form.heading')} <span className="text-navy italic">{t('meeting.form.headingAccent')}</span>
               </h3>
 
               {/* Error: calc data missing */}
