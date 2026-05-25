@@ -177,15 +177,15 @@ export default function Discounts() {
             </div>
 
             <div className="hidden lg:flex items-center justify-center">
-              <div className="relative flex items-center justify-center w-[495px] h-[495px]">
-                <div className="relative w-[346px] h-[346px] flex items-center justify-center">
+              <div className="relative flex items-center justify-center w-[594px] h-[594px]">
+                <div className="relative w-[415px] h-[415px] flex items-center justify-center">
                   {HERO_ICONS.map((icon, i) => (
                     <img
                       key={i}
                       src={icon}
                       alt=""
                       aria-hidden="true"
-                      className="absolute w-[297px] h-auto transition-all duration-700"
+                      className="absolute w-[356px] h-auto transition-all duration-700"
                       style={{
                         opacity: i === activeIcon ? 1 : 0,
                         transform: i === activeIcon ? 'scale(1) translateY(0)' : 'scale(0.85) translateY(12px)',
