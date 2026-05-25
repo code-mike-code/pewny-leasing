@@ -2,6 +2,8 @@
 
 Corporate leasing platform with an interactive lease calculator and lead generation landing page. Built with React 18, TypeScript, Vite and Tailwind CSS.
 
+Pewny Leasing — niezależny broker leasingowy B2B w Polsce. Leasing operacyjny i finansowy, LTR, finansowanie flot i sprzętu specjalistycznego. Współpraca z ponad 12 bankami. Szybka decyzja — nawet tego samego dnia.
+
 ![Pewny Leasing — podgląd strony](src/assets/rwd-mockup-for%20readme.webp)
 
 ## Quick Start
@@ -26,9 +28,11 @@ npm run lint       # ESLint
 | Icons | Lucide React |
 | SEO | react-helmet-async + JSON-LD |
 | Forms | EmailJS |
+| Accordion | Radix UI (`@radix-ui/react-accordion`) |
+| Utilities | clsx + tailwind-merge |
 | Tests | Vitest |
 
-No component library — all UI built from plain HTML + Tailwind.
+No full component library — plain HTML + Tailwind. Radix UI used only for the accessible accordion primitive.
 
 ## Project Structure
 
@@ -39,8 +43,9 @@ src/
 │   ├── forms/            # InquiryForm
 │   ├── layout/           # Header, Footer
 │   ├── modals/           # BookingModal
-│   ├── sections/         # Page sections (Hero, Banner, About, …)
-│   └── ui/               # Atoms: CTAButton, Reveal, MapPopover, …
+│   ├── sections/         # Page sections (Hero, Banner, About, Offer, WhyUs, …)
+│   └── ui/               # Atoms: CTAButton, Reveal, accordion, ImageCarousel,
+│                         #        MapPopover, WaveText, WhatsAppWidget, CookieConsent
 ├── hooks/
 │   ├── useLanguage.tsx   # i18n context + t() translation helper
 │   ├── useScrollReveal.ts
@@ -58,7 +63,8 @@ src/
 │   ├── EquipmentFinancing.tsx
 │   ├── FAQ.tsx
 │   ├── PrivacyPolicy.tsx
-│   └── TermsOfService.tsx
+│   ├── TermsOfService.tsx
+│   └── NotFound.tsx
 └── translations/
     ├── pl.ts             # Polish strings
     └── en.ts             # English strings
@@ -79,7 +85,7 @@ t(`equipmentFinancing.sectors.items.${i}.title`)  // array item
 - **Brand colours**: dark background (`#050505` / `#0A0A0A`), warm yellow CTA (`#F5A623` → Tailwind `primary`)
 - **Typography**: heavy italic uppercase headings (`font-black italic uppercase`), legible body text
 - **Shapes**: `shape-rhombus` utility for clipped rhombus corners
-- **Animations**: `Reveal` component (Intersection Observer fade-in), CSS marquee in `BannerSection`
+- **Animations**: `Reveal` component (Intersection Observer fade-in), CSS marquee in `BannerSection`, stacked accordion with center-expand animation
 - **Motion safety**: `prefers-reduced-motion` respected in all CSS animations
 
 ## Accessibility
