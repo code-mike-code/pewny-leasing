@@ -9,36 +9,112 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { Reveal } from '@/components/ui/Reveal'
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
 import mercedesLogo from '@/assets/partners-logos/mercedes-logo-removebg.webp'
 import bmwLogo from '@/assets/partners-logos/bmw-logo-removebg.webp'
 import toyotaLogo from '@/assets/partners-logos/toyota-logo-removebg.webp'
 import bydLogo from '@/assets/partners-logos/byd-logo.webp'
+import landRoverLogo from '@/assets/partners-logos/land-rover-logo-removebg.webp'
+import audiLogo from '@/assets/partners-logos/audi-logo-removebg.webp'
+import volkswagenLogo from '@/assets/partners-logos/volkswagen-logo-removebg.webp'
+import lamborghiniLogo from '@/assets/partners-logos/lamborghini-logo-removebg.webp'
+import ferrariLogo from '@/assets/partners-logos/ferrari-logo-removebg.webp'
+import teslaLogo from '@/assets/partners-logos/tesla-logo-removebg.webp'
+import volvoLogo from '@/assets/partners-logos/volvo-logo-removebg.webp'
+import fordLogo from '@/assets/partners-logos/ford-logo-removebg.webp'
+import jetourLogo from '@/assets/partners-logos/jetour-logo-removebg.webp'
+import jaguarLogo from '@/assets/partners-logos/jaguar-logo-removebg.webp'
+import hongqiLogo from '@/assets/partners-logos/hongqi-logo.webp'
+import kiaLogo from '@/assets/partners-logos/kia-logo-removebg.webp'
+import porscheLogo from '@/assets/partners-logos/porsche-logo-removebg.webp'
+import bentleyLogo from '@/assets/partners-logos/bentley-logo-removebg.webp'
+import astonMartinLogo from '@/assets/partners-logos/aston-martin-logo-removebg.webp'
+import jeepLogo from '@/assets/partners-logos/jeep-logo-removebg.webp'
+import maseratiLogo from '@/assets/partners-logos/maserati-logo-removebg.webp'
+import hondaLogo from '@/assets/partners-logos/honda-logo-removebg.webp'
+import mazdaLogo from '@/assets/partners-logos/mazda-logo-removebg.webp'
+import mitsubishiLogo from '@/assets/partners-logos/mitsubishi-logo-removebg.webp'
+import nissanLogo from '@/assets/partners-logos/nissan-logo-removebg.webp'
+import suzukiLogo from '@/assets/partners-logos/suzuki-logo-removebg.webp'
+import lexusLogo from '@/assets/partners-logos/lexus-logo-removebg.webp'
 
 const HERO_ICONS = [SaleIcon, BmwYellowIcon, AutoUsedIcon]
 
-// logo keys for brands.items — non-translatable UI logic
-const BRAND_LOGOS = ['mercedes', 'bmw', 'toyota', 'byd'] as const
+const BRAND_LOGOS = [
+  'mercedes', 'bmw', 'toyota', 'byd',
+  'landRover', 'audi', 'volkswagen', 'lamborghini', 'ferrari', 'tesla',
+  'volvo', 'ford', 'jetour', 'jaguar', 'hongqi', 'kia', 'porsche',
+  'bentley', 'astonMartin', 'jeep', 'maserati', 'honda', 'mazda',
+  'mitsubishi', 'nissan', 'suzuki', 'lexus',
+] as const
 type BrandLogoKey = typeof BRAND_LOGOS[number]
 
 const LOGO_MAP: Record<BrandLogoKey, { src: string; alt: string }> = {
-  mercedes: { src: mercedesLogo, alt: 'Mercedes-Benz' },
-  bmw:      { src: bmwLogo,      alt: 'BMW' },
-  toyota:   { src: toyotaLogo,   alt: 'Toyota' },
-  byd:      { src: bydLogo,      alt: 'BYD' },
+  mercedes:    { src: mercedesLogo,    alt: 'Mercedes-Benz' },
+  bmw:         { src: bmwLogo,         alt: 'BMW' },
+  toyota:      { src: toyotaLogo,      alt: 'Toyota' },
+  byd:         { src: bydLogo,         alt: 'BYD' },
+  landRover:   { src: landRoverLogo,   alt: 'Land Rover' },
+  audi:        { src: audiLogo,        alt: 'Audi' },
+  volkswagen:  { src: volkswagenLogo,  alt: 'Volkswagen' },
+  lamborghini: { src: lamborghiniLogo, alt: 'Lamborghini' },
+  ferrari:     { src: ferrariLogo,     alt: 'Ferrari' },
+  tesla:       { src: teslaLogo,       alt: 'Tesla' },
+  volvo:       { src: volvoLogo,       alt: 'Volvo' },
+  ford:        { src: fordLogo,        alt: 'Ford' },
+  jetour:      { src: jetourLogo,      alt: 'Jetour' },
+  jaguar:      { src: jaguarLogo,      alt: 'Jaguar' },
+  hongqi:      { src: hongqiLogo,      alt: 'Hongqi' },
+  kia:         { src: kiaLogo,         alt: 'Kia' },
+  porsche:     { src: porscheLogo,     alt: 'Porsche' },
+  bentley:     { src: bentleyLogo,     alt: 'Bentley' },
+  astonMartin: { src: astonMartinLogo, alt: 'Aston Martin' },
+  jeep:        { src: jeepLogo,        alt: 'Jeep' },
+  maserati:    { src: maseratiLogo,    alt: 'Maserati' },
+  honda:       { src: hondaLogo,       alt: 'Honda' },
+  mazda:       { src: mazdaLogo,       alt: 'Mazda' },
+  mitsubishi:  { src: mitsubishiLogo,  alt: 'Mitsubishi' },
+  nissan:      { src: nissanLogo,      alt: 'Nissan' },
+  suzuki:      { src: suzukiLogo,      alt: 'Suzuki' },
+  lexus:       { src: lexusLogo,       alt: 'Lexus' },
 }
 
-// ─── Brand logo helper ────────────────────────────────────────────────────────
+type BrandItem = {
+  logo: BrandLogoKey
+  brand: string
+  desc: string
+  models: string[]
+  note: string
+}
 
 function BrandLogo({ name }: { name: BrandLogoKey }) {
   const { src, alt } = LOGO_MAP[name]
-  return <img src={src} alt={alt} className="h-10 w-auto object-contain opacity-80" />
+  return <img src={src} alt={alt} className="h-8 w-auto object-contain opacity-80 flex-shrink-0" />
 }
 
-// ─── Component ────────────────────────────────────────────────────────────────
+function BrandContent({ item }: { item: BrandItem }) {
+  return (
+    <div className="flex flex-col gap-4">
+      <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+      <ul className="space-y-2">
+        {item.models.map(model => (
+          <li key={model} className="flex items-center gap-3 text-sm text-gray-600">
+            <ArrowRight size={14} strokeWidth={3} className="text-primary flex-shrink-0" />
+            {model}
+          </li>
+        ))}
+      </ul>
+      <p className="text-xs font-bold text-primary uppercase tracking-wider border-t border-gray-100 pt-4">
+        {item.note}
+      </p>
+    </div>
+  )
+}
 
 export default function Discounts() {
   const { t } = useLanguage()
   const [activeIcon, setActiveIcon] = useState(0)
+  const [mobileActive, setMobileActive] = useState<number | null>(null)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,7 +123,7 @@ export default function Discounts() {
     return () => clearInterval(interval)
   }, [])
 
-  const brandItems = BRAND_LOGOS.map((logo, i) => ({
+  const brandItems: BrandItem[] = BRAND_LOGOS.map((logo, i) => ({
     logo,
     brand:  t(`discounts.brands.items.${i}.brand`),
     desc:   t(`discounts.brands.items.${i}.desc`),
@@ -106,7 +182,6 @@ export default function Discounts() {
               </Reveal>
             </div>
 
-            {/* Decorative — cycling icons */}
             <div className="hidden lg:flex items-center justify-center">
               <div className="relative flex items-center justify-center w-[320px] h-[320px]">
                 <div className="relative w-56 h-56 flex items-center justify-center">
@@ -155,29 +230,68 @@ export default function Discounts() {
               </div>
             </Reveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {brandItems.map((item, i) => (
-                <Reveal key={item.brand} delay={i * 80}>
-                  <div className="border-2 border-gray-100 p-8 lg:p-10 flex flex-col gap-5 group transition-all duration-300 h-full border-anim">
-                    <div className="flex items-center gap-4">
-                      <h4 className="text-2xl font-black text-dark uppercase italic tracking-tight">{item.brand}</h4>
-                      <BrandLogo name={item.logo} />
-                    </div>
-                    <p className="text-gray-500 text-sm leading-relaxed flex-1">{item.desc}</p>
-                    <ul className="space-y-2">
-                      {item.models.map(model => (
-                        <li key={model} className="flex items-center gap-3 text-sm text-gray-600">
-                          <ArrowRight size={14} strokeWidth={3} className="text-primary flex-shrink-0" />
-                          {model}
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="text-xs font-bold text-primary uppercase tracking-wider border-t border-gray-100 pt-4 mt-2">
-                      {item.note}
-                    </p>
+            {/* Desktop — vertical accordion */}
+            <Reveal delay={100}>
+              <div className="hidden lg:block">
+                <Accordion type="single" collapsible>
+                  {brandItems.map((item, i) => (
+                    <AccordionItem
+                      key={item.brand}
+                      value={String(i)}
+                      className="border-gray-100 relative group"
+                    >
+                      <span
+                        className="absolute left-0 top-0 h-full w-0.5 bg-primary opacity-0 group-data-[state=open]:opacity-100 transition-opacity duration-300 pointer-events-none z-10"
+                        aria-hidden="true"
+                      />
+                      <AccordionTrigger className="py-5 pl-4 hover:no-underline">
+                        <div className="flex items-center gap-4">
+                          <BrandLogo name={item.logo} />
+                          <span className="text-lg font-black text-dark uppercase italic tracking-tight">{item.brand}</span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="pl-4">
+                        <BrandContent item={item} />
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            </Reveal>
+
+            {/* Mobile — horizontal scrollable tabs */}
+            <div className="lg:hidden">
+              <div className="overflow-x-auto pb-3 -mx-4 px-4 sm:-mx-8 sm:px-8">
+                <div className="flex gap-2 w-max">
+                  {brandItems.map((item, i) => (
+                    <button
+                      key={item.brand}
+                      type="button"
+                      aria-expanded={mobileActive === i}
+                      aria-controls="brand-mobile-panel"
+                      onClick={() => setMobileActive(mobileActive === i ? null : i)}
+                      className={`px-4 py-2 text-xs font-black uppercase tracking-wide border-2 whitespace-nowrap transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+                        mobileActive === i
+                          ? 'border-primary text-primary bg-primary/5'
+                          : 'border-gray-200 text-gray-500 bg-white hover:border-gray-300'
+                      }`}
+                    >
+                      {item.brand}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              {mobileActive !== null && (
+                <div id="brand-mobile-panel" role="region" className="mt-4 border-2 border-gray-100 p-6 border-anim-active">
+                  <div className="flex items-center gap-4 mb-5">
+                    <span className="text-xl font-black text-dark uppercase italic tracking-tight">
+                      {brandItems[mobileActive].brand}
+                    </span>
+                    <BrandLogo name={brandItems[mobileActive].logo} />
                   </div>
-                </Reveal>
-              ))}
+                  <BrandContent item={brandItems[mobileActive]} />
+                </div>
+              )}
             </div>
           </div>
         </section>
