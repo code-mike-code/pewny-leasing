@@ -46,7 +46,7 @@ export function HeroSection() {
 
             {/* Left Side: Headings & Buttons */}
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left order-1 lg:order-1">
-              <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">Pewny Leasing</p>
+              <p className="hidden lg:block text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">Pewny Leasing</p>
               <h1 className="text-[clamp(2.5rem,10vw,3.5rem)] md:text-[clamp(4rem,10vw,5.5rem)] lg:text-[clamp(3.5rem,6vw,5.5rem)] font-black text-white leading-[0.9] tracking-tighter uppercase italic mb-8 transition-all duration-300">
                 <span className="block">{t('hero.title').split(' ')[0]}</span>
                 <span className="block text-white italic">{t('hero.title').split(' ').slice(1).join(' ')}</span>
