@@ -9,7 +9,6 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { Reveal } from '@/components/ui/Reveal'
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
 import mercedesLogo from '@/assets/partners-logos/mercedes-logo-removebg.webp'
 import bmwLogo from '@/assets/partners-logos/bmw-logo-removebg.webp'
 import toyotaLogo from '@/assets/partners-logos/toyota-logo-removebg.webp'
@@ -87,11 +86,6 @@ type BrandItem = {
   note: string
 }
 
-function BrandLogo({ name }: { name: BrandLogoKey }) {
-  const { src, alt } = LOGO_MAP[name]
-  return <img src={src} alt={alt} className="h-8 w-auto object-contain opacity-80 flex-shrink-0" />
-}
-
 function BrandContent({ item }: { item: BrandItem }) {
   return (
     <div className="flex flex-col gap-4">
@@ -114,7 +108,7 @@ function BrandContent({ item }: { item: BrandItem }) {
 export default function Discounts() {
   const { t } = useLanguage()
   const [activeIcon, setActiveIcon] = useState(0)
-  const [mobileActive, setMobileActive] = useState<number | null>(null)
+  const [activeIndex, setActiveIndex] = useState<number>(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -183,15 +177,15 @@ export default function Discounts() {
             </div>
 
             <div className="hidden lg:flex items-center justify-center">
-              <div className="relative flex items-center justify-center w-[320px] h-[320px]">
-                <div className="relative w-56 h-56 flex items-center justify-center">
+              <div className="relative flex items-center justify-center w-[495px] h-[495px]">
+                <div className="relative w-[346px] h-[346px] flex items-center justify-center">
                   {HERO_ICONS.map((icon, i) => (
                     <img
                       key={i}
                       src={icon}
                       alt=""
                       aria-hidden="true"
-                      className="absolute w-48 h-auto transition-all duration-700"
+                      className="absolute w-[297px] h-auto transition-all duration-700"
                       style={{
                         opacity: i === activeIcon ? 1 : 0,
                         transform: i === activeIcon ? 'scale(1) translateY(0)' : 'scale(0.85) translateY(12px)',
@@ -230,36 +224,56 @@ export default function Discounts() {
               </div>
             </Reveal>
 
-            {/* Desktop — vertical accordion */}
+            {/* Desktop — sidebar + content panel */}
             <Reveal delay={100}>
-              <div className="hidden lg:block">
-                <Accordion type="single" collapsible>
+              <div className="hidden lg:grid grid-cols-[260px_1fr] border border-gray-100">
+                {/* Left: brand list */}
+                <div className="border-r border-gray-100 overflow-y-auto max-h-[680px]">
                   {brandItems.map((item, i) => (
-                    <AccordionItem
+                    <button
                       key={item.brand}
-                      value={String(i)}
-                      className="border border-gray-100 relative group -mt-px first:mt-0 bg-white transition-all duration-200 hover:z-10 hover:-translate-y-0.5 hover:shadow-sm"
+                      type="button"
+                      onClick={() => setActiveIndex(i)}
+                      className={`w-full flex items-center gap-3 px-4 py-3 text-left border-b border-gray-50 transition-all duration-150 group ${
+                        activeIndex === i
+                          ? 'bg-primary/5 border-l-4 border-l-primary'
+                          : 'border-l-4 border-l-transparent hover:bg-gray-50'
+                      }`}
                     >
-                      <span
-                        className="absolute left-0 top-0 h-full w-0.5 bg-primary opacity-0 group-data-[state=open]:opacity-100 transition-opacity duration-300 pointer-events-none z-10"
-                        aria-hidden="true"
-                      />
-                      <AccordionTrigger className="py-5 pl-4 hover:no-underline">
-                        <div className="flex items-center gap-4">
-                          <BrandLogo name={item.logo} />
-                          <span className="text-lg font-black text-dark uppercase italic tracking-tight">{item.brand}</span>
-                        </div>
-                      </AccordionTrigger>
-                      <AccordionContent className="pl-4">
-                        <BrandContent item={item} />
-                      </AccordionContent>
-                    </AccordionItem>
+                      <div className="w-9 flex-shrink-0 flex items-center justify-center">
+                        <img
+                          src={LOGO_MAP[item.logo].src}
+                          alt={LOGO_MAP[item.logo].alt}
+                          className="h-6 w-auto object-contain opacity-60"
+                        />
+                      </div>
+                      <span className={`text-xs font-black uppercase tracking-wide transition-colors duration-150 ${
+                        activeIndex === i ? 'text-dark' : 'text-gray-400 group-hover:text-dark'
+                      }`}>
+                        {item.brand}
+                      </span>
+                    </button>
                   ))}
-                </Accordion>
+                </div>
+
+                {/* Right: content panel */}
+                <div className="p-10 lg:p-14">
+                  <div className="flex items-center gap-6 mb-8 pb-8 border-b border-gray-100">
+                    <img
+                      src={LOGO_MAP[brandItems[activeIndex].logo].src}
+                      alt={LOGO_MAP[brandItems[activeIndex].logo].alt}
+                      className="h-14 w-auto object-contain opacity-80 flex-shrink-0"
+                    />
+                    <h3 className="text-3xl lg:text-4xl font-black text-dark uppercase italic tracking-tighter leading-none">
+                      {brandItems[activeIndex].brand}
+                    </h3>
+                  </div>
+                  <BrandContent item={brandItems[activeIndex]} />
+                </div>
               </div>
             </Reveal>
 
-            {/* Mobile — horizontal scrollable tabs */}
+            {/* Mobile — horizontal tabs + content panel */}
             <div className="lg:hidden">
               <div className="overflow-x-auto pb-3 -mx-4 px-4 sm:-mx-8 sm:px-8">
                 <div className="flex gap-2 w-max">
@@ -267,11 +281,11 @@ export default function Discounts() {
                     <button
                       key={item.brand}
                       type="button"
-                      aria-expanded={mobileActive === i}
+                      aria-expanded={activeIndex === i}
                       aria-controls="brand-mobile-panel"
-                      onClick={() => setMobileActive(mobileActive === i ? null : i)}
+                      onClick={() => setActiveIndex(i)}
                       className={`px-4 py-2 text-xs font-black uppercase tracking-wide border-2 whitespace-nowrap transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
-                        mobileActive === i
+                        activeIndex === i
                           ? 'border-primary text-primary bg-primary/5'
                           : 'border-gray-200 text-gray-500 bg-white hover:border-gray-300'
                       }`}
@@ -281,17 +295,19 @@ export default function Discounts() {
                   ))}
                 </div>
               </div>
-              {mobileActive !== null && (
-                <div id="brand-mobile-panel" role="region" className="mt-4 border-2 border-gray-100 p-6 border-anim-active">
-                  <div className="flex items-center gap-4 mb-5">
-                    <span className="text-xl font-black text-dark uppercase italic tracking-tight">
-                      {brandItems[mobileActive].brand}
-                    </span>
-                    <BrandLogo name={brandItems[mobileActive].logo} />
-                  </div>
-                  <BrandContent item={brandItems[mobileActive]} />
+              <div id="brand-mobile-panel" role="region" className="mt-4 border border-gray-100 p-6">
+                <div className="flex items-center gap-4 mb-5">
+                  <img
+                    src={LOGO_MAP[brandItems[activeIndex].logo].src}
+                    alt={LOGO_MAP[brandItems[activeIndex].logo].alt}
+                    className="h-8 w-auto object-contain opacity-80"
+                  />
+                  <span className="text-xl font-black text-dark uppercase italic tracking-tight">
+                    {brandItems[activeIndex].brand}
+                  </span>
                 </div>
-              )}
+                <BrandContent item={brandItems[activeIndex]} />
+              </div>
             </div>
           </div>
         </section>

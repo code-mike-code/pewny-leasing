@@ -1,5 +1,4 @@
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
-import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const Accordion = AccordionPrimitive.Root
@@ -22,17 +21,12 @@ const AccordionTrigger = ({
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       className={cn(
-        'flex flex-1 items-center justify-between py-6 text-left text-xl font-bold text-dark transition-all hover:text-grey-mid [&[data-state=open]>svg]:rotate-90',
+        'flex flex-1 items-center py-6 text-left text-xl font-bold text-dark transition-all',
         className,
       )}
       {...props}
     >
       {children}
-      <ArrowRight
-        size={18}
-        strokeWidth={2.5}
-        className="shrink-0 text-grey-mid transition-transform duration-300"
-      />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 )
