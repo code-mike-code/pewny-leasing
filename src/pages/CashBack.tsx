@@ -23,6 +23,7 @@ export default function CashBack() {
   const [activeIcon, setActiveIcon] = useState(0)
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const interval = setInterval(() => {
       setActiveIcon(prev => (prev + 1) % HERO_ICONS.length)
     }, 2200)
@@ -76,14 +77,14 @@ export default function CashBack() {
                   to="/"
                   className="hover-wipe hover-wipe-yellow shape-rhombus inline-flex items-center gap-2 text-white/60 font-bold text-xs uppercase tracking-widest px-5 py-2.5 mb-8 group bg-white/5"
                 >
-                  <ArrowRight size={14} strokeWidth={3} className="rotate-180 transition-transform duration-300 group-hover:rotate-[135deg]" />
+                  <ArrowRight size={14} strokeWidth={3} className="rotate-180 transition-transform duration-300 group-hover:rotate-[135deg]" aria-hidden="true" />
                   {t('cashBack.nav.home')}
                 </Link>
               </Reveal>
 
               <Reveal delay={80}>
                 <span className="inline-flex items-center gap-2 bg-primary/15 text-primary font-black text-[10px] uppercase tracking-widest px-4 py-2 mb-6 shape-rhombus">
-                  <Coins size={12} />
+                  <Coins size={12} aria-hidden="true" />
                   {t('cashBack.hero.badge')}
                 </span>
               </Reveal>
@@ -101,7 +102,7 @@ export default function CashBack() {
               <Reveal delay={260}>
                 <CTAButton href="/#contact" variant="yellow" className="group">
                   {t('cashBack.cta.primary')}
-                  <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
+                  <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" aria-hidden="true" />
                 </CTAButton>
               </Reveal>
             </div>
@@ -146,7 +147,7 @@ export default function CashBack() {
           <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <Reveal variant="left">
               <div>
-                <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('cashBack.what.badge')}</p>
+                <p className="text-xs font-black text-amber-800 uppercase tracking-[0.3em] mb-4">{t('cashBack.what.badge')}</p>
                 <h2 className="text-4xl lg:text-6xl font-black text-dark leading-none tracking-tighter uppercase italic mb-8">
                   {t('cashBack.what.title')}<br />
                   <span className="text-dark">{t('cashBack.what.titleAccent')}</span>
@@ -161,7 +162,7 @@ export default function CashBack() {
                 {whatStats.map(({ value, label }) => (
                   <div key={label} className="bg-gray-50 border border-gray-100 p-6 flex flex-col justify-between shape-rhombus min-h-[120px] group hover:bg-primary hover:border-primary transition-all duration-300">
                     <p className="text-3xl font-black text-dark tracking-tighter">{value}</p>
-                    <p className="text-xs font-bold text-gray-400 group-hover:text-dark/60 uppercase tracking-widest mt-3">{label}</p>
+                    <p className="text-xs font-bold text-gray-500 group-hover:text-dark/60 uppercase tracking-widest mt-3">{label}</p>
                   </div>
                 ))}
               </div>
@@ -204,7 +205,7 @@ export default function CashBack() {
           <div className="max-w-screen-xl mx-auto">
             <Reveal>
               <div className="mb-16 lg:mb-20">
-                <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('cashBack.who.badge')}</p>
+                <p className="text-xs font-black text-amber-800 uppercase tracking-[0.3em] mb-4">{t('cashBack.who.badge')}</p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-dark leading-none tracking-tighter uppercase italic">
                   {t('cashBack.who.title')} <span className="text-dark">{t('cashBack.who.titleAccent')}</span>
                 </h2>
@@ -217,8 +218,8 @@ export default function CashBack() {
                   <div className="border-2 border-gray-100 p-10 lg:p-12 flex flex-col gap-6 group transition-all duration-300 h-full border-anim">
                     <div className="bg-primary/10 w-14 h-14 flex items-center justify-center shape-rhombus group-hover:bg-primary transition-colors duration-300">
                       {card.icon === 'user'
-                        ? <User size={24} className="text-primary group-hover:text-dark transition-colors duration-300" strokeWidth={2} />
-                        : <Building2 size={24} className="text-primary group-hover:text-dark transition-colors duration-300" strokeWidth={2} />
+                        ? <User size={24} className="text-primary group-hover:text-dark transition-colors duration-300" strokeWidth={2} aria-hidden="true" />
+                        : <Building2 size={24} className="text-primary group-hover:text-dark transition-colors duration-300" strokeWidth={2} aria-hidden="true" />
                       }
                     </div>
                     <div>
@@ -247,7 +248,7 @@ export default function CashBack() {
           <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 items-start">
             <Reveal variant="left">
               <div className="lg:sticky lg:top-[100px]">
-                <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('cashBack.benefits.badge')}</p>
+                <p className="text-xs font-black text-amber-800 uppercase tracking-[0.3em] mb-4">{t('cashBack.benefits.badge')}</p>
                 <h2 className="text-4xl lg:text-5xl font-black text-dark leading-none tracking-tighter uppercase italic">
                   {t('cashBack.benefits.title')}<br />
                   <span className="text-dark">{t('cashBack.benefits.titleAccent')}</span>
@@ -259,7 +260,7 @@ export default function CashBack() {
               {benefitItems.map((item, i) => (
                 <Reveal key={i} delay={i * 60}>
                   <div className="flex items-start gap-4 bg-white border border-gray-100 px-6 py-5 group transition-colors duration-200 border-anim">
-                    <CheckCircle size={20} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <CheckCircle size={20} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                     <p className="text-dark text-sm font-medium leading-relaxed">{item}</p>
                   </div>
                 </Reveal>
@@ -274,7 +275,7 @@ export default function CashBack() {
             <Reveal variant="left">
               <div>
                 <span className="inline-flex items-center gap-2 text-primary text-[10px] font-black uppercase tracking-widest mb-6">
-                  <Zap size={14} />
+                  <Zap size={14} aria-hidden="true" />
                   Cash Back
                 </span>
                 <h2 className="text-4xl lg:text-6xl font-black text-white leading-none tracking-tighter uppercase italic">
@@ -288,11 +289,11 @@ export default function CashBack() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <CTAButton href="/#contact" variant="yellow" className="group">
                   {t('cashBack.cta.primary')}
-                  <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
+                  <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" aria-hidden="true" />
                 </CTAButton>
                 <CTAButton href="/#calculator" variant="outline-yellow" className="group">
                   {t('cashBack.cta.secondary')}
-                  <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
+                  <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" aria-hidden="true" />
                 </CTAButton>
               </div>
             </Reveal>

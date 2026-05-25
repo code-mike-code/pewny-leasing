@@ -167,7 +167,7 @@ export function BusinessCalculatorSection({ onConfirm }: BusinessCalculatorSecti
                 <div>
                   <div className="flex justify-between items-center mb-4 text-sm font-bold text-dark tracking-wide">
                     <span>{t('businessCalc.sliders.value')}</span>
-                    <span className="text-primary">{value.toLocaleString('pl-PL')} PLN</span>
+                    <span className="text-amber-800">{value.toLocaleString('pl-PL')} PLN</span>
                   </div>
                   <input
                     type="range" min="20000" max="1000000" step="1000"
@@ -204,7 +204,7 @@ export function BusinessCalculatorSection({ onConfirm }: BusinessCalculatorSecti
                 <div>
                   <div className="flex justify-between items-center mb-4 text-sm font-bold text-dark tracking-wide">
                     <span>{t('businessCalc.sliders.period')}</span>
-                    <span className="text-primary">{period} mc</span>
+                    <span className="text-amber-800">{period} mc</span>
                   </div>
                   <input
                     type="range" min="12" max="60" step="1"

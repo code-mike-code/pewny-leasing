@@ -153,7 +153,7 @@ export default function EquipmentFinancing() {
           <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <Reveal variant="left">
               <div>
-                <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.why.badge')}</p>
+                <p className="text-xs font-black text-amber-800 uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.why.badge')}</p>
                 <h2 className="text-4xl lg:text-6xl font-black text-dark leading-none tracking-tighter uppercase italic mb-8">
                   {t('equipmentFinancing.why.title')}<br />
                   <span className="text-dark">{t('equipmentFinancing.why.titleAccent')}</span>
@@ -168,7 +168,7 @@ export default function EquipmentFinancing() {
                 {stats.map(({ value, label }) => (
                   <div key={label} className="bg-gray-50 border border-gray-100 p-6 flex flex-col justify-between shape-rhombus min-h-[120px] group hover:bg-primary hover:border-primary transition-all duration-300">
                     <p className="text-3xl font-black text-dark tracking-tighter">{value}</p>
-                    <p className="text-xs font-bold text-gray-400 group-hover:text-dark/60 uppercase tracking-widest mt-3">{label}</p>
+                    <p className="text-xs font-bold text-gray-500 group-hover:text-dark/60 uppercase tracking-widest mt-3">{label}</p>
                   </div>
                 ))}
               </div>
@@ -213,7 +213,7 @@ export default function EquipmentFinancing() {
           <div className="max-w-screen-xl mx-auto">
             <Reveal>
               <div className="text-center mb-16 lg:mb-20">
-                <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.how.badge')}</p>
+                <p className="text-xs font-black text-amber-800 uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.how.badge')}</p>
                 <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-dark leading-none tracking-tighter uppercase italic">
                   {t('equipmentFinancing.how.title')} <span className="text-dark">{t('equipmentFinancing.how.titleAccent')}</span>
                 </h2>
@@ -225,9 +225,9 @@ export default function EquipmentFinancing() {
                 <Reveal key={step.n} delay={i * 100}>
                   <div className="border-2 border-gray-100 p-8 lg:p-10 group transition-all duration-300 h-full flex flex-col border-anim">
                     <span className="text-6xl font-black text-primary/30 leading-none mb-6 block">{step.n}</span>
-                    <h4 className="text-xl font-black text-dark uppercase italic tracking-tight mb-4 transition-colors duration-300">
+                    <h3 className="text-xl font-black text-dark uppercase italic tracking-tight mb-4 transition-colors duration-300">
                       {step.title}
-                    </h4>
+                    </h3>
                     <p className="text-gray-500 text-sm leading-relaxed flex-1">
                       {step.desc}
                     </p>
@@ -243,7 +243,7 @@ export default function EquipmentFinancing() {
           <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 items-start">
             <Reveal variant="left">
               <div className="lg:sticky lg:top-[100px]">
-                <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.benefits.badge')}</p>
+                <p className="text-xs font-black text-amber-800 uppercase tracking-[0.3em] mb-4">{t('equipmentFinancing.benefits.badge')}</p>
                 <h2 className="text-4xl lg:text-5xl font-black text-dark leading-none tracking-tighter uppercase italic">
                   {t('equipmentFinancing.benefits.title')}<br />
                   <span className="text-dark">{t('equipmentFinancing.benefits.titleAccent')}</span>
@@ -255,7 +255,7 @@ export default function EquipmentFinancing() {
               {benefitItems.map((item, i) => (
                 <Reveal key={i} delay={i * 60}>
                   <div className="flex items-start gap-4 bg-white border border-gray-100 px-6 py-5 group transition-colors duration-200 border-anim">
-                    <CheckCircle size={20} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <CheckCircle size={20} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                     <p className="text-dark text-sm font-medium leading-relaxed">{item}</p>
                   </div>
                 </Reveal>

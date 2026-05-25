@@ -20,8 +20,8 @@ export function KnowledgeSection() {
           <div className="relative w-full lg:w-[65%] bg-gray-50 p-10 lg:p-14 text-navy shadow-sm border border-gray-100 flex flex-col justify-between items-start border-anim">
 
             <div className="relative z-10 w-full flex flex-col">
-              <span className="inline-flex items-center gap-2 bg-[#FEFCE8] text-primary font-black text-[10px] uppercase tracking-widest px-3 py-1 mb-8 self-start border border-yellow-100">
-                <HelpCircle size={12} />
+              <span className="inline-flex items-center gap-2 bg-[#FEFCE8] text-amber-800 font-black text-[10px] uppercase tracking-widest px-3 py-1 mb-8 self-start border border-yellow-100">
+                <HelpCircle size={12} aria-hidden="true" />
                 {t('knowledge.faq.badge')}
               </span>
 
@@ -37,7 +37,7 @@ export function KnowledgeSection() {
               <ul className="w-full space-y-3 mb-10">
                 {previewItems.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 bg-white px-5 py-4 border border-gray-100">
-                    <ChevronRight size={16} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={3} />
+                    <ChevronRight size={16} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={3} aria-hidden="true" />
                     <span className="text-sm font-medium text-navy leading-snug">{item.question}</span>
                   </li>
                 ))}
@@ -46,7 +46,7 @@ export function KnowledgeSection() {
               <Link to="/faq">
                 <CTAButton variant="yellow" className="group self-start">
                   {t('knowledge.faq.cta')}
-                  <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
+                  <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" aria-hidden="true" />
                 </CTAButton>
               </Link>
             </div>
@@ -57,8 +57,8 @@ export function KnowledgeSection() {
           <div className="w-full lg:w-[35%] bg-white p-10 lg:p-12 shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-gray-50 flex flex-col relative group border-anim">
 
             <div className="mb-8">
-              <div className="bg-[#FEFCE8] p-3 inline-flex items-center justify-center text-primary mb-6">
-                <Coins size={24} strokeWidth={2} />
+              <div className="bg-[#FEFCE8] p-3 inline-flex items-center justify-center mb-6">
+                <Coins size={24} strokeWidth={2} className="text-amber-800" aria-hidden="true" />
               </div>
               <h3 className="text-2xl lg:text-3xl font-black text-navy tracking-tight mb-4 uppercase italic">
                 {t('knowledge.cashback.title')} <span className="text-navy italic">{t('knowledge.cashback.titleAccent')}</span>
@@ -70,9 +70,9 @@ export function KnowledgeSection() {
 
             <div className="mt-auto pt-8 flex">
               <Link to="/cashback">
-                <CTAButton variant="outline-yellow" size="sm" className="group !text-primary hover:!text-dark">
+                <CTAButton variant="outline-yellow" size="sm" className="group !text-dark hover:!text-dark">
                   {t('knowledge.cashback.cta')}
-                  <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" />
+                  <ArrowRight size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:-rotate-45" aria-hidden="true" />
                 </CTAButton>
               </Link>
             </div>

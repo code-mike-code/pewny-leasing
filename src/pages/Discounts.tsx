@@ -93,12 +93,12 @@ function BrandContent({ item }: { item: BrandItem }) {
       <ul className="space-y-2">
         {item.models.map(model => (
           <li key={model} className="flex items-center gap-3 text-sm text-gray-600">
-            <ArrowRight size={14} strokeWidth={3} className="text-primary flex-shrink-0" />
+            <ArrowRight size={14} strokeWidth={3} className="text-primary flex-shrink-0" aria-hidden="true" />
             {model}
           </li>
         ))}
       </ul>
-      <p className="text-xs font-bold text-primary uppercase tracking-wider border-t border-gray-100 pt-4">
+      <p className="text-xs font-bold text-amber-800 uppercase tracking-wider border-t border-gray-100 pt-4">
         {item.note}
       </p>
     </div>
@@ -215,7 +215,7 @@ export default function Discounts() {
           <div className="max-w-screen-xl mx-auto">
             <Reveal>
               <div className="mb-12 lg:mb-16">
-                <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('discounts.brands.badge')}</p>
+                <p className="text-xs font-black text-amber-800 uppercase tracking-[0.3em] mb-4">{t('discounts.brands.badge')}</p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-dark leading-none tracking-tighter uppercase italic mb-6">
                   {t('discounts.brands.title')}<br />
                   <span className="text-dark">{t('discounts.brands.titleAccent')}</span>
@@ -286,7 +286,7 @@ export default function Discounts() {
                       onClick={() => setActiveIndex(i)}
                       className={`px-4 py-2 text-xs font-black uppercase tracking-wide border-2 whitespace-nowrap transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
                         activeIndex === i
-                          ? 'border-primary text-primary bg-primary/5'
+                          ? 'border-primary text-dark bg-primary/5'
                           : 'border-gray-200 text-gray-500 bg-white hover:border-gray-300'
                       }`}
                     >
@@ -347,7 +347,7 @@ export default function Discounts() {
           <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 items-start">
             <Reveal variant="left">
               <div className="lg:sticky lg:top-[100px]">
-                <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-4">{t('discounts.benefits.badge')}</p>
+                <p className="text-xs font-black text-amber-800 uppercase tracking-[0.3em] mb-4">{t('discounts.benefits.badge')}</p>
                 <h2 className="text-4xl lg:text-5xl font-black text-dark leading-none tracking-tighter uppercase italic">
                   {t('discounts.benefits.title')}<br />
                   <span className="text-dark">{t('discounts.benefits.titleAccent')}</span>
@@ -359,7 +359,7 @@ export default function Discounts() {
               {benefitItems.map((item, i) => (
                 <Reveal key={i} delay={i * 60}>
                   <div className="flex items-start gap-4 bg-white border border-gray-100 px-6 py-5 group transition-colors duration-200 border-anim">
-                    <CheckCircle size={20} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <CheckCircle size={20} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                     <p className="text-dark text-sm font-medium leading-relaxed">{item}</p>
                   </div>
                 </Reveal>

@@ -167,7 +167,7 @@ export function MeetingSection({ calcData }: MeetingSectionProps) {
                         onChange={() => setActiveMeeting('online')}
                         className="w-3.5 h-3.5 accent-primary"
                       />
-                      <span className={cn("text-[10px] font-black uppercase tracking-wider", activeMeeting === 'online' ? "text-primary" : "text-gray-400")}>{t('calculator.meeting.online')}</span>
+                      <span className={cn("text-[10px] font-black uppercase tracking-wider", activeMeeting === 'online' ? "text-amber-800" : "text-gray-400")}>{t('calculator.meeting.online')}</span>
                     </label>
                     <label className="flex items-center gap-2 cursor-pointer">
                       <input
@@ -177,7 +177,7 @@ export function MeetingSection({ calcData }: MeetingSectionProps) {
                         onChange={() => setActiveMeeting('personal')}
                         className="w-3.5 h-3.5 accent-primary"
                       />
-                      <span className={cn("text-[10px] font-black uppercase tracking-wider", activeMeeting === 'personal' ? "text-primary" : "text-gray-400")}>{t('calculator.meeting.inPerson')}</span>
+                      <span className={cn("text-[10px] font-black uppercase tracking-wider", activeMeeting === 'personal' ? "text-amber-800" : "text-gray-400")}>{t('calculator.meeting.inPerson')}</span>
                     </label>
                   </div>
                 </div>

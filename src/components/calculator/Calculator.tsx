@@ -81,7 +81,7 @@ export function Calculator() {
         {/* Header content */}
         <div className="flex justify-between items-center text-[10px] font-bold text-gray-400 tracking-wider mb-1">
           <span>{t('calculator.header.title')}</span>
-          <span aria-live="polite" aria-atomic="true" className="text-primary bg-yellow-50 px-2 py-0.5 rounded">
+          <span aria-live="polite" aria-atomic="true" className="text-dark bg-amber-100 px-2 py-0.5 rounded">
             {t('calculator.header.step').replace('{step}', String(step))}
           </span>
         </div>
@@ -113,7 +113,7 @@ export function Calculator() {
                 <div className="group">
                   <div className="flex justify-between items-center mb-1 font-bold">
                     <span className="text-xs uppercase text-gray-500" id="slider-value-label">{t('calculator.sliders.value')}</span>
-                    <span className="text-primary text-lg xl:text-xl">{value.toLocaleString('pl-PL')}</span>
+                    <span className="text-amber-800 text-lg xl:text-xl">{value.toLocaleString('pl-PL')}</span>
                   </div>
                   <input
                     type="range" min="20000" max="1000000" step="1000"
@@ -128,7 +128,7 @@ export function Calculator() {
                 <div className="group">
                   <div className="flex justify-between items-center mb-1 font-bold">
                     <span className="text-xs uppercase text-gray-500" id="slider-contribution-label">{t('calculator.sliders.contribution')}</span>
-                    <span className="text-primary text-lg xl:text-xl">{contribution}%</span>
+                    <span className="text-amber-800 text-lg xl:text-xl">{contribution}%</span>
                   </div>
                   <input
                     type="range" min="0" max="45"
@@ -143,7 +143,7 @@ export function Calculator() {
                 <div className="group">
                   <div className="flex justify-between items-center mb-1 font-bold">
                     <span className="text-xs uppercase text-gray-500" id="slider-buyout-label">{t('calculator.sliders.buyout')}</span>
-                    <span className="text-primary text-lg xl:text-xl">{buyout}%</span>
+                    <span className="text-amber-800 text-lg xl:text-xl">{buyout}%</span>
                   </div>
                   <input
                     type="range" min="1" max="50"
@@ -158,7 +158,7 @@ export function Calculator() {
                 <div className="group">
                   <div className="flex justify-between items-center mb-1 font-bold">
                     <span className="text-xs uppercase text-gray-500" id="slider-period-label">{t('calculator.sliders.period')}</span>
-                    <span className="text-primary text-lg xl:text-xl">{period} mc</span>
+                    <span className="text-amber-800 text-lg xl:text-xl">{period} mc</span>
                   </div>
                   <input
                     type="range" min="12" max="60" step="1"
@@ -279,11 +279,11 @@ export function Calculator() {
                       )}>
                         <label className="flex items-center gap-2 cursor-pointer">
                           <input type="radio" name="meeting" checked={meetingType === 'online'} onChange={() => setMeetingType('online')} className="w-3.5 h-3.5 accent-primary" />
-                          <span className={cn("text-[10px] font-black uppercase tracking-wider", meetingType === 'online' ? "text-primary" : "text-gray-400")}>{t('calculator.meeting.online')}</span>
+                          <span className={cn("text-[10px] font-black uppercase tracking-wider", meetingType === 'online' ? "text-amber-800" : "text-gray-400")}>{t('calculator.meeting.online')}</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer">
                           <input type="radio" name="meeting" checked={meetingType === 'in_person'} onChange={() => setMeetingType('in_person')} className="w-3.5 h-3.5 accent-primary" />
-                          <span className={cn("text-[10px] font-black uppercase tracking-wider", meetingType === 'in_person' ? "text-primary" : "text-gray-400")}>{t('calculator.meeting.inPerson')}</span>
+                          <span className={cn("text-[10px] font-black uppercase tracking-wider", meetingType === 'in_person' ? "text-amber-800" : "text-gray-400")}>{t('calculator.meeting.inPerson')}</span>
                         </label>
                       </div>
                     </div>

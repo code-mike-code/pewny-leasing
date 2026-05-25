@@ -186,7 +186,7 @@ export default function FAQ() {
                         className="w-full flex items-center justify-between py-6 text-left group"
                       >
                         <div className="flex items-start gap-5 pr-6">
-                          <span className="text-xs font-black text-primary/40 tracking-widest mt-1 flex-shrink-0">
+                          <span className="text-xs font-black text-gray-500 tracking-widest mt-1 flex-shrink-0">
                             {String(i + 1).padStart(2, '0')}
                           </span>
                           <span className="text-base md:text-lg font-bold text-dark leading-snug group-hover:text-primary transition-colors duration-200">
