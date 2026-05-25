@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ArrowRight, Coins, CheckCircle, Building2, User, Zap } from 'lucide-react'
 import { useLanguage } from '@/hooks/useLanguage'
@@ -28,25 +29,25 @@ export default function CashBack() {
     return () => clearInterval(interval)
   }, [])
 
-  const whatStats = [0, 1, 2, 3].map(i => ({
+  const whatStats = useMemo(() => [0, 1, 2, 3].map(i => ({
     value: t(`cashBack.what.stats.${i}.value`),
     label: t(`cashBack.what.stats.${i}.label`),
-  }))
+  })), [t])
 
-  const howSteps = [0, 1, 2].map(i => ({
+  const howSteps = useMemo(() => [0, 1, 2].map(i => ({
     n:     t(`cashBack.how.steps.${i}.n`),
     title: t(`cashBack.how.steps.${i}.title`),
     desc:  t(`cashBack.how.steps.${i}.desc`),
-  }))
+  })), [t])
 
-  const whoCards = WHO_CARD_ICONS.map((icon, i) => ({
+  const whoCards = useMemo(() => WHO_CARD_ICONS.map((icon, i) => ({
     icon,
     title:  t(`cashBack.who.cards.${i}.title`),
     desc:   t(`cashBack.who.cards.${i}.desc`),
     points: [0, 1, 2].map(j => t(`cashBack.who.cards.${i}.points.${j}`)),
-  }))
+  })), [t])
 
-  const benefitItems = [0, 1, 2, 3, 4, 5, 6].map(i => t(`cashBack.benefits.items.${i}`))
+  const benefitItems = useMemo(() => [0, 1, 2, 3, 4, 5, 6].map(i => t(`cashBack.benefits.items.${i}`)), [t])
 
   return (
     <>
@@ -71,13 +72,13 @@ export default function CashBack() {
             <div>
               {/* back button — top-left above heading */}
               <Reveal>
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="hover-wipe hover-wipe-yellow shape-rhombus inline-flex items-center gap-2 text-white/60 font-bold text-xs uppercase tracking-widest px-5 py-2.5 mb-8 group bg-white/5"
                 >
                   <ArrowRight size={14} strokeWidth={3} className="rotate-180 transition-transform duration-300 group-hover:rotate-[135deg]" />
                   {t('cashBack.nav.home')}
-                </a>
+                </Link>
               </Reveal>
 
               <Reveal delay={80}>
@@ -183,11 +184,11 @@ export default function CashBack() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {howSteps.map((step, i) => (
                 <Reveal key={step.n} delay={i * 100}>
-                  <div className="border border-white/5 p-8 lg:p-10 group hover:border-primary/50 transition-all duration-500 bg-[#111] hover:shadow-[0_0_40px_rgba(251,191,36,0.05)] h-full flex flex-col">
+                  <div className="border border-white/5 p-8 lg:p-10 group transition-all duration-500 bg-[#111] hover:shadow-[0_0_40px_rgba(251,191,36,0.05)] h-full flex flex-col border-anim">
                     <span className="text-6xl font-black text-primary/20 leading-none mb-6 block">{step.n}</span>
-                    <h4 className="text-xl font-black text-white uppercase italic tracking-tight mb-4 transition-colors duration-300">
+                    <h3 className="text-xl font-black text-white uppercase italic tracking-tight mb-4 transition-colors duration-300">
                       {step.title}
-                    </h4>
+                    </h3>
                     <p className="text-gray-500 text-sm leading-relaxed flex-1 group-hover:text-gray-400 transition-colors">
                       {step.desc}
                     </p>
@@ -213,7 +214,7 @@ export default function CashBack() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {whoCards.map((card, i) => (
                 <Reveal key={card.title} delay={i * 120}>
-                  <div className="border-2 border-gray-100 hover:border-primary p-10 lg:p-12 flex flex-col gap-6 group transition-all duration-300 h-full">
+                  <div className="border-2 border-gray-100 p-10 lg:p-12 flex flex-col gap-6 group transition-all duration-300 h-full border-anim">
                     <div className="bg-primary/10 w-14 h-14 flex items-center justify-center shape-rhombus group-hover:bg-primary transition-colors duration-300">
                       {card.icon === 'user'
                         ? <User size={24} className="text-primary group-hover:text-dark transition-colors duration-300" strokeWidth={2} />
@@ -221,14 +222,14 @@ export default function CashBack() {
                       }
                     </div>
                     <div>
-                      <h4 className="text-2xl font-black text-dark uppercase italic tracking-tight mb-3 transition-colors duration-300">
+                      <h3 className="text-2xl font-black text-dark uppercase italic tracking-tight mb-3 transition-colors duration-300">
                         {card.title}
-                      </h4>
+                      </h3>
                       <p className="text-gray-500 text-sm leading-relaxed mb-6">{card.desc}</p>
                       <ul className="space-y-2">
                         {card.points.map(point => (
                           <li key={point} className="flex items-center gap-3 text-sm text-gray-600">
-                            <ArrowRight size={14} strokeWidth={3} className="text-primary flex-shrink-0" />
+                            <ArrowRight size={14} strokeWidth={3} className="text-primary flex-shrink-0" aria-hidden="true" />
                             {point}
                           </li>
                         ))}
@@ -257,7 +258,7 @@ export default function CashBack() {
             <div className="space-y-4">
               {benefitItems.map((item, i) => (
                 <Reveal key={i} delay={i * 60}>
-                  <div className="flex items-start gap-4 bg-white border border-gray-100 px-6 py-5 group hover:border-primary transition-colors duration-200">
+                  <div className="flex items-start gap-4 bg-white border border-gray-100 px-6 py-5 group transition-colors duration-200 border-anim">
                     <CheckCircle size={20} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <p className="text-dark text-sm font-medium leading-relaxed">{item}</p>
                   </div>
