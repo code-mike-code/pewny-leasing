@@ -238,7 +238,7 @@ export default function Discounts() {
                     <AccordionItem
                       key={item.brand}
                       value={String(i)}
-                      className="border-gray-100 relative group"
+                      className="border border-gray-100 relative group -mt-px first:mt-0 bg-white transition-all duration-200 hover:z-10 hover:-translate-y-0.5 hover:shadow-sm"
                     >
                       <span
                         className="absolute left-0 top-0 h-full w-0.5 bg-primary opacity-0 group-data-[state=open]:opacity-100 transition-opacity duration-300 pointer-events-none z-10"
