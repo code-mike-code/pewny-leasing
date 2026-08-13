@@ -13,4 +13,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://www.pewnyleasing24.pl/sitemap.xml
+Sitemap: https://pewnyleasing24.pl/sitemap.xml

@@ -10,13 +10,13 @@ Mamy na koncie ponad 500 zadowolonych klientów, ponad 20 partnerów finansowych
 
 ## Strony serwisu
 
-- [Strona główna](https://www.pewnyleasing24.pl/) — kalkulator leasingu, oferta, kontakt
-- [FAQ](https://www.pewnyleasing24.pl/faq) — najczęstsze pytania o leasing i wynajem
-- [Pojazdy z rabatem](https://www.pewnyleasing24.pl/discounts) — wybrane modele samochodów z rabatem dealerskim
-- [Cash back](https://www.pewnyleasing24.pl/cashback) — zwrot gotówki przy wybranych umowach leasingowych
-- [Finansowanie sprzętu](https://www.pewnyleasing24.pl/finansowanie-sprzetu) — leasing sprzętu IT, medycznego, budowlanego, rolniczego i przemysłowego
-- [Polityka prywatności](https://www.pewnyleasing24.pl/privacy-policy)
-- [Regulamin](https://www.pewnyleasing24.pl/terms-of-service)
+- [Strona główna](https://pewnyleasing24.pl/) — kalkulator leasingu, oferta, kontakt
+- [FAQ](https://pewnyleasing24.pl/faq) — najczęstsze pytania o leasing i wynajem
+- [Pojazdy z rabatem](https://pewnyleasing24.pl/discounts) — wybrane modele samochodów z rabatem dealerskim
+- [Cash back](https://pewnyleasing24.pl/cashback) — zwrot gotówki przy wybranych umowach leasingowych
+- [Finansowanie sprzętu](https://pewnyleasing24.pl/finansowanie-sprzetu) — leasing sprzętu IT, medycznego, budowlanego, rolniczego i przemysłowego
+- [Polityka prywatności](https://pewnyleasing24.pl/privacy-policy)
+- [Regulamin](https://pewnyleasing24.pl/terms-of-service)
 
 ## Oferta usług
 
@@ -91,7 +91,7 @@ Poniedziałek – Piątek: 10:00 – 18:00
 
 ## Kontakt
 
-- **Strona:** https://www.pewnyleasing24.pl
+- **Strona:** https://pewnyleasing24.pl
 - **Email:** kontakt@pewnyleasing24.pl
 - **Email alternatywny:** kontakt@pewnyleasing.com
 - **Telefon:** +48 535 454 858

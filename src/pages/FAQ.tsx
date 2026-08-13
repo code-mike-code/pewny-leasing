@@ -27,7 +27,7 @@ export default function FAQ() {
             ? 'Odpowiedzi na najczęstsze pytania o leasing operacyjny, wynajem długoterminowy, finansowanie flot i sprzętu specjalistycznego. Pewny Leasing – broker B2B, Warszawa.'
             : 'Answers to the most common questions about operational leasing, long-term rental, fleet and specialist equipment financing at Pewny Leasing – B2B broker, Warsaw.'}
         />
-        <link rel="canonical" href="https://www.pewnyleasing24.pl/faq" />
+        <link rel="canonical" href="https://pewnyleasing24.pl/faq" />
 
         {/* JSON-LD: FAQPage — enables Google FAQ rich results; HTML content must match */}
         <script type="application/ld+json">{JSON.stringify({

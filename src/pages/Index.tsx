@@ -26,14 +26,14 @@ export default function Index() {
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <meta name="keywords" content={t('meta.keywords')} />
-        <link rel="canonical" href="https://www.pewnyleasing24.pl/" />
+        <link rel="canonical" href="https://pewnyleasing24.pl/" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.pewnyleasing24.pl/" />
+        <meta property="og:url" content="https://pewnyleasing24.pl/" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content="https://www.pewnyleasing24.pl/og-image.png" />
+        <meta property="og:image" content="https://pewnyleasing24.pl/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Pewny Leasing – Broker Leasingowy dla Firm" />
@@ -42,26 +42,26 @@ export default function Index() {
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.pewnyleasing24.pl/" />
+        <meta name="twitter:url" content="https://pewnyleasing24.pl/" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content="https://www.pewnyleasing24.pl/og-image.png" />
+        <meta name="twitter:image" content="https://pewnyleasing24.pl/og-image.png" />
 
         {/* JSON-LD: FinancialService + LocalBusiness */}
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": ["FinancialService", "LocalBusiness"],
-          "@id": "https://www.pewnyleasing24.pl/#organization",
+          "@id": "https://pewnyleasing24.pl/#organization",
           "name": "Pewny Leasing",
           "description": "Broker leasingowy i finansowy dla firm B2B. Leasing operacyjny, wynajem długoterminowy i krótkoterminowy, finansowanie flot samochodowych, leasing samochodów premium oraz sprzętu specjalistycznego dla branż IT, medycznej, budowlanej, przemysłowej, rolniczej i automotive.",
-          "url": "https://www.pewnyleasing24.pl",
+          "url": "https://pewnyleasing24.pl",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://www.pewnyleasing24.pl/logo.webp",
+            "url": "https://pewnyleasing24.pl/logo.webp",
             "width": 300,
             "height": 80
           },
-          "image": "https://www.pewnyleasing24.pl/og-image.png",
+          "image": "https://pewnyleasing24.pl/og-image.png",
           "telephone": "+48535454858",
           "email": "kontakt@pewnyleasing24.pl",
           "address": {
@@ -116,7 +116,7 @@ export default function Index() {
           "provider": {
             "@type": "Organization",
             "name": "Pewny Leasing",
-            "@id": "https://www.pewnyleasing24.pl/#organization"
+            "@id": "https://pewnyleasing24.pl/#organization"
           },
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -160,7 +160,7 @@ export default function Index() {
               "@type": "ListItem",
               "position": 1,
               "name": "Strona główna",
-              "item": "https://www.pewnyleasing24.pl/"
+              "item": "https://pewnyleasing24.pl/"
             }
           ]
         })}</script>
