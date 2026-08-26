@@ -1,5 +1,14 @@
 Options -MultiViews
 RewriteEngine On
+
+# Prerenderowane podstrony: czysty URL (np. /faq) serwuj z pliku faq.html.
+# Bez zmiany adresu w pasku i bez przekierowania na ukośnik — canonical się zgadza.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Fallback SPA: pozostałe trasy obsługuje React Router z index.html.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [QSA,L]

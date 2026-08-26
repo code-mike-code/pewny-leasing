@@ -9,13 +9,22 @@ const PHONE = '+48535454858'
 export function HeroSection() {
   const { t } = useLanguage()
   const [isDesktop, setIsDesktop] = useState(false)
+  const [reduceMotion, setReduceMotion] = useState(false)
 
   useEffect(() => {
-    const mq = window.matchMedia('(min-width: 1024px)')
-    setIsDesktop(mq.matches)
-    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches)
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
+    const mqDesktop = window.matchMedia('(min-width: 1024px)')
+    const mqMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const sync = () => {
+      setIsDesktop(mqDesktop.matches)
+      setReduceMotion(mqMotion.matches)
+    }
+    sync()
+    mqDesktop.addEventListener('change', sync)
+    mqMotion.addEventListener('change', sync)
+    return () => {
+      mqDesktop.removeEventListener('change', sync)
+      mqMotion.removeEventListener('change', sync)
+    }
   }, [])
 
   return (
@@ -24,8 +33,8 @@ export function HeroSection() {
         id="hero"
         className="relative flex items-center bg-[#050505] overflow-hidden pt-[116px] pb-16 min-h-screen"
       >
-        {/* Background Video — desktop only */}
-        {isDesktop && (
+        {/* Background Video — desktop only, and only when the user hasn't asked for reduced motion (WCAG 2.3.3) */}
+        {isDesktop && !reduceMotion && (
           <video
             className="absolute inset-0 w-full h-full object-cover opacity-40"
             autoPlay
@@ -38,6 +47,16 @@ export function HeroSection() {
           >
             <source src="/hero-video.webm" type="video/webm" />
           </video>
+        )}
+
+        {/* Reduced-motion / no-autoplay fallback: static poster instead of the moving video */}
+        {isDesktop && reduceMotion && (
+          <img
+            src={posterImg}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
+          />
         )}
 
         {/* Content Container */}
